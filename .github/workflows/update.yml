@@ -2,8 +2,8 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # каждые 2 часа — автоматический мониторинг
-  workflow_dispatch:        # ручной запуск
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
   push:
     branches: [main]
     paths:
@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -41,7 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run collector (monitor + update)
+      - name: Run collector
         run: python collector.py
 
       - name: Commit and push sub.txt
@@ -57,4 +57,5 @@ jobs:
           fi
 
           git commit -m "Auto-update subscription $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main || true
           git push origin main
