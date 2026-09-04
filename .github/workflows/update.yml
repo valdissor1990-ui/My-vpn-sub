@@ -9,7 +9,6 @@ on:
     paths:
       - 'collector.py'
       - 'config.py'
-      'bots/**'
       - 'bots/**'
       - 'requirements.txt'
       - '.github/workflows/update.yml'
