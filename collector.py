@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""White-list сборка: только Reality + XHTTP/gRPC, источники с зеркал."""
+"""White-list + Hysteria2 сборка с зеркал."""
 
 import base64
 from datetime import datetime, timezone
@@ -9,8 +9,9 @@ from config import (
     SOURCES,
     MAX_SERVERS,
     PROTOCOLS,
-    REQUIRE_REALITY,
-    REQUIRE_XHTTP_OR_GRPC,
+    ALLOW_HYSTERIA2,
+    REQUIRE_REALITY_FOR_VLESS,
+    REQUIRE_XHTTP_OR_GRPC_FOR_VLESS,
 )
 
 
@@ -22,7 +23,7 @@ def download_source(url: str) -> list[str]:
     try:
         r = requests.get(url, timeout=25)
         if r.status_code != 200:
-            log(f"  HTTP {r.status_code}: {url[:60]}")
+            log(f"  HTTP {r.status_code}: {url[:55]}")
             return []
         content = r.text.strip()
         if not content:
@@ -33,48 +34,58 @@ def download_source(url: str) -> list[str]:
         except Exception:
             return [ln.strip() for ln in content.splitlines() if ln.strip()]
     except Exception as e:
-        log(f"  Ошибка {url[:40]}: {e}")
+        log(f"  err: {e}")
         return []
 
 
-def is_config(line: str) -> bool:
-    line = line.strip()
-    if not line or line.startswith("#"):
+def protocol_of(line: str) -> str | None:
+    line = line.strip().lower()
+    for p in ("hysteria2", "hy2", "hysteria", "vless", "vmess", "trojan"):
+        if line.startswith(f"{p}://"):
+            return p
+    return None
+
+
+def passes(line: str) -> bool:
+    p = protocol_of(line)
+    if not p:
         return False
-    return any(line.startswith(f"{p}://") for p in PROTOCOLS)
-
-
-def passes_strict_filter(line: str) -> bool:
     low = line.lower()
-    if REQUIRE_REALITY and "security=reality" not in low and "reality" not in low:
-        return False
-    if REQUIRE_XHTTP_OR_GRPC:
-        if "type=xhttp" not in low and "type=grpc" not in low and "network=grpc" not in low:
-            # также xhttp иногда как packet-up / mode=
-            if "xhttp" not in low and "grpc" not in low:
-                return False
+
+    if p in ("hysteria2", "hy2", "hysteria"):
+        return ALLOW_HYSTERIA2
+
+    # vless/vmess/trojan: Reality + xhttp/grpc
+    if REQUIRE_REALITY_FOR_VLESS:
+        if "security=reality" not in low and "reality" not in low:
+            return False
+    if REQUIRE_XHTTP_OR_GRPC_FOR_VLESS:
+        if not any(x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc")):
+            return False
     return True
 
 
 def score(line: str) -> int:
-    s = 0
     low = line.lower()
-    if "type=xhttp" in low or "xhttp" in low:
+    s = 0
+    if low.startswith("hysteria2://") or low.startswith("hy2://"):
+        s += 80
+    if "xhttp" in low:
         s += 50
-    if "type=grpc" in low or "grpc" in low:
+    if "grpc" in low:
         s += 40
-    if "flow=xtls-rprx-vision" in low:
-        s += 15
+    if "reality" in low:
+        s += 30
     if "cidr" in low or "white" in low:
-        s += 20
+        s += 15
     return s
 
 
 def main() -> None:
-    log("Сбор зеркал → фильтр Reality + XHTTP/gRPC")
+    log("Сбор WL + Hysteria2")
     all_lines: list[str] = []
     for url in SOURCES:
-        log(f"  {url[:65]}...")
+        log(f"  {url[:60]}...")
         lines = download_source(url)
         log(f"    → {len(lines)}")
         all_lines.extend(lines)
@@ -82,9 +93,7 @@ def main() -> None:
     seen: set[str] = set()
     configs: list[str] = []
     for line in all_lines:
-        if not is_config(line):
-            continue
-        if not passes_strict_filter(line):
+        if not passes(line):
             continue
         key = line.split("#")[0].strip()
         if key in seen:
@@ -92,28 +101,27 @@ def main() -> None:
         seen.add(key)
         configs.append(line)
 
-    log(f"После фильтра Reality+XHTTP/gRPC: {len(configs)}")
+    log(f"После фильтра: {len(configs)}")
     configs.sort(key=score, reverse=True)
     final = configs[:MAX_SERVERS]
 
-    xhttp_n = sum(1 for c in final if "xhttp" in c.lower())
-    grpc_n = sum(1 for c in final if "grpc" in c.lower())
+    hy = sum(1 for c in final if c.lower().startswith(("hysteria2://", "hy2://", "hysteria://")))
+    xv = len(final) - hy
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     header = [
-        "#profile-title: base64:" + base64.b64encode("My VPN · Reality XHTTP/gRPC".encode()).decode(),
+        "#profile-title: base64:" + base64.b64encode("My VPN · WL + Hy2".encode()).decode(),
         "#profile-update-interval: 2",
         "#subscription-userinfo: upload=0; download=0; total=1073741824000000; expire=2546249531",
         f"# Generated: {now}",
-        f"# Servers: {len(final)} | XHTTP: {xhttp_n} | gRPC: {grpc_n}",
-        "# Filter: Reality + (XHTTP or gRPC) only",
-        "# Mirrors: jsDelivr, GitHack, Codeberg, Bitbucket",
+        f"# Servers: {len(final)} | Reality/XHTTP/gRPC: {xv} | Hysteria2: {hy}",
+        "# Sources: zieng2, igareck, Subzio, kizyak, Endi (mirrors)",
         "# https://github.com/valdissor1990-ui/My-vpn-sub",
     ]
 
     with open("sub.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(header + final) + "\n")
-    log(f"sub.txt: {len(final)} (XHTTP={xhttp_n}, gRPC={grpc_n})")
+    log(f"sub.txt: {len(final)}")
 
 
 if __name__ == "__main__":
