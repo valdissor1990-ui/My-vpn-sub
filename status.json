@@ -1,130 +1,92 @@
 {
-  "generated_at": "2026-09-04T19:43:04.570509+00:00",
+  "generated_at": "2026-09-04T19:55:09.792763+00:00",
+  "interval": "hourly",
+  "max_servers": 20,
   "collect": {
-    "sources": [
-      {
-        "url": "https://cdn.jsdelivr.net/gh/zieng2/wl@main/vless_universal.txt",
-        "lines": 77,
-        "error": null
-      },
-      {
-        "url": "https://codeberg.org/zieng2/wl/raw/branch/main/vless_universal.txt",
-        "lines": 0,
-        "error": "HTTPSConnectionPool(host='codeberg.org', port=443): Read timed out."
-      },
-      {
-        "url": "https://gitlab.com/zieng2/wl/raw/main/vless_universal.txt",
-        "lines": 0,
-        "error": "HTTP 403"
-      },
-      {
-        "url": "https://gitverse.ru/api/repos/zieng2/wl/raw/branch/master/list_universal.txt",
-        "lines": 67,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile.txt",
-        "lines": 105,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile-2.txt",
-        "lines": 0,
-        "error": "HTTP 404"
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/WHITE-CIDR-RU-checked.txt",
-        "lines": 5,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/WHITE-CIDR-RU-all.txt",
-        "lines": 76,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/WHITE-SNI-RU-all.txt",
-        "lines": 10,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS_mobile.txt",
-        "lines": 155,
-        "error": null
-      },
-      {
-        "url": "https://raw.githack.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
-        "lines": 81,
-        "error": null
-      },
-      {
-        "url": "https://bitbucket.org/igareck/vpn-configs-for-russia/raw/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
-        "lines": 81,
-        "error": null
-      },
-      {
-        "url": "https://bitbucket.org/igareck/vpn-configs-for-russia/raw/main/WHITE-CIDR-RU-checked.txt",
-        "lines": 10,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/Subzio/subzio@main/HYSTERIA2.txt",
-        "lines": 3094,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/Subzio/subzio@main/WHITE_LIST_PROXY_COLLECTION.txt",
-        "lines": 4281,
-        "error": null
-      },
-      {
-        "url": "https://raw.githack.com/Subzio/subzio/main/HYSTERIA2.txt",
-        "lines": 3094,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/Maskkost93/kizyak-vpn-4.0@main/kizyakbeta7.txt",
-        "lines": 94,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/Maskkost93/kizyak-vpn-4.0@main/kizyakbeta6.txt",
-        "lines": 83,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/MrEndi777709/Endi-VPN@main/mrendi-vpn-white-list.txt",
-        "lines": 8,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/MrEndi777709/Endi-VPN@main/mrendi-vpn-black-list.txt",
-        "lines": 129,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/nikita29a/FreeProxyList@main/mirror/1.txt",
-        "lines": 14095,
-        "error": null
-      },
-      {
-        "url": "https://cdn.jsdelivr.net/gh/3inker/v2ray-subscription@main/all_not_ru.txt",
-        "lines": 0,
-        "error": "HTTP 404"
-      }
-    ],
-    "ok": 18,
-    "fail": 4,
-    "total_lines": 25545
+    "sources_ok": 20,
+    "sources_fail": 10,
+    "total_lines": 33407
   },
   "filter": {
-    "unique_passed": 3070,
-    "hy2": 1490,
-    "reality_xhttp_grpc": 1580
+    "unique": 3681,
+    "hy2": 1644,
+    "reality_xhttp_grpc": 2037
+  },
+  "monitor": {
+    "checked": 3681,
+    "tcp_alive": 1200,
+    "exported": 20,
+    "max_servers": 20,
+    "max_ping_ms": 2000,
+    "runner_note": "TCP from GitHub Actions (not RU mobile/Yota)",
+    "top_pings": [
+      {
+        "host": "dda685345af09097dda685345af09097.drwrdoh.org",
+        "port": 2025,
+        "ms": 200,
+        "proto": "vless"
+      },
+      {
+        "host": "de-193-58.neobo-tooth.ru",
+        "port": 2053,
+        "ms": 681,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.42",
+        "port": 8443,
+        "ms": 168,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.89",
+        "port": 9443,
+        "ms": 170,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.184",
+        "port": 4443,
+        "ms": 171,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.89",
+        "port": 9443,
+        "ms": 173,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.89",
+        "port": 9443,
+        "ms": 173,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.42",
+        "port": 8443,
+        "ms": 173,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.184",
+        "port": 4443,
+        "ms": 176,
+        "proto": "vless"
+      },
+      {
+        "host": "46.243.142.89",
+        "port": 9443,
+        "ms": 180,
+        "proto": "vless"
+      }
+    ]
   },
   "output": {
-    "sub.txt": 50,
-    "sub_hy2.txt": 30,
-    "sub_reality.txt": 40
-  }
+    "sub.txt": 20,
+    "sub_hy2.txt": 10,
+    "sub_reality.txt": 10
+  },
+  "health": "ok",
+  "warning": "TCP check runs outside Russia; Yota whitelist may still block these hosts"
 }
