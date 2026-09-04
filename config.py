@@ -14,5 +14,5 @@ SOURCES = [
 CONNECT_TIMEOUT = 3   # секунд на TCP-подключение
 MAX_PING = 1500       # максимальный пинг в ms
 MAX_WORKERS = 30      # параллельных проверок
-MAX_SERVERS = 400     # максимум серверов в итоговой подписке (чтобы sub.txt не раздувался)
+MAX_SERVERS = 50      # максимум серверов в итоговой подписке (только самые быстрые)
 PROTOCOLS = ["vless", "vmess", "trojan", "ss"]
