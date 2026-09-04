@@ -6,11 +6,6 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - 'collector.py'
-      - 'config.py'
-      - 'requirements.txt'
-      - '.github/workflows/update.yml'
 
 permissions:
   contents: write
@@ -22,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
       
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -36,10 +33,11 @@ jobs:
     - name: Run collector
       run: python collector.py
       
-    - name: Commit and push
+    - name: Force push sub.txt
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git pull --rebase origin main
         git add sub.txt
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update $(date)" && git push origin main)
+        git commit -m "Auto-update $(date)" || echo "Nothing to commit"
+        git push --force origin main || echo "Push failed, trying again"
+        git push origin main
