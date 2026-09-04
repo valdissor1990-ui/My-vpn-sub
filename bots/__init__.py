@@ -1,1 +1,1 @@
-# collector → filter → monitor → picker
+# collector → enrich → filter → monitor → picker

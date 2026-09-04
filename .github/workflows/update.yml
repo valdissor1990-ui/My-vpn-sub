@@ -2,13 +2,14 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 * * * *'   # каждый час
+    - cron: '0 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - 'collector.py'
       - 'config.py'
+      'bots/**'
       - 'bots/**'
       - 'requirements.txt'
       - '.github/workflows/update.yml'
@@ -23,16 +24,14 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -42,21 +41,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run bots (collect → filter → monitor → picker)
+      - name: Run bots
         run: python collector.py
 
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add sub.txt sub_hy2.txt sub_reality.txt status.json || true
-
+          git add sub.txt sub_hy2.txt sub_reality.txt status.json meta_raw.json meta_filtered.json || true
           if git diff --staged --quiet; then
             echo "No changes"
             exit 0
           fi
-
-          git commit -m "monitor: hourly top-20 $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "collect+monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
           git push origin main

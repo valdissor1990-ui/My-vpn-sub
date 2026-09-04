@@ -1,4 +1,4 @@
-"""Бот фильтров: протокол / Reality / XHTTP|gRPC / Hy2 / дедуп."""
+"""Фильтр: Hy2 | Reality+(xhttp|grpc) | Reality+TCP(vision)."""
 
 from __future__ import annotations
 
@@ -6,9 +6,10 @@ from datetime import datetime
 
 from config import (
     ALLOW_HYSTERIA2,
+    ALLOW_REALITY_TCP,
+    ALLOW_XHTTP_GRPC,
     PROTOCOLS,
     REQUIRE_REALITY_FOR_VLESS,
-    REQUIRE_XHTTP_OR_GRPC,
 )
 
 
@@ -18,7 +19,7 @@ def log(msg: str) -> None:
 
 def protocol_of(line: str) -> str | None:
     low = line.strip().lower()
-    for p in ("hysteria2", "hy2", "hysteria", "vless", "vmess", "trojan", "ss"):
+    for p in ("hysteria2", "hy2", "hysteria", "vless", "vmess", "trojan"):
         if low.startswith(f"{p}://"):
             return p
     return None
@@ -28,18 +29,26 @@ def is_hy2(line: str) -> bool:
     return protocol_of(line) in ("hysteria2", "hy2", "hysteria")
 
 
-def is_reality_fast(line: str) -> bool:
+def is_reality(line: str) -> bool:
     low = line.lower()
-    p = protocol_of(line)
-    if p not in ("vless", "vmess", "trojan"):
+    return "reality" in low or "security=reality" in low
+
+
+def is_xhttp_grpc(line: str) -> bool:
+    low = line.lower()
+    return any(x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc"))
+
+
+def is_reality_tcp(line: str) -> bool:
+    low = line.lower()
+    if not is_reality(line):
         return False
-    if REQUIRE_REALITY_FOR_VLESS and "reality" not in low:
+    # tcp / raw / без явного ws
+    if "type=ws" in low or "type=http" in low and "xhttp" not in low:
         return False
-    if REQUIRE_XHTTP_OR_GRPC and not any(
-        x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc")
-    ):
+    if is_xhttp_grpc(line):
         return False
-    return True
+    return "type=tcp" in low or "type=raw" in low or "flow=xtls-rprx-vision" in low
 
 
 def passes(line: str) -> bool:
@@ -51,14 +60,19 @@ def passes(line: str) -> bool:
         return False
     if is_hy2(line):
         return ALLOW_HYSTERIA2
-    return is_reality_fast(line)
+    if REQUIRE_REALITY_FOR_VLESS and not is_reality(line):
+        return False
+    if ALLOW_XHTTP_GRPC and is_xhttp_grpc(line):
+        return True
+    if ALLOW_REALITY_TCP and is_reality_tcp(line):
+        return True
+    return False
 
 
 def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
     seen: set[str] = set()
     out: list[str] = []
-    hy2 = 0
-    reality = 0
+    counts = {"hy2": 0, "xhttp_grpc": 0, "reality_tcp": 0}
 
     for line in raw_lines:
         if not passes(line):
@@ -69,10 +83,12 @@ def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
         seen.add(key)
         out.append(line)
         if is_hy2(line):
-            hy2 += 1
+            counts["hy2"] += 1
+        elif is_xhttp_grpc(line):
+            counts["xhttp_grpc"] += 1
         else:
-            reality += 1
+            counts["reality_tcp"] += 1
 
-    stats = {"unique": len(out), "hy2": hy2, "reality_xhttp_grpc": reality}
-    log(f"После фильтра: {len(out)} (Hy2={hy2}, Reality={reality})")
+    stats = {"unique": len(out), **counts}
+    log(f"Фильтр: {len(out)} | {counts}")
     return out, stats

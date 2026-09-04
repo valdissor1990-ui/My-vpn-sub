@@ -1,30 +1,24 @@
-# My VPN Sub · hourly monitor · top-20 alive
+# My VPN Sub · усиленный сбор + TCP monitor
 
-Каждый **час** GitHub Actions:
-
-1. **collector** — все открытые подписки (30+ URL, зеркала)
-2. **filter** — Hysteria2 **или** Reality+(XHTTP|gRPC)
-3. **monitor** — TCP ping host:port, отсев мёртвых
-4. **picker** — только рабочие, **≤ 20**, в `sub.txt`
+Каждый час:
+1. **collector** — 50+ открытых подписок (зеркала)
+2. **enrich** — статистика протоколов/портов/SNI → `meta_*.json`
+3. **filter** — Hy2 | Reality+XHTTP/gRPC | Reality+TCP
+4. **monitor** — TCP ping, только живые
+5. **picker** — **≤ 20** в `sub.txt`
 
 ## Подписка
 
 ```
 https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt
 ```
-```
-https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt
-```
 
-Дополнительно:
-- `sub_hy2.txt` — живые Hysteria2
-- `sub_reality.txt` — живые Reality
-- [`status.json`](https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/status.json) — мониторинг
+Статус: `status.json` · мета: `meta_raw.json`, `meta_filtered.json`
 
-## Важно про «пинг мобильной сети РФ»
+## Пинг есть, подключения нет
 
-GitHub Actions **не может** пинговать из сети Yota.  
-Мониторинг = TCP с зарубежных серверов GitHub → отсекает совсем мёртвые IP.  
-На белых списках Yota хост может отвечать с GitHub и **не** работать с телефона.
+Это ожидаемо:
+- **TCP ping** = порт открыт с GitHub
+- **Подключение VPN** = ещё Reality/Hy2 handshake + политика Yota
 
-Если после обновления на Yota снова 0 — это ограничение оператора, не ботов.
+Мы на пути: сначала появляются «живые» порты, дальше нужен ключ, который проходит handshake с твоей сети. Обновляй подписку каждый час и перебирай серверы вручную.
