@@ -9,6 +9,7 @@ on:
     paths:
       - 'collector.py'
       - 'config.py'
+      - 'bots/**'
       - 'requirements.txt'
       - '.github/workflows/update.yml'
 
@@ -41,21 +42,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run collector
+      - name: Run bots (collector → filter → picker)
         run: python collector.py
 
-      - name: Commit and push sub.txt
+      - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add sub.txt
+          git add sub.txt sub_hy2.txt sub_reality.txt status.json || true
 
           if git diff --staged --quiet; then
-            echo "No changes in sub.txt"
+            echo "No changes"
             exit 0
           fi
 
-          git commit -m "Auto-update subscription $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "bots: auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
           git push origin main
