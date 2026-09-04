@@ -11,7 +11,8 @@ SOURCES = [
 ]
 
 # Настройки тестирования
-PING_TIMEOUT = 2  # секунд на пинг
-MAX_PING = 2000   # максимальный пинг в ms
-MAX_WORKERS = 20  # параллельных проверок
+CONNECT_TIMEOUT = 3   # секунд на TCP-подключение
+MAX_PING = 1500       # максимальный пинг в ms
+MAX_WORKERS = 30      # параллельных проверок
+MAX_SERVERS = 400     # максимум серверов в итоговой подписке (чтобы sub.txt не раздувался)
 PROTOCOLS = ["vless", "vmess", "trojan", "ss"]

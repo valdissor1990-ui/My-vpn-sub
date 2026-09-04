@@ -2,10 +2,19 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
-  workflow_dispatch:
+    - cron: '0 */4 * * *'   # каждые 4 часа
+  workflow_dispatch:        # ручной запуск
   push:
     branches: [main]
+    paths:
+      - 'collector.py'
+      - 'config.py'
+      - 'requirements.txt'
+      - '.github/workflows/update.yml'
+
+concurrency:
+  group: update-subscription
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -13,31 +22,39 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 25
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 1
-      
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-        
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Run collector
-      run: python collector.py
-      
-    - name: Force push sub.txt
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add sub.txt
-        git commit -m "Auto-update $(date)" || echo "Nothing to commit"
-        git push --force origin main || echo "Push failed, trying again"
-        git push origin main
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run collector
+        run: python collector.py
+
+      - name: Commit and push sub.txt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add sub.txt
+
+          if git diff --staged --quiet; then
+            echo "No changes in sub.txt"
+            exit 0
+          fi
+
+          git commit -m "Auto-update subscription $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push origin main
