@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Агрегатор рабочих VPN/прокси конфигов (VLESS / VMess / Trojan / Shadowsocks).
-Скачивает публичные подписки, проверяет TCP-доступность серверов
-и сохраняет только живые конфиги, отсортированные по пингу.
+Агрегатор рабочих VPN/прокси конфигов.
+Упор: российский мобильный интернет, YouTube без рекламы, доступ к ИИ.
+Скачивает публичные подписки, проверяет TCP, оставляет топ быстрых.
 """
 
 import base64
@@ -39,7 +39,6 @@ def download_source(url: str) -> list[str]:
         if not content:
             return []
 
-        # Пробуем base64, иначе берём как plain text
         try:
             decoded = base64.b64decode(content).decode("utf-8", errors="ignore")
             return [line.strip() for line in decoded.splitlines() if line.strip()]
@@ -59,16 +58,17 @@ def parse_config(line: str) -> dict | None:
     for protocol in ("vless", "vmess", "trojan", "ss", "hysteria", "hysteria2"):
         if line.startswith(f"{protocol}://"):
             name = line.split("#", 1)[-1] if "#" in line else "Unknown"
-            # Убираем URL-encoded символы в имени для читаемости
             try:
                 from urllib.parse import unquote
                 name = unquote(name)
             except Exception:
                 pass
+            is_reality = "security=reality" in line.lower() or "reality" in name.lower()
             return {
                 "protocol": protocol,
                 "raw": line,
                 "name": name[:80],
+                "reality": is_reality,
             }
     return None
 
@@ -77,7 +77,6 @@ def extract_host_port(line: str, protocol: str) -> tuple[str | None, int | None]
     try:
         if protocol == "vmess":
             encoded = line.removeprefix("vmess://")
-            # Добавляем padding если нужно
             padding = 4 - len(encoded) % 4
             if padding != 4:
                 encoded += "=" * padding
@@ -86,7 +85,6 @@ def extract_host_port(line: str, protocol: str) -> tuple[str | None, int | None]
             port = int(data.get("port", 443))
             return host, port
         else:
-            # vless://uuid@host:port?...  или trojan://pass@host:port?...  или ss://...
             match = re.search(r"@([^:/?\s]+):(\d+)", line)
             if match:
                 return match.group(1), int(match.group(2))
@@ -96,13 +94,12 @@ def extract_host_port(line: str, protocol: str) -> tuple[str | None, int | None]
 
 
 def test_connection(config: dict) -> tuple[str | None, int]:
-    """TCP-проверка доступности сервера (без root)."""
+    """TCP-проверка доступности сервера."""
     try:
         host, port = extract_host_port(config["raw"], config["protocol"])
         if not host or not port:
             return None, 9999
 
-        # Отбрасываем локальные и явно мусорные адреса
         if host in ("0.0.0.0", "127.0.0.1", "localhost") or host.startswith("192.168."):
             return None, 9999
 
@@ -114,10 +111,14 @@ def test_connection(config: dict) -> tuple[str | None, int]:
         return None, 9999
 
 
-def main() -> None:
-    log("Запуск агрегатора VPN-подписок")
+def sort_key(c: dict) -> tuple:
+    """Сначала Reality (лучше для РФ-мобильного), потом пинг."""
+    return (0 if c.get("reality") else 1, c["ping"])
 
-    # 1. Скачиваем все источники
+
+def main() -> None:
+    log("Запуск агрегатора (РФ-мобильный / YouTube / ИИ)")
+
     all_lines: list[str] = []
     for url in SOURCES:
         log(f"Скачивание: {url[:55]}...")
@@ -127,7 +128,6 @@ def main() -> None:
 
     log(f"Всего скачано строк: {len(all_lines)}")
 
-    # 2. Парсим и убираем точные дубликаты
     seen_raw: set[str] = set()
     parsed: list[dict] = []
     for line in all_lines:
@@ -142,7 +142,6 @@ def main() -> None:
     log(f"Уникальных конфигов: {len(parsed)}")
     log(f"Тестирование TCP ({MAX_WORKERS} потоков)...")
 
-    # 3. Параллельная проверка
     working: list[dict] = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(test_connection, c): c for c in parsed}
@@ -161,28 +160,29 @@ def main() -> None:
 
     log(f"Живых серверов: {len(working)}")
 
-    # 4. Дедупликация по host:port (оставляем самый быстрый)
+    # Дедупликация по host:port — оставляем самый быстрый
     best_by_endpoint: dict[str, dict] = {}
     for c in working:
-        key = f"{c['host']}:{extract_host_port(c['raw'], c['protocol'])[1]}"
+        port = extract_host_port(c["raw"], c["protocol"])[1]
+        key = f"{c['host']}:{port}"
         if key not in best_by_endpoint or c["ping"] < best_by_endpoint[key]["ping"]:
             best_by_endpoint[key] = c
 
     unique = list(best_by_endpoint.values())
-    unique.sort(key=lambda x: x["ping"])
+    unique.sort(key=sort_key)  # Reality выше, потом пинг
 
-    # 5. Ограничиваем количество (оптимизация размера sub.txt)
     final = unique[:MAX_SERVERS]
-    log(f"После дедупликации и лимита: {len(final)} серверов")
+    reality_count = sum(1 for c in final if c.get("reality"))
+    log(f"После дедупликации и лимита: {len(final)} серверов (Reality: {reality_count})")
 
-    # 6. Формируем подписку
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     header = [
-        "#profile-title: base64:" + base64.b64encode("My VPN Sub".encode()).decode(),
-        "#profile-update-interval: 4",
+        "#profile-title: base64:" + base64.b64encode("My VPN Sub · РФ мобильный".encode()).decode(),
+        "#profile-update-interval: 2",
         "#subscription-userinfo: upload=0; download=0; total=1073741824000000; expire=2546249531",
         f"# Generated: {now}",
-        f"# Working servers: {len(final)} (max ping {MAX_PING}ms)",
+        f"# Working: {len(final)} | Reality: {reality_count} | max ping {MAX_PING}ms",
+        f"# Focus: RU mobile · YouTube · AI",
         f"# Source: https://github.com/valdissor1990-ui/My-vpn-sub",
     ]
 
@@ -192,9 +192,10 @@ def main() -> None:
         f.write(content)
 
     log("Сохранено: sub.txt")
-    log("Топ-5 самых быстрых:")
+    log("Топ-5:")
     for i, c in enumerate(final[:5], 1):
-        log(f"  {i}. [{c['ping']:4d}ms] {c['name'][:55]}")
+        tag = "Reality" if c.get("reality") else c["protocol"]
+        log(f"  {i}. [{c['ping']:4d}ms] [{tag}] {c['name'][:50]}")
 
 
 if __name__ == "__main__":
