@@ -2,7 +2,7 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 */4 * * *'   # каждые 4 часа
+    - cron: '0 */2 * * *'   # каждые 2 часа — автоматический мониторинг
   workflow_dispatch:        # ручной запуск
   push:
     branches: [main]
@@ -22,7 +22,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
@@ -41,7 +41,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run collector
+      - name: Run collector (monitor + update)
         run: python collector.py
 
       - name: Commit and push sub.txt
