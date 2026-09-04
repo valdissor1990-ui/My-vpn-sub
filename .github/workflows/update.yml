@@ -2,7 +2,7 @@ name: Update Subscription
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 * * * *'   # каждый час
   workflow_dispatch:
   push:
     branches: [main]
@@ -23,7 +23,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
 
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run bots (collector → filter → picker)
+      - name: Run bots (collect → filter → monitor → picker)
         run: python collector.py
 
       - name: Commit outputs
@@ -57,6 +57,6 @@ jobs:
             exit 0
           fi
 
-          git commit -m "bots: auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "monitor: hourly top-20 $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
           git push origin main

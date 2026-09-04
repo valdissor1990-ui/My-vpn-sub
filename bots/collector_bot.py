@@ -1,4 +1,4 @@
-"""Бот сбора: качает все SOURCES, декодирует base64, возвращает сырые строки."""
+"""Бот сбора со всех открытых подписок."""
 
 from __future__ import annotations
 
@@ -22,15 +22,10 @@ def _decode_body(content: str) -> list[str]:
         decoded = base64.b64decode(content).decode("utf-8", errors="ignore")
         lines = [ln.strip() for ln in decoded.splitlines() if ln.strip()]
         if lines and any(
-            ln.startswith((
-                "vless://",
-                "vmess://",
-                "trojan://",
-                "ss://",
-                "hysteria",
-                "hy2://",
-            ))
-            for ln in lines[:20]
+            ln.lower().startswith(
+                ("vless://", "vmess://", "trojan://", "ss://", "hysteria", "hy2://")
+            )
+            for ln in lines[:30]
         ):
             return lines
     except Exception:
@@ -49,14 +44,13 @@ def fetch_one(url: str) -> tuple[str, list[str], str | None]:
 
 
 def run_collector() -> tuple[list[str], dict]:
-    """Возвращает все строки + статистику по источникам."""
     log(f"Источников: {len(SOURCES)}")
     all_lines: list[str] = []
     stats: dict = {"sources": [], "ok": 0, "fail": 0, "total_lines": 0}
 
     for url in SOURCES:
         u, lines, err = fetch_one(url)
-        short = u[:70]
+        short = u[:65]
         if err:
             log(f"FAIL {short} → {err}")
             stats["fail"] += 1
@@ -68,5 +62,5 @@ def run_collector() -> tuple[list[str], dict]:
             all_lines.extend(lines)
 
     stats["total_lines"] = len(all_lines)
-    log(f"Собрано строк: {len(all_lines)} (ok={stats['ok']} fail={stats['fail']})")
+    log(f"Собрано: {len(all_lines)} (ok={stats['ok']} fail={stats['fail']})")
     return all_lines, stats

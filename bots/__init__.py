@@ -1,1 +1,1 @@
-# Bots: collector, filter, picker
+# collector → filter → monitor → picker

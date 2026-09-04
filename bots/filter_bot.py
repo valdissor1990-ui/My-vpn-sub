@@ -1,4 +1,4 @@
-"""Бот фильтров: протокол, Reality, XHTTP/gRPC, Hysteria2, дедуп."""
+"""Бот фильтров: протокол / Reality / XHTTP|gRPC / Hy2 / дедуп."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from datetime import datetime
 from config import (
     ALLOW_HYSTERIA2,
     PROTOCOLS,
-    REQUIRE_REALITY,
+    REQUIRE_REALITY_FOR_VLESS,
     REQUIRE_XHTTP_OR_GRPC,
 )
 
@@ -25,20 +25,20 @@ def protocol_of(line: str) -> str | None:
 
 
 def is_hy2(line: str) -> bool:
-    p = protocol_of(line)
-    return p in ("hysteria2", "hy2", "hysteria")
+    return protocol_of(line) in ("hysteria2", "hy2", "hysteria")
 
 
-def is_reality_xhttp_grpc(line: str) -> bool:
+def is_reality_fast(line: str) -> bool:
     low = line.lower()
     p = protocol_of(line)
     if p not in ("vless", "vmess", "trojan"):
         return False
-    if REQUIRE_REALITY and "reality" not in low and "security=reality" not in low:
+    if REQUIRE_REALITY_FOR_VLESS and "reality" not in low:
         return False
-    if REQUIRE_XHTTP_OR_GRPC:
-        if not any(x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc")):
-            return False
+    if REQUIRE_XHTTP_OR_GRPC and not any(
+        x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc")
+    ):
+        return False
     return True
 
 
@@ -51,18 +51,14 @@ def passes(line: str) -> bool:
         return False
     if is_hy2(line):
         return ALLOW_HYSTERIA2
-    return is_reality_xhttp_grpc(line)
+    return is_reality_fast(line)
 
 
-def run_filter(raw_lines: list[str]) -> tuple[list[str], list[str], list[str], dict]:
-    """
-    Возвращает:
-      all_passed, only_hy2, only_reality_xhttp_grpc, stats
-    """
+def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
     seen: set[str] = set()
-    all_passed: list[str] = []
-    only_hy2: list[str] = []
-    only_reality: list[str] = []
+    out: list[str] = []
+    hy2 = 0
+    reality = 0
 
     for line in raw_lines:
         if not passes(line):
@@ -71,19 +67,12 @@ def run_filter(raw_lines: list[str]) -> tuple[list[str], list[str], list[str], d
         if key in seen:
             continue
         seen.add(key)
-        all_passed.append(line)
+        out.append(line)
         if is_hy2(line):
-            only_hy2.append(line)
-        elif is_reality_xhttp_grpc(line):
-            only_reality.append(line)
+            hy2 += 1
+        else:
+            reality += 1
 
-    stats = {
-        "unique_passed": len(all_passed),
-        "hy2": len(only_hy2),
-        "reality_xhttp_grpc": len(only_reality),
-    }
-    log(
-        f"Уникальных: {stats['unique_passed']} "
-        f"(Hy2={stats['hy2']}, Reality/XHTTP/gRPC={stats['reality_xhttp_grpc']})"
-    )
-    return all_passed, only_hy2, only_reality, stats
+    stats = {"unique": len(out), "hy2": hy2, "reality_xhttp_grpc": reality}
+    log(f"После фильтра: {len(out)} (Hy2={hy2}, Reality={reality})")
+    return out, stats
