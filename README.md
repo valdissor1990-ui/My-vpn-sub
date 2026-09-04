@@ -1,23 +1,28 @@
-# My VPN Sub — audit build
-
-## Приоритет протоколов (scoring)
-1. **VLESS Reality + XHTTP**
-2. **VLESS Reality + TCP + XTLS Vision** (`flow=xtls-rprx-vision`)
-3. **VLESS Reality + gRPC**
-4. **Hysteria2**
-5. Прочий Reality TCP
-
-XTLS Vision: `flow` применяется **только** с `type=tcp` (в protocol-test flow сбрасывается для xhttp/grpc).
-
-## Пайплайн
-collector → **TG web scrape** (`t.me/s/...`) → filter → TCP+score → Xray HTTP test → ≤20 outs
+# My VPN Sub
 
 ## Подписки
+
+| Файл | Содержимое |
+|------|------------|
+| **sub.txt** | top-20 (XHTTP > Vision > gRPC > Hy2) |
+| **sub_vision.txt** | только Reality + TCP + XTLS Vision |
+| sub_white / black / hy2 / reality | срезы |
+| `*_base64.txt` | то же в base64 |
+
 ```
 https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt
-https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_white.txt
-https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/status.json
+https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_vision.txt
+https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_base64.txt
+https://raw.githack.com/valdissor1990-ui/My-vpn-sub/main/sub.txt
 ```
 
-TG-каналы (web): v2FreeHub, ATLAS_V2VPN, abc_configs, NexoVPN  
-+ raw с GitHub-коллекторов, которые уже парсят Telegram.
+## Оптимизации
+- **pre-score cap** 3000 до TCP
+- **dead_cache.json** — мёртвые host:port на 12 ч
+- TG web: 18 публичных каналов `t.me/s/...`
+
+## Приоритет
+1. Reality + XHTTP  
+2. Reality + TCP + `xtls-rprx-vision`  
+3. Reality + gRPC  
+4. Hysteria2  

@@ -1,4 +1,4 @@
-"""TCP + score."""
+"""Pre-score cap → skip dead cache → TCP + score."""
 
 from __future__ import annotations
 
@@ -9,8 +9,9 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
-from bots.score_bot import classify_list, score_line
-from config import CONNECT_TIMEOUT, MAX_PING_MS, MAX_WORKERS
+from bots.dead_cache import is_dead, mark_alive, mark_dead, stats as dead_stats
+from bots.score_bot import classify_list, is_vision_tcp, score_line
+from config import CONNECT_TIMEOUT, MAX_PING_MS, MAX_WORKERS, PRE_SCORE_CAP
 
 
 def log(msg: str) -> None:
@@ -60,7 +61,25 @@ def tcp_ping(host: str, port: int) -> int:
 
 
 def run_monitor(candidates: list[str]):
-    log(f"TCP check {len(candidates)}")
+    # 1) pre-score без ping → top PRE_SCORE_CAP
+    pre = [(score_line(ln, None), ln) for ln in candidates]
+    pre.sort(key=lambda x: -x[0])
+    if len(pre) > PRE_SCORE_CAP:
+        log(f"pre-score cap {len(pre)} → {PRE_SCORE_CAP}")
+        pre = pre[:PRE_SCORE_CAP]
+    capped = [ln for _, ln in pre]
+
+    # 2) skip dead cache
+    to_check = []
+    skipped_dead = 0
+    for ln in capped:
+        host, port = extract_host_port(ln)
+        if host and port and is_dead(host, port):
+            skipped_dead += 1
+            continue
+        to_check.append(ln)
+    log(f"TCP candidates={len(to_check)} (skipped_dead={skipped_dead}) {dead_stats()}")
+
     results = []
 
     def check(line: str):
@@ -69,7 +88,9 @@ def run_monitor(candidates: list[str]):
             return None
         ms = tcp_ping(host, port)
         if ms >= MAX_PING_MS:
+            mark_dead(host, port)
             return None
+        mark_alive(host, port)
         return {
             "raw": line,
             "host": host,
@@ -78,13 +99,14 @@ def run_monitor(candidates: list[str]):
             "protocol": protocol_of(line) or "?",
             "score": score_line(line, ms),
             "list_type": classify_list(line),
+            "is_vision": is_vision_tcp(line),
         }
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-        futs = [pool.submit(check, c) for c in candidates]
+        futs = [pool.submit(check, c) for c in to_check]
         for i, fut in enumerate(as_completed(futs), 1):
             if i % 400 == 0:
-                log(f"  {i}/{len(candidates)}")
+                log(f"  {i}/{len(to_check)}")
             try:
                 row = fut.result()
                 if row:
@@ -94,4 +116,10 @@ def run_monitor(candidates: list[str]):
 
     results.sort(key=lambda r: (-r["score"], r["ping_ms"]))
     log(f"TCP alive={len(results)}")
-    return results, {"tcp_alive": len(results), "checked": len(candidates)}
+    return results, {
+        "tcp_alive": len(results),
+        "checked": len(to_check),
+        "pre_score_cap": PRE_SCORE_CAP,
+        "skipped_dead": skipped_dead,
+        "dead_cache": dead_stats(),
+    }

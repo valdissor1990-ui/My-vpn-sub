@@ -1,7 +1,4 @@
-"""
-1) Web-scrape публичных каналов t.me/s/NAME (без API)
-2) Опционально Telethon при TG_API_ID/HASH
-"""
+"""TG web scrape + optional Telethon."""
 
 from __future__ import annotations
 
@@ -26,7 +23,6 @@ def log(msg: str) -> None:
 
 def _clean(link: str) -> str:
     link = unescape(link).strip().rstrip(")"]}>\"'")
-    # обрезать HTML entities хвосты
     if "#" in link:
         base, frag = link.split("#", 1)
         frag = re.sub(r"<.*", "", frag)
@@ -39,31 +35,26 @@ def scrape_tme_s(channel: str) -> list[str]:
     try:
         r = requests.get(
             url,
-            timeout=20,
-            headers={"User-Agent": "Mozilla/5.0 (compatible; MyVpnSub/1.0)"},
+            timeout=18,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; MyVpnSub/1.1)"},
         )
         if r.status_code != 200:
-            log(f"  web {channel} HTTP {r.status_code}")
             return []
         found = [_clean(m) for m in LINK_RE.findall(r.text)]
-        # фильтр мусора
-        found = [x for x in found if len(x) > 30 and "://" in x]
-        log(f"  web @{channel} → {len(found)}")
-        return found
-    except Exception as e:
-        log(f"  web @{channel} err {e}")
+        return [x for x in found if len(x) > 30]
+    except Exception:
         return []
 
 
 def run_telegram_collect() -> list[str]:
     links: list[str] = []
-
-    # --- публичный web preview ---
-    log(f"TG web scrape: {len(TG_WEB_CHANNELS)} channels")
+    log(f"TG web: {len(TG_WEB_CHANNELS)} channels")
     for ch in TG_WEB_CHANNELS:
-        links.extend(scrape_tme_s(ch))
+        got = scrape_tme_s(ch)
+        if got:
+            log(f"  @{ch} → {len(got)}")
+            links.extend(got)
 
-    # --- optional Telethon ---
     api_id = os.environ.get("TG_API_ID", "").strip()
     api_hash = os.environ.get("TG_API_HASH", "").strip()
     if api_id and api_hash:
@@ -72,28 +63,24 @@ def run_telegram_collect() -> list[str]:
 
             channels = os.environ.get("TG_CHANNELS", "").strip()
             ch_list = [c.strip() for c in channels.split(",") if c.strip()] or [
-                f"@{c}" for c in TG_WEB_CHANNELS
+                f"@{c}" for c in TG_WEB_CHANNELS[:8]
             ]
             with TelegramClient("tg_session", int(api_id), api_hash) as client:
                 for ch in ch_list:
                     try:
-                        for msg in client.iter_messages(ch, limit=60):
+                        for msg in client.iter_messages(ch, limit=40):
                             text = msg.message or ""
                             links.extend(_clean(m) for m in LINK_RE.findall(text))
                     except Exception as e:
                         log(f"  api {ch}: {e}")
         except Exception as e:
-            log(f"Telethon skip: {e}")
-    else:
-        log("No TG API secrets — web-only")
+            log(f"Telethon: {e}")
 
-    # unique
-    seen = set()
-    out = []
+    seen, out = set(), []
     for ln in links:
-        key = ln.split("#")[0]
-        if key not in seen:
-            seen.add(key)
+        k = ln.split("#")[0]
+        if k not in seen:
+            seen.add(k)
             out.append(ln)
-    log(f"TG total unique: {len(out)}")
+    log(f"TG unique={len(out)}")
     return out

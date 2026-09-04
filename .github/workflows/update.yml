@@ -39,7 +39,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          # optional TG
           pip install telethon || true
 
       - name: Run full pipeline
@@ -53,11 +52,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sub.txt sub_white.txt sub_black.txt sub_hy2.txt sub_reality.txt status.json meta_filtered.json || true
+          git add sub.txt sub_vision.txt sub_white.txt sub_black.txt sub_hy2.txt sub_reality.txt \
+            sub_base64.txt sub_vision_base64.txt sub_white_base64.txt sub_black_base64.txt \
+            sub_hy2_base64.txt sub_reality_base64.txt \
+            status.json meta_filtered.json dead_cache.json || true
           if git diff --staged --quiet; then
             echo "No changes"
             exit 0
           fi
-          git commit -m "pipeline: score+proto $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "pipeline: vision+cache+b64 $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
           git push origin main
