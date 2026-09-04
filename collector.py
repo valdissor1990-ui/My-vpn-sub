@@ -2,12 +2,13 @@
 import base64
 import json
 import re
+import socket
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 import requests
-from config import SOURCES, PING_TIMEOUT, MAX_WORKERS, MAX_PING, PROTOCOLS
-from ping3 import ping
+from config import SOURCES, MAX_WORKERS, MAX_PING, PROTOCOLS
 
 
 def log(msg):
@@ -43,74 +44,77 @@ def parse_config(line):
     return None
 
 
-def extract_host(line, protocol):
+def extract_host_port(line, protocol):
     try:
         if protocol == 'vmess':
             encoded = line.replace('vmess://', '')
             decoded = base64.b64decode(encoded + '==').decode('utf-8')
             data = json.loads(decoded)
-            return data.get('add') or data.get('address')
+            return data.get('add'), int(data.get('port', 443))
         else:
-            match = re.search(r'@([^:/?]+)', line)
+            match = re.search(r'@([^:/?]+):(\d+)', line)
             if match:
-                return match.group(1)
+                return match.group(1), int(match.group(2))
     except:
         pass
-    return None
+    return None, None
 
 
-def test_ping(config):
+def test_connection(config):
+    """Проверить TCP-подключение к серверу (работает без прав root)"""
     try:
-        host = extract_host(config['raw'], config['protocol'])
-        if not host or host.startswith('0.0.0.0') or host.startswith('127.0.0.1'):
+        host, port = extract_host_port(config['raw'], config['protocol'])
+        if not host or not port:
             return None, 9999
-        ping_time = ping(host, timeout=PING_TIMEOUT, unit='ms')
-        if ping_time is None:
+        if host.startswith('0.0.0.0') or host.startswith('127.0.0.1'):
             return None, 9999
-        return host, int(ping_time)
+        start = time.time()
+        sock = socket.create_connection((host, port), timeout=3)
+        elapsed = (time.time() - start) * 1000
+        sock.close()
+        return host, int(elapsed)
     except:
         return None, 9999
 
 
 def main():
     log("Запуск агрегатора")
-    
+
     all_configs = []
     for url in SOURCES:
         log(f"Скачивание: {url[:50]}...")
-        configs = download_source(url)
-        all_configs.extend(configs)
-    
+        all_configs.extend(download_source(url))
+
     log(f"Скачано: {len(all_configs)}")
-    
+
     parsed = []
     for line in all_configs:
         config = parse_config(line)
         if config and config['protocol'] in PROTOCOLS:
             parsed.append(config)
-    
+
     log(f"Распознано: {len(parsed)}")
     log(f"Тестирование {len(parsed)} серверов...")
-    
+
     working = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(test_ping, c): c for c in parsed}
+        futures = {executor.submit(test_connection, c): c for c in parsed}
         for i, future in enumerate(as_completed(futures), 1):
-            if i % 50 == 0:
+            if i % 100 == 0:
                 log(f"  Проверено {i}/{len(parsed)}")
             try:
-                host, ping_ms = future.result()
+                host, ms = future.result()
                 config = futures[future]
-                if host and ping_ms < MAX_PING:
+                if host and ms < MAX_PING:
                     config['host'] = host
-                    config['ping'] = ping_ms
+                    config['ping'] = ms
                     working.append(config)
             except:
                 pass
-    
+
     log(f"Рабочих: {len(working)}")
     working.sort(key=lambda x: x['ping'])
-    
+
     output_lines = [
         "#profile-title: base64:" + base64.b64encode("My VPN Sub".encode()).decode(),
         "#profile-update-interval: 1",
@@ -118,19 +122,15 @@ def main():
         f"# Generated: {datetime.now().isoformat()}",
         f"# Working servers: {len(working)}",
     ]
-    
-    for config in working:
-        output_lines.append(config['raw'])
-    
-    output = '\n'.join(output_lines)
-    
+    output_lines += [c['raw'] for c in working]
+
     with open('sub.txt', 'w', encoding='utf-8') as f:
-        f.write(output)
-    
-    log("Подписка сохранена: sub.txt")
+        f.write('\n'.join(output_lines))
+
+    log("Сохранено: sub.txt")
     log("Топ-5 самых быстрых:")
-    for i, config in enumerate(working[:5], 1):
-        log(f"  {i}. {config['name'][:50]} - {config['ping']}ms")
+    for i, c in enumerate(working[:5], 1):
+        log(f"  {i}. {c['name'][:50]} - {c['ping']}ms")
 
 
 if __name__ == "__main__":
