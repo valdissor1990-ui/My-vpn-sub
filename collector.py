@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
-"""
-Агрегатор конфигов под российский мобильный интернет.
-Берёт уже отобранные списки с GitHub (igareck и др.),
-дедуплицирует и оставляет топ-50.
-TCP-тест с зарубежных раннеров GitHub отключён — он бесполезен для РФ-мобильного.
-"""
+"""Сборка white-list конфигов под Yota / мобильный БС."""
 
 import base64
-import re
 from datetime import datetime, timezone
 
 import requests
-from config import SOURCES, MAX_SERVERS, PROTOCOLS, SKIP_TCP_TEST
+from config import SOURCES, MAX_SERVERS, PROTOCOLS
 
 
 def log(msg: str) -> None:
@@ -48,25 +42,25 @@ def is_config(line: str) -> bool:
 
 
 def score(line: str) -> int:
-    """Выше = лучше для РФ-мобильного."""
     s = 0
     low = line.lower()
-    if "security=reality" in low or "reality" in low:
+    if "security=reality" in low:
         s += 100
     if "type=xhttp" in low or "type=grpc" in low:
-        s += 40
+        s += 50
+    if "cidr" in low or "white" in low or "whitelist" in low:
+        s += 30
     if "flow=xtls-rprx-vision" in low:
         s += 20
     if line.startswith("vless://"):
         s += 10
     if line.startswith("hysteria2://") or line.startswith("hy2://"):
-        s += 30
+        s += 25
     return s
 
 
 def main() -> None:
-    log("Сбор RU-mobile источников (без TCP-теста с GitHub)")
-
+    log("Сбор WHITE-LIST источников (Yota / БС)")
     all_lines: list[str] = []
     for url in SOURCES:
         log(f"  {url[:60]}...")
@@ -74,43 +68,36 @@ def main() -> None:
         log(f"    → {len(lines)} строк")
         all_lines.extend(lines)
 
-    # Уникальные рабочие ссылки
     seen: set[str] = set()
     configs: list[str] = []
     for line in all_lines:
         if not is_config(line):
             continue
-        # ключ дедупа — host:port + protocol prefix
         key = line.split("#")[0].strip()
         if key in seen:
             continue
         seen.add(key)
         configs.append(line)
 
-    log(f"Уникальных конфигов: {len(configs)}")
-
-    # Сортируем: Reality / XHTTP / gRPC / Hy2 выше
+    log(f"Уникальных: {len(configs)}")
     configs.sort(key=score, reverse=True)
     final = configs[:MAX_SERVERS]
-
     reality = sum(1 for c in final if "reality" in c.lower())
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     header = [
-        "#profile-title: base64:" + base64.b64encode("My VPN Sub · РФ мобильный".encode()).decode(),
+        "#profile-title: base64:" + base64.b64encode("My VPN · Yota WhiteList".encode()).decode(),
         "#profile-update-interval: 2",
         "#subscription-userinfo: upload=0; download=0; total=1073741824000000; expire=2546249531",
         f"# Generated: {now}",
-        f"# Servers: {len(final)} | Reality-ish: {reality}",
-        "# Sources: igareck, FreeProxyList, Stintik, kizyak, Endi, kort0881",
-        "# Note: curated for RU mobile — no foreign TCP filter",
+        f"# Servers: {len(final)} | Reality: {reality}",
+        "# Mode: WHITE-LIST for Yota mobile",
         "# https://github.com/valdissor1990-ui/My-vpn-sub",
     ]
 
     with open("sub.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(header + final) + "\n")
-
-    log(f"Сохранено sub.txt: {len(final)} серверов")
+    log(f"sub.txt: {len(final)} серверов")
 
 
 if __name__ == "__main__":

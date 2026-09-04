@@ -1,51 +1,30 @@
-# My VPN Sub · РФ мобильный
+# My VPN Sub · Yota / белые списки
 
-Сборка **уже отобранных** бесплатных конфигов под российский мобильный интернет  
-(источники: igareck, FreeProxyList и др.).
-
-Обновление каждые **2 часа**. В подписке до **50** конфигов с приоритетом Reality / XHTTP / gRPC / Hysteria2.
-
----
-
-## Ссылка
+Подписка заточена под **мобильный интернет с белыми списками** (Yota и др.).
 
 ```
 https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt
 ```
 
+Обновление каждые 2 часа. В приоритете Reality + gRPC/XHTTP из white-list источников.
+
 ---
 
-## Лучшие прямые подписки (если наша не зайдёт)
+## Прямые white-list ссылки (добавь отдельно в клиент)
 
-Пробуй **по очереди** в Hiddify / v2rayNG (обновляй подписку и перебирай серверы):
-
-### Для обычного режима (чёрные списки)
-```
-https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt
-```
-
-### Для жёстких белых списков (МТС/Билайн и т.п.)
 ```
 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt
+https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile-2.txt
+https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/WHITE-CIDR-RU-checked.txt
 ```
 
-### Запасные
-```
-https://raw.githubusercontent.com/nikita29a/FreeProxyList/main/mirror/1.txt
-https://raw.githubusercontent.com/Stintik-123/vpn-configs-russia/main/mobile.txt
-https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/main/kizyakbeta7.txt
-```
-
-Если GitHub raw режется — у igareck есть зеркала (Bitbucket, Codeberg, GitLab) в README их репозитория.
+Клиент: Hiddify / v2rayNG → добавить подписку → обновить → перебирать серверы.
 
 ---
 
-## Важно
+## Три рабочих пути (без оплаты VPS)
 
-- Бесплатные публичные ключи нестабильны: сегодня работают, завтра нет.
-- На мобильном чаще заходят **Reality + XHTTP/gRPC** и **Hysteria2**.
-- Если ничего не пингуется — попробуй другую прямую ссылку выше или свой VPS.
-
----
-
-Клиенты: Hiddify, v2rayNG, NekoBox, Streisand, V2Box.
+См. файлы в репозитории:
+- `GUIDE-ORACLE.md` — бесплатный сервер Oracle Always Free
+- `GUIDE-WHITELIST.md` — white-list подписки
+- `GUIDE-WARP.md` — Cloudflare WARP
