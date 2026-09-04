@@ -1,70 +1,51 @@
 # My VPN Sub · РФ мобильный
 
-Автоматический агрегатор рабочих конфигов под **российский мобильный интернет**  
-(обход DPI/ТСПУ) + задачи: **YouTube без рекламы** и **доступ к ИИ** (ChatGPT, Grok и т.д.).
+Сборка **уже отобранных** бесплатных конфигов под российский мобильный интернет  
+(источники: igareck, FreeProxyList и др.).
 
-**Каждые 2 часа:**
-1. Собирает конфиги из источников, заточенных под РФ и Reality
-2. Проверяет серверы через TCP
-3. Предпочитает **VLESS + Reality** (лучше проходит мобильные блокировки)
-4. Оставляет **топ-50** самых быстрых живых
-5. Обновляет `sub.txt`
+Обновление каждые **2 часа**. В подписке до **50** конфигов с приоритетом Reality / XHTTP / gRPC / Hysteria2.
 
 ---
 
-## Ссылка на подписку
+## Ссылка
 
 ```
 https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt
 ```
 
-Рекомендуемые клиенты:
-- **Android:** Hiddify, v2rayNG, NekoBox
-- **iOS:** Streisand, V2Box, Shadowrocket
-- **ПК:** Hiddify, v2rayN, Nekoray
-
 ---
 
-## Для чего это
+## Лучшие прямые подписки (если наша не зайдёт)
 
-| Задача | Как использовать |
-|--------|------------------|
-| Мобильный интернет в РФ (блокировки) | Подключить подписку, выбрать сервер с низким пингом / Reality |
-| YouTube без рекламы | Тот же VPN + клиент с adblock (или просто доступ к YouTube) |
-| ИИ (ChatGPT, Grok, Claude…) | Достаточно включить VPN — трафик идёт через зарубежный сервер |
+Пробуй **по очереди** в Hiddify / v2rayNG (обновляй подписку и перебирай серверы):
 
----
+### Для обычного режима (чёрные списки)
+```
+https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt
+```
 
-## Как отбираются серверы
+### Для жёстких белых списков (МТС/Билайн и т.п.)
+```
+https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt
+```
 
-| Этап | Описание |
-|------|----------|
-| Источники | Репозитории под РФ + Reality + проверенные mix |
-| Протоколы | VLESS (в т.ч. Reality), VMess, Trojan, SS |
-| Приоритет | Сначала Reality, потом по пингу |
-| Фильтр | Пинг < 1000 мс |
-| Лимит | Топ-50 |
-| Расписание | Каждые **2 часа** |
+### Запасные
+```
+https://raw.githubusercontent.com/nikita29a/FreeProxyList/main/mirror/1.txt
+https://raw.githubusercontent.com/Stintik-123/vpn-configs-russia/main/mobile.txt
+https://raw.githubusercontent.com/Maskkost93/kizyak-vpn-4.0/main/kizyakbeta7.txt
+```
+
+Если GitHub raw режется — у igareck есть зеркала (Bitbucket, Codeberg, GitLab) в README их репозитория.
 
 ---
 
 ## Важно
 
-- Бесплатные публичные конфиги. Стабильность не гарантируется — при проблемах обнови подписку или выбери другой сервер.
-- Лучше всего работают **VLESS + Reality** на мобильных сетях с жёстким DPI.
-- Используй только для легальных целей.
+- Бесплатные публичные ключи нестабильны: сегодня работают, завтра нет.
+- На мобильном чаще заходят **Reality + XHTTP/gRPC** и **Hysteria2**.
+- Если ничего не пингуется — попробуй другую прямую ссылку выше или свой VPS.
 
 ---
 
-## Настройки (`config.py`)
-
-```python
-MAX_PING = 1000       # мс
-MAX_SERVERS = 50      # топ-N
-MAX_WORKERS = 40
-CONNECT_TIMEOUT = 3
-```
-
----
-
-Репозиторий: https://github.com/valdissor1990-ui/My-vpn-sub
+Клиенты: Hiddify, v2rayNG, NekoBox, Streisand, V2Box.

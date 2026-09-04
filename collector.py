@@ -1,27 +1,17 @@
 #!/usr/bin/env python3
 """
-Агрегатор рабочих VPN/прокси конфигов.
-Упор: российский мобильный интернет, YouTube без рекламы, доступ к ИИ.
-Скачивает публичные подписки, проверяет TCP, оставляет топ быстрых.
+Агрегатор конфигов под российский мобильный интернет.
+Берёт уже отобранные списки с GitHub (igareck и др.),
+дедуплицирует и оставляет топ-50.
+TCP-тест с зарубежных раннеров GitHub отключён — он бесполезен для РФ-мобильного.
 """
 
 import base64
-import json
 import re
-import socket
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 import requests
-from config import (
-    SOURCES,
-    MAX_WORKERS,
-    MAX_PING,
-    MAX_SERVERS,
-    PROTOCOLS,
-    CONNECT_TIMEOUT,
-)
+from config import SOURCES, MAX_SERVERS, PROTOCOLS, SKIP_TCP_TEST
 
 
 def log(msg: str) -> None:
@@ -30,172 +20,97 @@ def log(msg: str) -> None:
 
 def download_source(url: str) -> list[str]:
     try:
-        response = requests.get(url, timeout=15)
-        if response.status_code != 200:
-            log(f"  HTTP {response.status_code}: {url[:60]}")
+        r = requests.get(url, timeout=20)
+        if r.status_code != 200:
+            log(f"  HTTP {r.status_code}: {url[:55]}")
             return []
-
-        content = response.text.strip()
+        content = r.text.strip()
         if not content:
             return []
-
         try:
             decoded = base64.b64decode(content).decode("utf-8", errors="ignore")
-            return [line.strip() for line in decoded.splitlines() if line.strip()]
+            return [ln.strip() for ln in decoded.splitlines() if ln.strip()]
         except Exception:
-            return [line.strip() for line in content.splitlines() if line.strip()]
-
+            return [ln.strip() for ln in content.splitlines() if ln.strip()]
     except Exception as e:
-        log(f"  Ошибка {url[:50]}: {e}")
+        log(f"  Ошибка: {e}")
         return []
 
 
-def parse_config(line: str) -> dict | None:
+def is_config(line: str) -> bool:
     line = line.strip()
     if not line or line.startswith("#"):
-        return None
-
-    for protocol in ("vless", "vmess", "trojan", "ss", "hysteria", "hysteria2"):
-        if line.startswith(f"{protocol}://"):
-            name = line.split("#", 1)[-1] if "#" in line else "Unknown"
-            try:
-                from urllib.parse import unquote
-                name = unquote(name)
-            except Exception:
-                pass
-            is_reality = "security=reality" in line.lower() or "reality" in name.lower()
-            return {
-                "protocol": protocol,
-                "raw": line,
-                "name": name[:80],
-                "reality": is_reality,
-            }
-    return None
+        return False
+    for p in PROTOCOLS:
+        if line.startswith(f"{p}://") or line.startswith("hy2://"):
+            return True
+    return False
 
 
-def extract_host_port(line: str, protocol: str) -> tuple[str | None, int | None]:
-    try:
-        if protocol == "vmess":
-            encoded = line.removeprefix("vmess://")
-            padding = 4 - len(encoded) % 4
-            if padding != 4:
-                encoded += "=" * padding
-            data = json.loads(base64.b64decode(encoded).decode("utf-8"))
-            host = data.get("add") or data.get("host")
-            port = int(data.get("port", 443))
-            return host, port
-        else:
-            match = re.search(r"@([^:/?\s]+):(\d+)", line)
-            if match:
-                return match.group(1), int(match.group(2))
-    except Exception:
-        pass
-    return None, None
-
-
-def test_connection(config: dict) -> tuple[str | None, int]:
-    """TCP-проверка доступности сервера."""
-    try:
-        host, port = extract_host_port(config["raw"], config["protocol"])
-        if not host or not port:
-            return None, 9999
-
-        if host in ("0.0.0.0", "127.0.0.1", "localhost") or host.startswith("192.168."):
-            return None, 9999
-
-        start = time.perf_counter()
-        with socket.create_connection((host, port), timeout=CONNECT_TIMEOUT):
-            elapsed_ms = int((time.perf_counter() - start) * 1000)
-        return host, elapsed_ms
-    except Exception:
-        return None, 9999
-
-
-def sort_key(c: dict) -> tuple:
-    """Сначала Reality (лучше для РФ-мобильного), потом пинг."""
-    return (0 if c.get("reality") else 1, c["ping"])
+def score(line: str) -> int:
+    """Выше = лучше для РФ-мобильного."""
+    s = 0
+    low = line.lower()
+    if "security=reality" in low or "reality" in low:
+        s += 100
+    if "type=xhttp" in low or "type=grpc" in low:
+        s += 40
+    if "flow=xtls-rprx-vision" in low:
+        s += 20
+    if line.startswith("vless://"):
+        s += 10
+    if line.startswith("hysteria2://") or line.startswith("hy2://"):
+        s += 30
+    return s
 
 
 def main() -> None:
-    log("Запуск агрегатора (РФ-мобильный / YouTube / ИИ)")
+    log("Сбор RU-mobile источников (без TCP-теста с GitHub)")
 
     all_lines: list[str] = []
     for url in SOURCES:
-        log(f"Скачивание: {url[:55]}...")
+        log(f"  {url[:60]}...")
         lines = download_source(url)
-        log(f"  → {len(lines)} строк")
+        log(f"    → {len(lines)} строк")
         all_lines.extend(lines)
 
-    log(f"Всего скачано строк: {len(all_lines)}")
-
-    seen_raw: set[str] = set()
-    parsed: list[dict] = []
+    # Уникальные рабочие ссылки
+    seen: set[str] = set()
+    configs: list[str] = []
     for line in all_lines:
-        config = parse_config(line)
-        if not config or config["protocol"] not in PROTOCOLS:
+        if not is_config(line):
             continue
-        if config["raw"] in seen_raw:
+        # ключ дедупа — host:port + protocol prefix
+        key = line.split("#")[0].strip()
+        if key in seen:
             continue
-        seen_raw.add(config["raw"])
-        parsed.append(config)
+        seen.add(key)
+        configs.append(line)
 
-    log(f"Уникальных конфигов: {len(parsed)}")
-    log(f"Тестирование TCP ({MAX_WORKERS} потоков)...")
+    log(f"Уникальных конфигов: {len(configs)}")
 
-    working: list[dict] = []
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(test_connection, c): c for c in parsed}
-        for i, future in enumerate(as_completed(futures), 1):
-            if i % 200 == 0 or i == len(parsed):
-                log(f"  Проверено {i}/{len(parsed)}")
-            try:
-                host, ms = future.result()
-                if host and ms < MAX_PING:
-                    config = futures[future]
-                    config["host"] = host
-                    config["ping"] = ms
-                    working.append(config)
-            except Exception:
-                pass
+    # Сортируем: Reality / XHTTP / gRPC / Hy2 выше
+    configs.sort(key=score, reverse=True)
+    final = configs[:MAX_SERVERS]
 
-    log(f"Живых серверов: {len(working)}")
-
-    # Дедупликация по host:port — оставляем самый быстрый
-    best_by_endpoint: dict[str, dict] = {}
-    for c in working:
-        port = extract_host_port(c["raw"], c["protocol"])[1]
-        key = f"{c['host']}:{port}"
-        if key not in best_by_endpoint or c["ping"] < best_by_endpoint[key]["ping"]:
-            best_by_endpoint[key] = c
-
-    unique = list(best_by_endpoint.values())
-    unique.sort(key=sort_key)  # Reality выше, потом пинг
-
-    final = unique[:MAX_SERVERS]
-    reality_count = sum(1 for c in final if c.get("reality"))
-    log(f"После дедупликации и лимита: {len(final)} серверов (Reality: {reality_count})")
-
+    reality = sum(1 for c in final if "reality" in c.lower())
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
     header = [
         "#profile-title: base64:" + base64.b64encode("My VPN Sub · РФ мобильный".encode()).decode(),
         "#profile-update-interval: 2",
         "#subscription-userinfo: upload=0; download=0; total=1073741824000000; expire=2546249531",
         f"# Generated: {now}",
-        f"# Working: {len(final)} | Reality: {reality_count} | max ping {MAX_PING}ms",
-        f"# Focus: RU mobile · YouTube · AI",
-        f"# Source: https://github.com/valdissor1990-ui/My-vpn-sub",
+        f"# Servers: {len(final)} | Reality-ish: {reality}",
+        "# Sources: igareck, FreeProxyList, Stintik, kizyak, Endi, kort0881",
+        "# Note: curated for RU mobile — no foreign TCP filter",
+        "# https://github.com/valdissor1990-ui/My-vpn-sub",
     ]
 
-    content = "\n".join(header + [c["raw"] for c in final]) + "\n"
-
     with open("sub.txt", "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write("\n".join(header + final) + "\n")
 
-    log("Сохранено: sub.txt")
-    log("Топ-5:")
-    for i, c in enumerate(final[:5], 1):
-        tag = "Reality" if c.get("reality") else c["protocol"]
-        log(f"  {i}. [{c['ping']:4d}ms] [{tag}] {c['name'][:50]}")
+    log(f"Сохранено sub.txt: {len(final)} серверов")
 
 
 if __name__ == "__main__":
