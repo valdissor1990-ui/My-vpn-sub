@@ -1,7 +1,7 @@
 #profile-title: base64:TXkgVlBOIFN1YiDCtyDQoNCkINC80L7QsdC40LvRjNC90YvQuQ==
 #profile-update-interval: 2
 #subscription-userinfo: upload=0; download=0; total=1073741824000000; expire=2546249531
-# Generated: 2026-09-04 18:56 UTC
+# Generated: 2026-09-04 18:58 UTC
 # Servers: 50 | Reality-ish: 50
 # Sources: igareck, FreeProxyList, Stintik, kizyak, Endi, kort0881
 # Note: curated for RU mobile — no foreign TCP filter
