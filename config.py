@@ -1,4 +1,3 @@
-# === Источники ===
 SOURCES = [
     "https://cdn.jsdelivr.net/gh/soroushmirzaei/telegram-configs-collector@main/protocols/reality",
     "https://cdn.jsdelivr.net/gh/soroushmirzaei/telegram-configs-collector@main/protocols/vless",
@@ -11,12 +10,9 @@ SOURCES = [
     "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile.txt",
     "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/Vless-Reality-White-Lists-Rus-Mobile-2.txt",
     "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/WHITE-CIDR-RU-checked.txt",
-    "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/WHITE-CIDR-RU-all.txt",
     "https://cdn.jsdelivr.net/gh/igareck/vpn-configs-for-russia@main/BLACK_VLESS_RUS_mobile.txt",
-    "https://bitbucket.org/igareck/vpn-configs-for-russia/raw/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
     "https://cdn.jsdelivr.net/gh/Subzio/subzio@main/HYSTERIA2.txt",
     "https://cdn.jsdelivr.net/gh/MrEndi777709/Endi-VPN@main/mrendi-vpn-white-list.txt",
-    "https://cdn.jsdelivr.net/gh/nikita29a/FreeProxyList@main/mirror/1.txt",
     "https://cdn.jsdelivr.net/gh/Au1rxx/free-vpn-subscriptions@main/output/v2ray-base64.txt",
     "https://cdn.jsdelivr.net/gh/0xRadikal/Free-v2ray-Configs@main/verified/configs_base64.txt",
     "https://cdn.jsdelivr.net/gh/0xRadikal/Free-v2ray-Configs@main/protocols/vless.txt",
@@ -27,26 +23,11 @@ SOURCES = [
     "https://cdn.jsdelivr.net/gh/3inker/v2ray-subscription@main/all_not_ru.txt",
 ]
 
-# TG web scrape (t.me/s/NAME) — расширенный список
 TG_WEB_CHANNELS = [
-    "v2FreeHub",
-    "ATLAS_V2VPN",
-    "abc_configs",
-    "NexoVPN",
-    "nexovpn",
-    "ConfigsHUB",
-    "v2rayngvpn",
-    "freev2rayn",
-    "VlessConfig",
-    "v2ray_configs",
-    "hope_net",
-    "ProxyForOpensource",
-    "v2rayng_config_free",
-    "FreeV2rayy",
-    "v2raycollector",
-    "CustomV2ray",
-    "v2rayngfree",
-    "ShadowProxy66",
+    "v2FreeHub", "ATLAS_V2VPN", "abc_configs", "NexoVPN", "nexovpn",
+    "ConfigsHUB", "v2rayngvpn", "freev2rayn", "VlessConfig", "v2ray_configs",
+    "hope_net", "ProxyForOpensource", "v2rayng_config_free", "FreeV2rayy",
+    "v2raycollector", "CustomV2ray", "v2rayngfree", "ShadowProxy66",
 ]
 
 MAX_SERVERS = 20
@@ -57,17 +38,26 @@ MAX_VISION = 20
 CONNECT_TIMEOUT = 3
 MAX_PING_MS = 2200
 MAX_WORKERS = 40
-
-# pre-score: не пинговать всё подряд
 PRE_SCORE_CAP = 3000
 
-# кэш мёртвых host:port
 DEAD_CACHE_FILE = "dead_cache.json"
 DEAD_CACHE_HOURS = 12
 
-PROTOCOL_TEST_CANDIDATES = 30
-PROTOCOL_TEST_TIMEOUT = 10
+PROTOCOL_TEST_CANDIDATES = 35
+PROTOCOL_TEST_TIMEOUT = 8
 PROTOCOL_TEST_MAX_PASS = 20
+PROTOCOL_TEST_WORKERS = 6  # parallel delay checks
+
+# ротация URL для Clash delay
+TEST_URLS = [
+    "http://www.gstatic.com/generate_204",
+    "http://cp.cloudflare.com/generate_204",
+    "http://connectivitycheck.gstatic.com/generate_204",
+    "http://www.msftconnecttest.com/connecttest.txt",
+]
+
+# mihomo download candidates
+MIHOMO_VERSIONS = ["v1.19.12", "v1.19.11", "v1.18.10"]
 
 SCORE_XHTTP_REALITY = 100
 SCORE_VISION_TCP = 95

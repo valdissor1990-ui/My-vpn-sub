@@ -23,7 +23,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 55
 
     steps:
       - uses: actions/checkout@v4
@@ -42,10 +42,14 @@ jobs:
           pip install telethon || true
 
       - name: Run full pipeline
+        id: pipeline
+        continue-on-error: true
         env:
           TG_API_ID: ${{ secrets.TG_API_ID }}
           TG_API_HASH: ${{ secrets.TG_API_HASH }}
           TG_CHANNELS: ${{ secrets.TG_CHANNELS }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python collector.py
 
       - name: Commit outputs
@@ -54,12 +58,18 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sub.txt sub_vision.txt sub_white.txt sub_black.txt sub_hy2.txt sub_reality.txt \
             sub_base64.txt sub_vision_base64.txt sub_white_base64.txt sub_black_base64.txt \
-            sub_hy2_base64.txt sub_reality_base64.txt \
-            status.json meta_filtered.json dead_cache.json || true
+            sub_hy2_base64.txt sub_reality_base64.txt sub_clash.yaml \
+            status.json meta_filtered.json dead_cache.json history/ || true
           if git diff --staged --quiet; then
             echo "No changes"
-            exit 0
+          else
+            git commit -m "pipeline: clash+full $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main || true
+            git push origin main
           fi
-          git commit -m "pipeline: vision+cache+b64 $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git pull --rebase origin main || true
-          git push origin main
+
+      - name: Fail if pool empty
+        if: steps.pipeline.outcome == 'failure'
+        run: |
+          echo "Subscription pool is empty"
+          exit 1
