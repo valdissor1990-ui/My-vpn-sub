@@ -1,4 +1,4 @@
-"""Фильтр протоколов + дедуп."""
+"""Фильтр: Reality / Vision-TCP / XHTTP / gRPC / Hy2."""
 
 from __future__ import annotations
 
@@ -25,26 +25,6 @@ def protocol_of(line: str) -> str | None:
     return None
 
 
-def is_hy2(line: str) -> bool:
-    return protocol_of(line) in ("hysteria2", "hy2", "hysteria")
-
-
-def is_reality(line: str) -> bool:
-    return "reality" in line.lower()
-
-
-def is_xhttp_grpc(line: str) -> bool:
-    low = line.lower()
-    return any(x in low for x in ("xhttp", "type=grpc", "grpc"))
-
-
-def is_reality_tcp(line: str) -> bool:
-    low = line.lower()
-    if not is_reality(line) or is_xhttp_grpc(line):
-        return False
-    return "type=tcp" in low or "type=raw" in low or "flow=xtls" in low or "type=" not in low
-
-
 def passes(line: str) -> bool:
     line = line.strip()
     if not line or line.startswith("#"):
@@ -52,15 +32,24 @@ def passes(line: str) -> bool:
     p = protocol_of(line)
     if not p or p not in PROTOCOLS:
         return False
-    if is_hy2(line):
+    low = line.lower()
+
+    if p in ("hysteria2", "hy2", "hysteria"):
         return ALLOW_HYSTERIA2
-    if REQUIRE_REALITY_FOR_VLESS and p == "vless" and not is_reality(line):
+
+    if REQUIRE_REALITY_FOR_VLESS and p == "vless" and "reality" not in low:
         return False
-    if ALLOW_XHTTP_GRPC and is_xhttp_grpc(line) and is_reality(line):
+
+    if "reality" not in low and p == "vless":
+        return False
+
+    # reality without public key is useless
+    if "reality" in low and "pbk=" not in low:
+        return False
+
+    if ALLOW_XHTTP_GRPC and ("xhttp" in low or "grpc" in low):
         return True
-    if ALLOW_REALITY_TCP and is_reality_tcp(line):
-        return True
-    if p in ("vmess", "trojan") and is_reality(line):
+    if ALLOW_REALITY_TCP:
         return True
     return False
 
@@ -77,5 +66,5 @@ def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
         seen.add(key)
         out.append(line)
     stats = {"unique": len(out)}
-    log(f"После фильтра: {len(out)}")
+    log(f"filtered unique={len(out)}")
     return out, stats

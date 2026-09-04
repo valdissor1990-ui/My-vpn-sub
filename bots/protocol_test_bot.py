@@ -1,10 +1,4 @@
-"""
-Протокольный smoke-тест через Xray-core (если бинарник доступен).
-Для каждого кандидата: временный socks inbound + outbound из share-link,
-затем HTTP GET через socks. Не Hy2 (нужен другой клиент).
-
-Если xray не скачался — пропускаем, оставляем TCP+score.
-"""
+"""Xray HTTP-over-socks test. Fixes: flow only on tcp, conf_path safety, ranking."""
 
 from __future__ import annotations
 
@@ -14,14 +8,19 @@ import subprocess
 import tempfile
 import time
 import urllib.request
+import zipfile
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
-from config import PROTOCOL_TEST_CANDIDATES, PROTOCOL_TEST_TIMEOUT
+from config import (
+    PROTOCOL_TEST_CANDIDATES,
+    PROTOCOL_TEST_MAX_PASS,
+    PROTOCOL_TEST_TIMEOUT,
+)
 
 XRAY_URL = (
-    "https://github.com/XTLS/Xray-core/releases/download/v25.8.3/"
-    "Xray-linux-64.zip"
+    "https://github.com/XTLS/Xray-core/releases/download/v25.8.3/Xray-linux-64.zip"
 )
 
 
@@ -32,97 +31,99 @@ def log(msg: str) -> None:
 def _ensure_xray() -> str | None:
     cache = Path("bin")
     cache.mkdir(exist_ok=True)
-    binary = cache / "xray"
-    if binary.exists() and os.access(binary, os.X_OK):
-        return str(binary)
+    for name in ("xray", "Xray"):
+        p = cache / name
+        if p.exists() and os.access(p, os.X_OK):
+            return str(p)
     try:
-        log("Скачиваю Xray-core...")
+        log("Downloading Xray-core...")
         zip_path = cache / "xray.zip"
         urllib.request.urlretrieve(XRAY_URL, zip_path)
-        import zipfile
-
         with zipfile.ZipFile(zip_path, "r") as z:
             z.extractall(cache)
-        if binary.exists():
-            binary.chmod(0o755)
-            return str(binary)
-        # иногда имя Xray
-        alt = cache / "Xray"
-        if alt.exists():
-            alt.chmod(0o755)
-            return str(alt)
+        for name in ("xray", "Xray"):
+            p = cache / name
+            if p.exists():
+                p.chmod(0o755)
+                return str(p)
     except Exception as e:
         log(f"Xray download failed: {e}")
     return None
 
 
 def _vless_to_outbound(link: str) -> dict | None:
-    """Грубый парсер vless:// → xray outbound. Не все transport покрыты."""
     try:
-        from urllib.parse import parse_qs, unquote, urlparse
-
         if not link.startswith("vless://"):
             return None
         u = urlparse(link)
-        uuid = u.username
-        host = u.hostname
-        port = u.port or 443
+        uuid, host, port = u.username, u.hostname, u.port or 443
+        if not uuid or not host:
+            return None
         q = {k: v[0] for k, v in parse_qs(u.query).items()}
         security = q.get("security", "none")
         network = q.get("type", "tcp")
         if network == "raw":
             network = "tcp"
 
+        flow = q.get("flow", "")
+        # XTLS Vision valid mainly with TCP(+reality), not xhttp/grpc/ws
+        if network != "tcp":
+            flow = ""
+
         stream: dict = {"network": network}
         if security == "reality":
+            pbk = q.get("pbk", "")
+            if not pbk:
+                return None
             stream["security"] = "reality"
             stream["realitySettings"] = {
-                "publicKey": q.get("pbk", ""),
-                "fingerprint": q.get("fp", "chrome"),
-                "serverName": q.get("sni", host),
+                "publicKey": pbk,
+                "fingerprint": q.get("fp") or "chrome",
+                "serverName": q.get("sni") or host,
                 "shortId": q.get("sid", ""),
                 "spiderX": q.get("spx", "/"),
             }
         elif security == "tls":
             stream["security"] = "tls"
-            stream["tlsSettings"] = {"serverName": q.get("sni", host)}
+            stream["tlsSettings"] = {
+                "serverName": q.get("sni") or host,
+                "fingerprint": q.get("fp") or "chrome",
+            }
 
         if network == "ws":
             stream["wsSettings"] = {
                 "path": q.get("path", "/"),
-                "headers": {"Host": q.get("host", q.get("sni", host))},
+                "headers": {"Host": q.get("host") or q.get("sni") or host},
             }
         elif network == "grpc":
-            stream["grpcSettings"] = {"serviceName": q.get("serviceName", q.get("path", ""))}
+            stream["grpcSettings"] = {
+                "serviceName": q.get("serviceName") or q.get("path") or ""
+            }
         elif network == "xhttp":
-            # xray newer: xhttp
             stream["network"] = "xhttp"
             stream["xhttpSettings"] = {
                 "path": q.get("path", "/"),
-                "host": q.get("host", q.get("sni", "")),
-                "mode": q.get("mode", "auto"),
+                "host": q.get("host") or q.get("sni") or "",
+                "mode": q.get("mode") or "auto",
             }
 
-        outbound = {
+        user = {"id": uuid, "encryption": q.get("encryption", "none")}
+        if flow:
+            user["flow"] = flow
+
+        return {
             "protocol": "vless",
             "settings": {
                 "vnext": [
                     {
                         "address": host,
                         "port": int(port),
-                        "users": [
-                            {
-                                "id": uuid,
-                                "encryption": q.get("encryption", "none"),
-                                "flow": q.get("flow", ""),
-                            }
-                        ],
+                        "users": [user],
                     }
                 ]
             },
             "streamSettings": stream,
         }
-        return outbound
     except Exception:
         return None
 
@@ -141,8 +142,9 @@ def _test_one(xray_bin: str, link: str, socks_port: int) -> bool:
                 "settings": {"udp": False},
             }
         ],
-        "outbounds": [outbound, {"protocol": "freedom", "tag": "direct"}],
+        "outbounds": [outbound],
     }
+    conf_path = None
     proc = None
     try:
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
@@ -153,71 +155,66 @@ def _test_one(xray_bin: str, link: str, socks_port: int) -> bool:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
-        time.sleep(1.2)
-        # HTTP через socks
+        time.sleep(1.0)
+        if proc.poll() is not None:
+            return False
         proxy_handler = urllib.request.ProxyHandler(
             {"http": f"socks5h://127.0.0.1:{socks_port}"}
         )
         opener = urllib.request.build_opener(proxy_handler)
-        # многие узлы режут произвольные сайты — пробуем generate_204
-        req = urllib.request.Request(
-            "http://www.gstatic.com/generate_204",
-            method="GET",
-        )
+        req = urllib.request.Request("http://www.gstatic.com/generate_204")
         with opener.open(req, timeout=PROTOCOL_TEST_TIMEOUT) as resp:
             return resp.status in (204, 200, 301, 302)
     except Exception:
         return False
     finally:
-        if proc:
+        if proc and proc.poll() is None:
             proc.kill()
             try:
-                proc.wait(timeout=3)
+                proc.wait(timeout=2)
             except Exception:
                 pass
-        try:
-            os.unlink(conf_path)
-        except Exception:
-            pass
+        if conf_path:
+            try:
+                os.unlink(conf_path)
+            except Exception:
+                pass
 
 
 def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
-    """
-    candidates: list of {raw, host, port, ping_ms, protocol, score, list_type}
-    """
+    stats = {"enabled": False, "tested": 0, "passed": 0, "fallback_tcp": False}
     xray = _ensure_xray()
-    stats = {
-        "enabled": bool(xray),
-        "tested": 0,
-        "passed": 0,
-        "skipped_non_vless": 0,
-    }
     if not xray:
-        log("Xray недоступен — protocol test SKIP, используем TCP+score")
+        log("Xray missing → TCP fallback")
+        stats["fallback_tcp"] = True
         return candidates, stats
+    stats["enabled"] = True
 
-    # только vless, top by score
-    vless = [c for c in candidates if str(c.get("protocol", "")).startswith("vless") or (c.get("raw") or "").startswith("vless://")]
-    vless = sorted(vless, key=lambda c: c.get("score", 0), reverse=True)[:PROTOCOL_TEST_CANDIDATES]
-    log(f"Protocol-test {len(vless)} vless через Xray...")
+    vless = [
+        c
+        for c in candidates
+        if (c.get("raw") or "").startswith("vless://")
+    ]
+    vless.sort(key=lambda c: c.get("score", 0), reverse=True)
+    vless = vless[:PROTOCOL_TEST_CANDIDATES]
+    log(f"Xray-test {len(vless)} vless...")
 
     passed: list[dict] = []
-    base_port = 10800
     for i, c in enumerate(vless):
         stats["tested"] += 1
-        ok = _test_one(xray, c["raw"], base_port + (i % 20))
-        if ok:
-            c = dict(c)
-            c["proto_ok"] = True
-            passed.append(c)
+        if _test_one(xray, c["raw"], 11000 + (i % 25)):
+            row = dict(c)
+            row["proto_ok"] = True
+            row["score"] = row.get("score", 0) + 50  # bonus за реальный HTTP
+            passed.append(row)
             stats["passed"] += 1
-            log(f"  PASS {c.get('host')}:{c.get('port')} score={c.get('score')}")
-        if len(passed) >= 25:
+            log(f"  PASS {c.get('host')} score={row['score']}")
+        if len(passed) >= PROTOCOL_TEST_MAX_PASS:
             break
 
-    log(f"Protocol passed: {stats['passed']}/{stats['tested']}")
-    # если никто не прошёл — fallback на TCP candidates (лучше что-то, чем пусто)
+    log(f"proto {stats['passed']}/{stats['tested']}")
     if not passed:
-        log("Никто не прошёл HTTP-over-Xray → fallback TCP ranked")
+        stats["fallback_tcp"] = True
         return candidates, stats
+    passed.sort(key=lambda c: (-c.get("score", 0), c.get("ping_ms", 9999)))
     return passed, stats
