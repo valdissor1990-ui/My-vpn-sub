@@ -1,4 +1,4 @@
-"""Фильтр: Hy2 | Reality+(xhttp|grpc) | Reality+TCP(vision)."""
+"""Фильтр протоколов + дедуп."""
 
 from __future__ import annotations
 
@@ -30,25 +30,19 @@ def is_hy2(line: str) -> bool:
 
 
 def is_reality(line: str) -> bool:
-    low = line.lower()
-    return "reality" in low or "security=reality" in low
+    return "reality" in line.lower()
 
 
 def is_xhttp_grpc(line: str) -> bool:
     low = line.lower()
-    return any(x in low for x in ("type=xhttp", "xhttp", "type=grpc", "grpc"))
+    return any(x in low for x in ("xhttp", "type=grpc", "grpc"))
 
 
 def is_reality_tcp(line: str) -> bool:
     low = line.lower()
-    if not is_reality(line):
+    if not is_reality(line) or is_xhttp_grpc(line):
         return False
-    # tcp / raw / без явного ws
-    if "type=ws" in low or "type=http" in low and "xhttp" not in low:
-        return False
-    if is_xhttp_grpc(line):
-        return False
-    return "type=tcp" in low or "type=raw" in low or "flow=xtls-rprx-vision" in low
+    return "type=tcp" in low or "type=raw" in low or "flow=xtls" in low or "type=" not in low
 
 
 def passes(line: str) -> bool:
@@ -60,11 +54,13 @@ def passes(line: str) -> bool:
         return False
     if is_hy2(line):
         return ALLOW_HYSTERIA2
-    if REQUIRE_REALITY_FOR_VLESS and not is_reality(line):
+    if REQUIRE_REALITY_FOR_VLESS and p == "vless" and not is_reality(line):
         return False
-    if ALLOW_XHTTP_GRPC and is_xhttp_grpc(line):
+    if ALLOW_XHTTP_GRPC and is_xhttp_grpc(line) and is_reality(line):
         return True
     if ALLOW_REALITY_TCP and is_reality_tcp(line):
+        return True
+    if p in ("vmess", "trojan") and is_reality(line):
         return True
     return False
 
@@ -72,8 +68,6 @@ def passes(line: str) -> bool:
 def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
     seen: set[str] = set()
     out: list[str] = []
-    counts = {"hy2": 0, "xhttp_grpc": 0, "reality_tcp": 0}
-
     for line in raw_lines:
         if not passes(line):
             continue
@@ -82,13 +76,6 @@ def run_filter(raw_lines: list[str]) -> tuple[list[str], dict]:
             continue
         seen.add(key)
         out.append(line)
-        if is_hy2(line):
-            counts["hy2"] += 1
-        elif is_xhttp_grpc(line):
-            counts["xhttp_grpc"] += 1
-        else:
-            counts["reality_tcp"] += 1
-
-    stats = {"unique": len(out), **counts}
-    log(f"Фильтр: {len(out)} | {counts}")
+    stats = {"unique": len(out)}
+    log(f"После фильтра: {len(out)}")
     return out, stats

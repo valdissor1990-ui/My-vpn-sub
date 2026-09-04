@@ -1,24 +1,40 @@
-# My VPN Sub · усиленный сбор + TCP monitor
+# My VPN Sub · score + protocol test + white/black
 
-Каждый час:
-1. **collector** — 50+ открытых подписок (зеркала)
-2. **enrich** — статистика протоколов/портов/SNI → `meta_*.json`
-3. **filter** — Hy2 | Reality+XHTTP/gRPC | Reality+TCP
-4. **monitor** — TCP ping, только живые
-5. **picker** — **≤ 20** в `sub.txt`
+Пайплайн каждый час:
 
-## Подписка
+1. **collector** — открытые подписки (доноры Au1rxx, 0xRadikal, igareck, …)
+2. **telegram** — опционально (`TG_API_ID` + `TG_API_HASH` secrets)
+3. **filter** — Reality / XHTTP|gRPC|TCP / Hy2
+4. **monitor** — TCP + **scoring** (Reality +25, CF +20, XHTTP, …)
+5. **protocol_test** — HTTP через **Xray-core** (vless), fallback на TCP
+6. **picker** — ≤20 в каждую выгрузку
+
+## Подписки
+
+| Файл | Назначение |
+|------|------------|
+| `sub.txt` | top scored (+ proto-ok если прошли) |
+| `sub_white.txt` | white-ish |
+| `sub_black.txt` | black-ish |
+| `sub_hy2.txt` | Hysteria2 |
+| `sub_reality.txt` | Reality из mix |
 
 ```
 https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt
+https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_white.txt
+https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/status.json
 ```
 
-Статус: `status.json` · мета: `meta_raw.json`, `meta_filtered.json`
+## Telegram (опционально)
 
-## Пинг есть, подключения нет
+Settings → Secrets → Actions:
+- `TG_API_ID`
+- `TG_API_HASH`
+- `TG_CHANNELS` (например `@channel1,@channel2`)
 
-Это ожидаемо:
-- **TCP ping** = порт открыт с GitHub
-- **Подключение VPN** = ещё Reality/Hy2 handshake + политика Yota
+Без secrets TG-бот просто пропускается.
 
-Мы на пути: сначала появляются «живые» порты, дальше нужен ключ, который проходит handshake с твоей сети. Обновляй подписку каждый час и перебирай серверы вручную.
+## Важно
+
+Протокольный тест идёт с GitHub runner, **не с Yota**.  
+`proto_ok` снижает «пинг есть / коннекта нет», но не гарантирует мобильный БС.

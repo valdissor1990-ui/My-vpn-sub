@@ -23,7 +23,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
 
     steps:
       - uses: actions/checkout@v4
@@ -39,19 +39,25 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          # optional TG
+          pip install telethon || true
 
-      - name: Run bots
+      - name: Run full pipeline
+        env:
+          TG_API_ID: ${{ secrets.TG_API_ID }}
+          TG_API_HASH: ${{ secrets.TG_API_HASH }}
+          TG_CHANNELS: ${{ secrets.TG_CHANNELS }}
         run: python collector.py
 
       - name: Commit outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sub.txt sub_hy2.txt sub_reality.txt status.json meta_raw.json meta_filtered.json || true
+          git add sub.txt sub_white.txt sub_black.txt sub_hy2.txt sub_reality.txt status.json meta_filtered.json || true
           if git diff --staged --quiet; then
             echo "No changes"
             exit 0
           fi
-          git commit -m "collect+monitor: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "pipeline: score+proto $(date -u +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main || true
           git push origin main

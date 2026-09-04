@@ -1,4 +1,4 @@
-"""Бот сбора со всех открытых подписок."""
+"""Сбор со всех SOURCES."""
 
 from __future__ import annotations
 
@@ -14,18 +14,16 @@ def log(msg: str) -> None:
     print(f"[{datetime.now().strftime('%H:%M:%S')}] [collector] {msg}")
 
 
-def _decode_body(content: str) -> list[str]:
+def _decode(content: str) -> list[str]:
     content = content.strip()
     if not content:
         return []
     try:
         decoded = base64.b64decode(content).decode("utf-8", errors="ignore")
         lines = [ln.strip() for ln in decoded.splitlines() if ln.strip()]
-        if lines and any(
-            ln.lower().startswith(
-                ("vless://", "vmess://", "trojan://", "ss://", "hysteria", "hy2://")
-            )
-            for ln in lines[:30]
+        if any(
+            ln.lower().startswith(("vless://", "vmess://", "trojan://", "hy2://", "hysteria"))
+            for ln in lines[:25]
         ):
             return lines
     except Exception:
@@ -33,34 +31,27 @@ def _decode_body(content: str) -> list[str]:
     return [ln.strip() for ln in content.splitlines() if ln.strip()]
 
 
-def fetch_one(url: str) -> tuple[str, list[str], str | None]:
-    try:
-        r = requests.get(url, timeout=25)
-        if r.status_code != 200:
-            return url, [], f"HTTP {r.status_code}"
-        return url, _decode_body(r.text), None
-    except Exception as e:
-        return url, [], str(e)
-
-
 def run_collector() -> tuple[list[str], dict]:
-    log(f"Источников: {len(SOURCES)}")
     all_lines: list[str] = []
-    stats: dict = {"sources": [], "ok": 0, "fail": 0, "total_lines": 0}
-
+    stats = {"ok": 0, "fail": 0, "total_lines": 0, "sources": []}
+    log(f"SOURCES={len(SOURCES)}")
     for url in SOURCES:
-        u, lines, err = fetch_one(url)
-        short = u[:65]
-        if err:
-            log(f"FAIL {short} → {err}")
-            stats["fail"] += 1
-            stats["sources"].append({"url": u, "lines": 0, "error": err})
-        else:
-            log(f"OK   {short} → {len(lines)}")
+        try:
+            r = requests.get(url, timeout=25)
+            if r.status_code != 200:
+                stats["fail"] += 1
+                stats["sources"].append({"url": url, "error": r.status_code})
+                log(f"FAIL {url[:55]} HTTP {r.status_code}")
+                continue
+            lines = _decode(r.text)
             stats["ok"] += 1
-            stats["sources"].append({"url": u, "lines": len(lines), "error": None})
+            stats["sources"].append({"url": url, "lines": len(lines)})
             all_lines.extend(lines)
-
+            log(f"OK {url[:55]} → {len(lines)}")
+        except Exception as e:
+            stats["fail"] += 1
+            stats["sources"].append({"url": url, "error": str(e)})
+            log(f"FAIL {url[:40]} {e}")
     stats["total_lines"] = len(all_lines)
-    log(f"Собрано: {len(all_lines)} (ok={stats['ok']} fail={stats['fail']})")
+    log(f"total raw lines={len(all_lines)}")
     return all_lines, stats

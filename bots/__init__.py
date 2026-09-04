@@ -1,1 +1,1 @@
-# collector → enrich → filter → monitor → picker
+# pipeline bots
