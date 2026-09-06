@@ -1,0 +1,149 @@
+{
+  "ts": "2026-09-06 12:55:12 UTC",
+  "status": {
+    "generated_at": "2026-09-06T12:55:12.277082+00:00",
+    "pick_source": "tcp_fallback",
+    "collect": {
+      "sources_ok": 17,
+      "sources_fail": 5,
+      "total_lines": 27698,
+      "telegram_links": 420
+    },
+    "filter": {
+      "unique": 17765
+    },
+    "monitor": {
+      "tcp_alive": 1203,
+      "checked": 2499,
+      "pre_score_cap": 2500,
+      "skipped_dead": 1,
+      "dead_cache": {
+        "entries": 6,
+        "active_dead": 6,
+        "hours": 12
+      }
+    },
+    "protocol_test": {
+      "engine": "mihomo",
+      "enabled": true,
+      "tested": 40,
+      "passed": 0,
+      "fallback_tcp": true,
+      "test_urls": [
+        "http://www.gstatic.com/generate_204",
+        "http://cp.cloudflare.com/generate_204",
+        "http://connectivitycheck.gstatic.com/generate_204",
+        "http://www.msftconnecttest.com/connecttest.txt"
+      ],
+      "workers": 4,
+      "workers_hy2": 2,
+      "workers_used": 4
+    },
+    "output": {
+      "sub.txt": 20,
+      "sub_vision.txt": 20,
+      "sub_white.txt": 20,
+      "sub_black.txt": 0,
+      "sub_hy2.txt": 0,
+      "sub_reality.txt": 20,
+      "sub_clash.yaml": 20
+    },
+    "pipeline": {
+      "raw_lines": 27698,
+      "tg_links": 420,
+      "filtered": 17765,
+      "tcp_alive": 1203,
+      "clash_passed": 0,
+      "clash_tested": 40,
+      "exported": 20,
+      "pick_source": "tcp_fallback"
+    },
+    "top_scores": [
+      {
+        "host": "154.84.164.10",
+        "score": 140,
+        "ping": 7,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "84.32.61.79",
+        "score": 140,
+        "ping": 14,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "138.124.123.96",
+        "score": 140,
+        "ping": 45,
+        "clash_delay": null,
+        "vision": false,
+        "proto_ok": null
+      },
+      {
+        "host": "31.76.109.7",
+        "score": 140,
+        "ping": 104,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "95.85.247.137",
+        "score": 140,
+        "ping": 109,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "94.103.1.44",
+        "score": 140,
+        "ping": 110,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "144.31.216.16",
+        "score": 140,
+        "ping": 110,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "146.103.104.93",
+        "score": 140,
+        "ping": 114,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      }
+    ],
+    "health": "ok",
+    "mirrors": {
+      "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
+      "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
+      "blog": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/blog.md",
+      "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md"
+    }
+  },
+  "fixes": [
+    {
+      "priority": "P0",
+      "code": "CLASH_ZERO",
+      "action": "Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok",
+      "auto": "force_tcp_fallback_pick"
+    },
+    {
+      "priority": "P1",
+      "code": "MIHOMO_DOWN",
+      "action": "mihomo не стартовал — проверить releases URL и bin/mihomo",
+      "auto": "retry_mihomo_download"
+    }
+  ]
+}

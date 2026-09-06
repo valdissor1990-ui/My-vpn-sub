@@ -1,0 +1,7 @@
+{"ts": "2026-09-06 12:51:47 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-06 12:51:56 UTC", "level": "info", "stage": "collect", "msg": "lines=27698 ok=17 fail=5"}
+{"ts": "2026-09-06 12:52:04 UTC", "level": "info", "stage": "tg", "msg": "links=420"}
+{"ts": "2026-09-06 12:52:05 UTC", "level": "info", "stage": "filter", "msg": "unique=17765"}
+{"ts": "2026-09-06 12:53:41 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1203"}
+{"ts": "2026-09-06 12:55:12 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
+{"ts": "2026-09-06 12:55:12 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["CLASH_ZERO", "MIHOMO_DOWN"]}
