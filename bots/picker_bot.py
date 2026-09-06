@@ -1,4 +1,4 @@
-"""Outputs + base64 + clash yaml + history."""
+"""Выгрузка: только рабочие + ротация каждый час."""
 
 from __future__ import annotations
 
@@ -11,13 +11,62 @@ from bots.clash_export import export_clash_yaml
 from bots.score_bot import is_vision_tcp
 from config import MAX_BLACK, MAX_SERVERS, MAX_VISION, MAX_WHITE
 
+LAST_FILE = "last_export.json"
+
 
 def log(msg: str) -> None:
     print(f"[{datetime.now().strftime('%H:%M:%S')}] [picker] {msg}")
 
 
 def _key(w: dict) -> str:
-    return f"{w.get('host')}:{w.get('port')}:{w.get('protocol')}"
+    return f"{w.get('host')}:{w.get('port')}"
+
+
+def _load_last() -> set[str]:
+    p = Path(LAST_FILE)
+    if not p.exists():
+        return set()
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+        return set(data.get("keys") or [])
+    except Exception:
+        return set()
+
+
+def _save_last(keys: list[str]) -> None:
+    Path(LAST_FILE).write_text(
+        json.dumps({"keys": keys, "at": datetime.now(timezone.utc).isoformat()}),
+        encoding="utf-8",
+    )
+
+
+def _dedup(items: list[dict]) -> list[dict]:
+    seen = set()
+    out = []
+    for w in items:
+        k = _key(w)
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(w)
+    return out
+
+
+def _rotate(pool: list[dict], n: int) -> list[dict]:
+    """Новые рабочие сначала, потом следующий срез пула (чтоб список не стоял)."""
+    pool = _dedup(pool)
+    last = _load_last()
+    fresh = [w for w in pool if _key(w) not in last]
+    stale = [w for w in pool if _key(w) in last]
+    hour = datetime.now(timezone.utc).hour
+    # сдвиг, чтоб даже при том же пуле набор менялся
+    if stale:
+        off = (hour * 3) % max(len(stale), 1)
+        stale = stale[off:] + stale[:off]
+    picked = (fresh + stale)[:n]
+    _save_last([_key(w) for w in picked])
+    log(f"rotate pool={len(pool)} fresh={len(fresh)} picked={len(picked)} last={len(last)}")
+    return picked
 
 
 def _write(path: str, title: str, lines: list[str], extra: list[str]) -> None:
@@ -47,39 +96,49 @@ def run_picker(
     proto_stats: dict,
 ) -> dict:
     for w in working:
-        if w.get("is_vision") or is_vision_tcp(w["raw"]):
+        if w.get("is_vision") or is_vision_tcp(w.get("raw", "")):
             w["score"] = w.get("score", 0) + 5
             w["is_vision"] = True
 
     working = sorted(working, key=lambda w: (-w.get("score", 0), w.get("ping_ms", 9999)))
-    mix = working[:MAX_SERVERS]
-    vision = [w for w in working if w.get("is_vision") or is_vision_tcp(w["raw"])][:MAX_VISION]
 
-    white = [w for w in working if w.get("list_type") == "white"]
-    if len(white) < MAX_WHITE:
-        have = {_key(w) for w in white}
-        for w in working:
-            if _key(w) not in have and "reality" in w["raw"].lower():
-                white.append(w)
-                have.add(_key(w))
-            if len(white) >= MAX_WHITE:
-                break
-    white = white[:MAX_WHITE]
-    white_keys = {_key(w) for w in white}
-    black = [w for w in working if w.get("list_type") == "black"]
-    if len(black) < 5:
-        black = [w for w in working if _key(w) not in white_keys]
-    black = black[:MAX_BLACK]
-    hy2 = [
-        w for w in working
-        if str(w.get("protocol", "")).startswith("hy") or w["raw"].lower().startswith(("hy2://", "hysteria"))
-    ][:MAX_SERVERS]
-    reality = [w for w in mix if "reality" in w["raw"].lower()]
+    proto_ok = [w for w in working if w.get("proto_ok")]
+    # если Clash проверил узлы — в sub.txt ТОЛЬКО proto_ok
+    if proto_stats.get("passed", 0) > 0 and proto_ok:
+        pool = proto_ok
+        source = "clash_http"
+    else:
+        pool = working
+        source = "tcp_fallback"
 
-    _write("sub.txt", "My VPN · top", [w["raw"] for w in mix], [
-        f"# clash={proto_stats.get('passed', 0)}/{proto_stats.get('tested', 0)}",
-        "# engine: mihomo",
-    ])
+    mix = _rotate(pool, MAX_SERVERS)
+    vision = _rotate(
+        [w for w in pool if w.get("is_vision") or is_vision_tcp(w.get("raw", ""))],
+        MAX_VISION,
+    )
+    white = _rotate([w for w in pool if w.get("list_type") == "white"] or pool, MAX_WHITE)
+    black = _rotate([w for w in pool if w.get("list_type") != "white"], MAX_BLACK)
+    hy2 = _rotate(
+        [
+            w
+            for w in pool
+            if str(w.get("protocol", "")).startswith("hy")
+            or w.get("raw", "").lower().startswith(("hy2://", "hysteria"))
+        ],
+        MAX_SERVERS,
+    )
+    reality = [w for w in mix if "reality" in w.get("raw", "").lower()]
+
+    _write(
+        "sub.txt",
+        "My VPN · live",
+        [w["raw"] for w in mix],
+        [
+            f"# source={source}",
+            f"# clash={proto_stats.get('passed', 0)}/{proto_stats.get('tested', 0)}",
+            "# rotated each run; only checked nodes",
+        ],
+    )
     _write("sub_vision.txt", "My VPN · Vision", [w["raw"] for w in vision], ["# XTLS Vision"])
     _write("sub_white.txt", "My VPN · white", [w["raw"] for w in white], ["# white"])
     _write("sub_black.txt", "My VPN · black", [w["raw"] for w in black], ["# black"])
@@ -87,10 +146,10 @@ def run_picker(
     _write("sub_reality.txt", "My VPN · reality", [w["raw"] for w in reality], ["# reality"])
 
     clash_n = export_clash_yaml(mix, "sub_clash.yaml")
-    log(f"sub_clash.yaml: {clash_n}")
 
     status = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "pick_source": source,
         "collect": {
             "sources_ok": collect_stats.get("ok"),
             "sources_fail": collect_stats.get("fail"),
@@ -117,6 +176,7 @@ def run_picker(
             "clash_passed": proto_stats.get("passed"),
             "clash_tested": proto_stats.get("tested"),
             "exported": len(mix),
+            "pick_source": source,
         },
         "top_scores": [
             {
@@ -132,27 +192,22 @@ def run_picker(
         "health": "ok" if mix else "empty",
         "mirrors": {
             "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
-            "clash": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_clash.yaml",
-            "vision": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub_vision.txt",
+            "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
         },
     }
-
     with open("status.json", "w", encoding="utf-8") as f:
         json.dump(status, f, ensure_ascii=False, indent=2)
 
-    # history
     hist = Path("history")
     hist.mkdir(exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M")
     (hist / f"status-{stamp}.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    # keep last 48 files
     files = sorted(hist.glob("status-*.json"))
     for old in files[:-48]:
         try:
             old.unlink()
         except Exception:
             pass
-
     return status

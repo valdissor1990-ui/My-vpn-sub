@@ -12,9 +12,10 @@ import requests
 from config import TG_WEB_CHANNELS
 
 LINK_RE = re.compile(
-    r"((?:vless|vmess|trojan|hysteria2|hy2)://[^\s<>\"'\u003c]+)",
+    r"((?:vless|vmess|trojan|hysteria2|hy2)://[^\s<>\"']+)",
     re.I,
 )
+_TRAIL = ")]}>'\""
 
 
 def log(msg: str) -> None:
@@ -22,7 +23,7 @@ def log(msg: str) -> None:
 
 
 def _clean(link: str) -> str:
-    link = unescape(link).strip().rstrip(")"]}>\"'")
+    link = unescape(link).strip().rstrip(_TRAIL)
     if "#" in link:
         base, frag = link.split("#", 1)
         frag = re.sub(r"<.*", "", frag)
