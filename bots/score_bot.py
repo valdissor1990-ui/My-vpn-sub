@@ -1,4 +1,4 @@
-"""Scoring + vision detection. XHTTP > Vision-TCP > gRPC > Hy2."""
+"""Scoring: XHTTP > Vision-TCP > gRPC ≈ Hy2(+obfs/hop)."""
 
 from __future__ import annotations
 
@@ -13,6 +13,8 @@ from config import (
     SCORE_FAST_PING,
     SCORE_GRPC_REALITY,
     SCORE_HY2,
+    SCORE_HY2_OBFS,
+    SCORE_HY2_PORTS,
     SCORE_REALITY_OTHER,
     SCORE_RU_SNI,
     SCORE_VISION_TCP,
@@ -51,6 +53,10 @@ def score_line(line: str, ping_ms: int | None = None) -> int:
 
     if is_hy2:
         s += SCORE_HY2
+        if "obfs=salamander" in low or "obfs=gecko" in low:
+            s += SCORE_HY2_OBFS
+        if "mport=" in low or "ports=" in low:
+            s += SCORE_HY2_PORTS
     elif is_reality and is_xhttp:
         s += SCORE_XHTTP_REALITY
     elif vision:
@@ -90,5 +96,7 @@ def classify_list(line: str) -> str:
     if any(x in low for x in ("black", "[bl]", "blacklist")):
         return "black"
     if is_vision_tcp(line) or ("reality" in low and "xhttp" in low):
+        return "white"
+    if low.startswith(("hysteria2://", "hy2://")):
         return "white"
     return "unknown"
