@@ -1,20 +1,14 @@
 {
-  "soft_fill_tcp": false,
-  "force_tcp_fallback_pick": true,
+  "soft_fill_tcp": true,
+  "force_tcp_fallback_pick": false,
   "raise_candidates": false,
-  "generated_at": "2026-09-06T13:04:47.345551+00:00",
+  "generated_at": "2026-09-06T13:14:17.180365+00:00",
   "fixes": [
     {
       "priority": "P0",
-      "code": "CLASH_ZERO",
-      "action": "Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok",
-      "auto": "force_tcp_fallback_pick"
-    },
-    {
-      "priority": "P1",
-      "code": "MIHOMO_DOWN",
-      "action": "mihomo не стартовал — проверить releases URL и bin/mihomo",
-      "auto": "retry_mihomo_download"
+      "code": "LOW_EXPORT",
+      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "auto": "soft_fill_and_raise_pass"
     }
   ]
 }
