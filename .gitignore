@@ -1,0 +1,15 @@
+# decrypted secrets — never commit
+private/**/*.dec
+private/**/*.txt
+private/**/*.json
+!private/README.md
+!private/.gitkeep
+!private/**/*.enc
+
+# local mihomo / sessions
+bin/
+tg_session*
+*.session
+__pycache__/
+*.pyc
+.venv/
