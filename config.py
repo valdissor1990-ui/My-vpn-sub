@@ -35,20 +35,24 @@ MAX_WHITE = 20
 MAX_BLACK = 20
 MAX_VISION = 20
 
+# === Параллелизм пайплайна ===
+# TCP-пинг: много потоков безопасно (короткие connect)
 CONNECT_TIMEOUT = 3
 MAX_PING_MS = 2200
-MAX_WORKERS = 40
-PRE_SCORE_CAP = 3000
+MAX_WORKERS = 32
+PRE_SCORE_CAP = 2500
 
 DEAD_CACHE_FILE = "dead_cache.json"
 DEAD_CACHE_HOURS = 12
 
-PROTOCOL_TEST_CANDIDATES = 35
-PROTOCOL_TEST_TIMEOUT = 8
+# Clash delay: Hy2 = QUIC/UDP, слишком много параллельных сессий
+# забивает UDP-буферы runner и ломает Brutal/BBR.
+PROTOCOL_TEST_CANDIDATES = 40
+PROTOCOL_TEST_TIMEOUT = 10
 PROTOCOL_TEST_MAX_PASS = 20
-PROTOCOL_TEST_WORKERS = 6  # parallel delay checks
+PROTOCOL_TEST_WORKERS = 4          # общий пул delay
+PROTOCOL_TEST_WORKERS_HY2 = 2      # Hy2 отдельно — меньше UDP-шторма
 
-# ротация URL для Clash delay
 TEST_URLS = [
     "http://www.gstatic.com/generate_204",
     "http://cp.cloudflare.com/generate_204",
@@ -56,13 +60,30 @@ TEST_URLS = [
     "http://www.msftconnecttest.com/connecttest.txt",
 ]
 
-# mihomo download candidates
 MIHOMO_VERSIONS = ["v1.19.12", "v1.19.11", "v1.18.10"]
+
+# === Hysteria 2 (клиентские поля mihomo) ===
+# Без up/down сервер часто уходит в BBR.
+# Слишком большие up/down на мобильном = Brutal долбит UDP → хуже на Yota.
+# Для теста/экспорта берём умеренный Brutal.
+HY2_UP = "20 Mbps"
+HY2_DOWN = "80 Mbps"
+HY2_HOP_INTERVAL = 30          # сек, port hopping
+HY2_ALPN = ["h3"]
+HY2_FINGERPRINT = "chrome"
+# QUIC windows (офиц. дефолт 8MB / 20MB, ratio ~2:5)
+HY2_INIT_STREAM_WINDOW = 8388608
+HY2_MAX_STREAM_WINDOW = 8388608
+HY2_INIT_CONN_WINDOW = 20971520
+HY2_MAX_CONN_WINDOW = 20971520
+HY2_APPLY_WINDOWS = False      # true только если нужно крутить память; дефолт mihomo лучше
 
 SCORE_XHTTP_REALITY = 100
 SCORE_VISION_TCP = 95
 SCORE_GRPC_REALITY = 70
-SCORE_HY2 = 55
+SCORE_HY2 = 70                 # Hy2 подняли: UDP иногда живёт, когда TCP режут
+SCORE_HY2_OBFS = 15            # salamander/gecko
+SCORE_HY2_PORTS = 10           # port hopping
 SCORE_REALITY_OTHER = 40
 SCORE_CF_SNI = 15
 SCORE_RU_SNI = 20
