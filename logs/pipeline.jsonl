@@ -35,3 +35,11 @@
 {"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "clash", "msg": "passed=1/40 enabled=True"}
 {"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
 {"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
+{"ts": "2026-09-06 16:02:17 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-06 16:02:23 UTC", "level": "info", "stage": "collect", "msg": "lines=27667 ok=17 fail=5"}
+{"ts": "2026-09-06 16:02:32 UTC", "level": "info", "stage": "tg", "msg": "links=439"}
+{"ts": "2026-09-06 16:02:33 UTC", "level": "info", "stage": "filter", "msg": "unique=17780"}
+{"ts": "2026-09-06 16:04:14 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1192"}
+{"ts": "2026-09-06 16:05:09 UTC", "level": "info", "stage": "clash", "msg": "passed=2/40 enabled=True"}
+{"ts": "2026-09-06 16:05:09 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=2 → pool=2"}
+{"ts": "2026-09-06 16:05:09 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
