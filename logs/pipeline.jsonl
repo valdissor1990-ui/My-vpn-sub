@@ -27,3 +27,11 @@
 {"ts": "2026-09-06 14:03:46 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1182"}
 {"ts": "2026-09-06 14:04:59 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
 {"ts": "2026-09-06 14:04:59 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["CLASH_ZERO", "MIHOMO_DOWN"]}
+{"ts": "2026-09-06 15:02:11 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-06 15:02:14 UTC", "level": "info", "stage": "collect", "msg": "lines=27191 ok=17 fail=5"}
+{"ts": "2026-09-06 15:02:22 UTC", "level": "info", "stage": "tg", "msg": "links=425"}
+{"ts": "2026-09-06 15:02:22 UTC", "level": "info", "stage": "filter", "msg": "unique=17879"}
+{"ts": "2026-09-06 15:03:55 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1165"}
+{"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "clash", "msg": "passed=1/40 enabled=True"}
+{"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
+{"ts": "2026-09-06 15:05:00 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
