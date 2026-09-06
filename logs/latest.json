@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-06 13:14:17 UTC",
+  "ts": "2026-09-06 14:04:59 UTC",
   "status": {
-    "generated_at": "2026-09-06T13:14:17.179579+00:00",
-    "pick_source": "clash_soft_fill",
+    "generated_at": "2026-09-06T14:04:59.101087+00:00",
+    "pick_source": "tcp_fallback",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 27719,
-      "telegram_links": 414
+      "total_lines": 27602,
+      "telegram_links": 419
     },
     "filter": {
-      "unique": 17774
+      "unique": 17730
     },
     "monitor": {
-      "tcp_alive": 1201,
-      "checked": 2399,
+      "tcp_alive": 1182,
+      "checked": 2492,
       "pre_score_cap": 2500,
-      "skipped_dead": 101,
+      "skipped_dead": 8,
       "dead_cache": {
-        "entries": 6,
-        "active_dead": 6,
+        "entries": 70,
+        "active_dead": 70,
         "hours": 12
       }
     },
@@ -27,8 +27,8 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 2,
-      "fallback_tcp": false,
+      "passed": 0,
+      "fallback_tcp": true,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
         "http://cp.cloudflare.com/generate_204",
@@ -40,32 +40,88 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 1,
-      "sub_vision.txt": 1,
-      "sub_white.txt": 1,
+      "sub.txt": 20,
+      "sub_vision.txt": 20,
+      "sub_white.txt": 20,
       "sub_black.txt": 0,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 1,
-      "sub_clash.yaml": 1
+      "sub_reality.txt": 20,
+      "sub_clash.yaml": 20
     },
     "pipeline": {
-      "raw_lines": 27719,
-      "tg_links": 414,
-      "filtered": 17774,
-      "tcp_alive": 1201,
-      "clash_passed": 2,
+      "raw_lines": 27602,
+      "tg_links": 419,
+      "filtered": 17730,
+      "tcp_alive": 1182,
+      "clash_passed": 0,
       "clash_tested": 40,
-      "exported": 1,
-      "pick_source": "clash_soft_fill"
+      "exported": 20,
+      "pick_source": "tcp_fallback"
     },
     "top_scores": [
       {
-        "host": "45.144.28.39",
-        "score": 200,
-        "ping": 81,
-        "clash_delay": 389,
+        "host": "154.84.164.10",
+        "score": 140,
+        "ping": 5,
+        "clash_delay": null,
         "vision": true,
-        "proto_ok": true
+        "proto_ok": null
+      },
+      {
+        "host": "138.124.123.96",
+        "score": 140,
+        "ping": 17,
+        "clash_delay": null,
+        "vision": false,
+        "proto_ok": null
+      },
+      {
+        "host": "84.32.61.79",
+        "score": 140,
+        "ping": 21,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "31.59.103.129",
+        "score": 140,
+        "ping": 81,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "45.90.162.226",
+        "score": 140,
+        "ping": 82,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "31.76.109.7",
+        "score": 140,
+        "ping": 85,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "185.140.12.160",
+        "score": 140,
+        "ping": 87,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "91.84.117.29",
+        "score": 140,
+        "ping": 88,
+        "clash_delay": null,
+        "vision": false,
+        "proto_ok": null
       }
     ],
     "health": "ok",
@@ -79,9 +135,15 @@
   "fixes": [
     {
       "priority": "P0",
-      "code": "LOW_EXPORT",
-      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
-      "auto": "soft_fill_and_raise_pass"
+      "code": "CLASH_ZERO",
+      "action": "Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok",
+      "auto": "force_tcp_fallback_pick"
+    },
+    {
+      "priority": "P1",
+      "code": "MIHOMO_DOWN",
+      "action": "mihomo не стартовал — проверить releases URL и bin/mihomo",
+      "auto": "retry_mihomo_download"
     }
   ]
 }
