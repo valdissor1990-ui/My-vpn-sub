@@ -54,18 +54,27 @@ jobs:
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python collector.py
 
-      - name: Commit outputs always
+      - name: Show fix commands
+        if: always()
+        run: |
+          echo "=== FIX_COMMANDS ==="
+          cat logs/FIX_COMMANDS.md 2>/dev/null || echo "(no fixes file)"
+          echo "=== LATEST ==="
+          cat logs/latest.json 2>/dev/null | head -c 2000 || true
+
+      - name: Commit outputs + logs
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add sub.txt sub_vision.txt sub_white.txt sub_black.txt sub_hy2.txt sub_reality.txt \
             sub_base64.txt sub_vision_base64.txt sub_white_base64.txt sub_black_base64.txt \
             sub_hy2_base64.txt sub_reality_base64.txt sub_clash.yaml \
-            status.json meta_filtered.json dead_cache.json last_export.json history/ || true
+            status.json meta_filtered.json dead_cache.json last_export.json history/ logs/ || true
           if git diff --staged --quiet; then
             echo "No output changes"
           else
-            git commit -m "live rotate $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "live rotate+logs $(date -u +'%Y-%m-%d %H:%M UTC')"
             git pull --rebase origin main || true
             git push origin main
           fi

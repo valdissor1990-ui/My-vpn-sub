@@ -1,4 +1,4 @@
-"""Выгрузка: только рабочие + ротация каждый час."""
+"""Выгрузка: рабочие + soft-fill + ротация только для sub.txt."""
 
 from __future__ import annotations
 
@@ -9,9 +9,11 @@ from pathlib import Path
 
 from bots.clash_export import export_clash_yaml
 from bots.score_bot import is_vision_tcp
+from bots import log_bot
 from config import MAX_BLACK, MAX_SERVERS, MAX_VISION, MAX_WHITE
 
 LAST_FILE = "last_export.json"
+MIN_EXPORT = 8  # меньше — добираем TCP
 
 
 def log(msg: str) -> None:
@@ -27,8 +29,7 @@ def _load_last() -> set[str]:
     if not p.exists():
         return set()
     try:
-        data = json.loads(p.read_text(encoding="utf-8"))
-        return set(data.get("keys") or [])
+        return set(json.loads(p.read_text(encoding="utf-8")).get("keys") or [])
     except Exception:
         return set()
 
@@ -41,8 +42,7 @@ def _save_last(keys: list[str]) -> None:
 
 
 def _dedup(items: list[dict]) -> list[dict]:
-    seen = set()
-    out = []
+    seen, out = set(), []
     for w in items:
         k = _key(w)
         if k in seen:
@@ -52,20 +52,21 @@ def _dedup(items: list[dict]) -> list[dict]:
     return out
 
 
-def _rotate(pool: list[dict], n: int) -> list[dict]:
-    """Новые рабочие сначала, потом следующий срез пула (чтоб список не стоял)."""
+def _rotate(pool: list[dict], n: int, persist: bool = False) -> list[dict]:
     pool = _dedup(pool)
-    last = _load_last()
+    if not pool:
+        return []
+    last = _load_last() if persist else set()
     fresh = [w for w in pool if _key(w) not in last]
     stale = [w for w in pool if _key(w) in last]
     hour = datetime.now(timezone.utc).hour
-    # сдвиг, чтоб даже при том же пуле набор менялся
     if stale:
         off = (hour * 3) % max(len(stale), 1)
         stale = stale[off:] + stale[:off]
     picked = (fresh + stale)[:n]
-    _save_last([_key(w) for w in picked])
-    log(f"rotate pool={len(pool)} fresh={len(fresh)} picked={len(picked)} last={len(last)}")
+    if persist:
+        _save_last([_key(w) for w in picked])
+        log(f"rotate persist pool={len(pool)} fresh={len(fresh)} picked={len(picked)}")
     return picked
 
 
@@ -94,6 +95,7 @@ def run_picker(
     filter_stats: dict,
     monitor_stats: dict,
     proto_stats: dict,
+    soft_fill: bool = True,
 ) -> dict:
     for w in working:
         if w.get("is_vision") or is_vision_tcp(w.get("raw", "")):
@@ -101,23 +103,42 @@ def run_picker(
             w["is_vision"] = True
 
     working = sorted(working, key=lambda w: (-w.get("score", 0), w.get("ping_ms", 9999)))
-
     proto_ok = [w for w in working if w.get("proto_ok")]
-    # если Clash проверил узлы — в sub.txt ТОЛЬКО proto_ok
+
     if proto_stats.get("passed", 0) > 0 and proto_ok:
-        pool = proto_ok
+        pool = list(proto_ok)
         source = "clash_http"
+        # soft-fill: если Clash дал мало — добираем TCP, чтобы sub не был из 1 узла
+        if soft_fill and len(pool) < MIN_EXPORT:
+            have = {_key(w) for w in pool}
+            for w in working:
+                if _key(w) not in have:
+                    pool.append(w)
+                    have.add(_key(w))
+                if len(pool) >= MAX_SERVERS:
+                    break
+            source = "clash_soft_fill"
+            log_bot.info("picker", f"soft_fill clash={len(proto_ok)} → pool={len(pool)}")
     else:
         pool = working
         source = "tcp_fallback"
 
-    mix = _rotate(pool, MAX_SERVERS)
+    mix = _rotate(pool, MAX_SERVERS, persist=True)
     vision = _rotate(
         [w for w in pool if w.get("is_vision") or is_vision_tcp(w.get("raw", ""))],
         MAX_VISION,
+        persist=False,
     )
-    white = _rotate([w for w in pool if w.get("list_type") == "white"] or pool, MAX_WHITE)
-    black = _rotate([w for w in pool if w.get("list_type") != "white"], MAX_BLACK)
+    white = _rotate(
+        [w for w in pool if w.get("list_type") == "white"] or pool,
+        MAX_WHITE,
+        persist=False,
+    )
+    black = _rotate(
+        [w for w in pool if w.get("list_type") != "white"],
+        MAX_BLACK,
+        persist=False,
+    )
     hy2 = _rotate(
         [
             w
@@ -126,6 +147,7 @@ def run_picker(
             or w.get("raw", "").lower().startswith(("hy2://", "hysteria"))
         ],
         MAX_SERVERS,
+        persist=False,
     )
     reality = [w for w in mix if "reality" in w.get("raw", "").lower()]
 
@@ -136,7 +158,7 @@ def run_picker(
         [
             f"# source={source}",
             f"# clash={proto_stats.get('passed', 0)}/{proto_stats.get('tested', 0)}",
-            "# rotated each run; only checked nodes",
+            "# rotate+soft_fill; last_export only for sub.txt",
         ],
     )
     _write("sub_vision.txt", "My VPN · Vision", [w["raw"] for w in vision], ["# XTLS Vision"])
@@ -145,7 +167,11 @@ def run_picker(
     _write("sub_hy2.txt", "My VPN · hy2", [w["raw"] for w in hy2], ["# hy2"])
     _write("sub_reality.txt", "My VPN · reality", [w["raw"] for w in reality], ["# reality"])
 
-    clash_n = export_clash_yaml(mix, "sub_clash.yaml")
+    try:
+        clash_n = export_clash_yaml(mix, "sub_clash.yaml")
+    except Exception as e:
+        log_bot.error("picker", "clash yaml failed", e)
+        clash_n = 0
 
     status = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -193,6 +219,8 @@ def run_picker(
         "mirrors": {
             "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
             "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
+            "blog": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/blog.md",
+            "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md",
         },
     }
     with open("status.json", "w", encoding="utf-8") as f:
@@ -204,8 +232,7 @@ def run_picker(
     (hist / f"status-{stamp}.json").write_text(
         json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    files = sorted(hist.glob("status-*.json"))
-    for old in files[:-48]:
+    for old in sorted(hist.glob("status-*.json"))[:-48]:
         try:
             old.unlink()
         except Exception:
