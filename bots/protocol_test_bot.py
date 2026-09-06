@@ -1,4 +1,4 @@
-"""Clash Meta (mihomo) protocol test: vless/vmess/trojan/hy2 + URL rotate + parallel delay."""
+"""Clash Meta protocol test. Hy2 via bots.hy2 (Brutal/hop/obfs)."""
 
 from __future__ import annotations
 
@@ -15,12 +15,14 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 
+from bots.hy2 import is_hy2, to_clash as hy2_to_clash
 from config import (
     MIHOMO_VERSIONS,
     PROTOCOL_TEST_CANDIDATES,
     PROTOCOL_TEST_MAX_PASS,
     PROTOCOL_TEST_TIMEOUT,
     PROTOCOL_TEST_WORKERS,
+    PROTOCOL_TEST_WORKERS_HY2,
     TEST_URLS,
 )
 
@@ -40,7 +42,6 @@ def _ensure_mihomo() -> str | None:
     binary = cache / "mihomo"
     if binary.exists() and os.access(binary, os.X_OK):
         return str(binary)
-
     for ver in MIHOMO_VERSIONS:
         for suffix in (
             f"mihomo-linux-amd64-{ver}.gz",
@@ -52,16 +53,13 @@ def _ensure_mihomo() -> str | None:
                 log(f"Trying {url}")
                 gz_path = cache / "mihomo.gz"
                 urllib.request.urlretrieve(url, gz_path)
-                with gzip.open(gz_path, "rb") as f_in:
-                    with open(binary, "wb") as f_out:
-                        shutil.copyfileobj(f_in, f_out)
+                with gzip.open(gz_path, "rb") as f_in, open(binary, "wb") as f_out:
+                    shutil.copyfileobj(f_in, f_out)
                 binary.chmod(0o755)
                 if binary.stat().st_size > 1000:
-                    log(f"mihomo OK {ver} {suffix}")
                     return str(binary)
             except Exception as e:
                 log(f"  fail: {e}")
-                continue
     return None
 
 
@@ -77,13 +75,8 @@ def _vless_to_clash(link: str, name: str) -> dict | None:
         if network == "raw":
             network = "tcp"
         proxy: dict = {
-            "name": name,
-            "type": "vless",
-            "server": host,
-            "port": int(port),
-            "uuid": uuid,
-            "network": network,
-            "udp": True,
+            "name": name, "type": "vless", "server": host, "port": int(port),
+            "uuid": uuid, "network": network, "udp": True,
             "tls": security in ("tls", "reality"),
             "client-fingerprint": q.get("fp") or "chrome",
         }
@@ -103,11 +96,7 @@ def _vless_to_clash(link: str, name: str) -> dict | None:
             proxy["grpc-opts"] = {"grpc-service-name": q.get("serviceName") or q.get("path") or ""}
         elif network == "xhttp":
             proxy["network"] = "xhttp"
-            proxy["xhttp-opts"] = {
-                "path": q.get("path", "/"),
-                "host": q.get("host") or sni,
-                "mode": q.get("mode") or "auto",
-            }
+            proxy["xhttp-opts"] = {"path": q.get("path", "/"), "host": q.get("host") or sni, "mode": q.get("mode") or "auto"}
         return proxy
     except Exception:
         return None
@@ -123,32 +112,20 @@ def _vmess_to_clash(link: str, name: str) -> dict | None:
             raw += "=" * pad
         data = json.loads(base64.b64decode(raw).decode("utf-8", errors="ignore"))
         host = data.get("add") or data.get("host")
-        port = int(data.get("port", 443))
         uuid = data.get("id")
         if not host or not uuid:
             return None
         network = data.get("net", "tcp")
-        tls = data.get("tls", "")
         proxy: dict = {
-            "name": name,
-            "type": "vmess",
-            "server": host,
-            "port": port,
-            "uuid": uuid,
-            "alterId": int(data.get("aid", 0)),
-            "cipher": data.get("scy") or "auto",
-            "network": network,
-            "udp": True,
-            "tls": tls in ("tls", "reality"),
+            "name": name, "type": "vmess", "server": host, "port": int(data.get("port", 443)),
+            "uuid": uuid, "alterId": int(data.get("aid", 0)), "cipher": data.get("scy") or "auto",
+            "network": network, "udp": True, "tls": data.get("tls", "") in ("tls", "reality"),
             "client-fingerprint": data.get("fp") or "chrome",
         }
         if data.get("sni") or data.get("host"):
             proxy["servername"] = data.get("sni") or data.get("host")
         if network == "ws":
-            proxy["ws-opts"] = {
-                "path": data.get("path", "/"),
-                "headers": {"Host": data.get("host") or data.get("sni") or host},
-            }
+            proxy["ws-opts"] = {"path": data.get("path", "/"), "headers": {"Host": data.get("host") or host}}
         elif network == "grpc":
             proxy["grpc-opts"] = {"grpc-service-name": data.get("path", "")}
         return proxy
@@ -167,15 +144,9 @@ def _trojan_to_clash(link: str, name: str) -> dict | None:
         q = {k: v[0] for k, v in parse_qs(u.query).items()}
         network = q.get("type", "tcp")
         proxy: dict = {
-            "name": name,
-            "type": "trojan",
-            "server": host,
-            "port": int(port),
-            "password": password,
-            "network": network,
-            "udp": True,
-            "sni": q.get("sni") or host,
-            "client-fingerprint": q.get("fp") or "chrome",
+            "name": name, "type": "trojan", "server": host, "port": int(port),
+            "password": password, "network": network, "udp": True,
+            "sni": q.get("sni") or host, "client-fingerprint": q.get("fp") or "chrome",
             "skip-cert-verify": q.get("allowInsecure", "0") in ("1", "true"),
         }
         if network == "ws":
@@ -188,31 +159,7 @@ def _trojan_to_clash(link: str, name: str) -> dict | None:
 
 
 def _hy2_to_clash(link: str, name: str) -> dict | None:
-    try:
-        low = link.lower()
-        if not (low.startswith("hysteria2://") or low.startswith("hy2://")):
-            return None
-        u = urlparse(link.replace("hy2://", "hysteria2://", 1))
-        password = unquote(u.username or "")
-        host, port = u.hostname, u.port or 443
-        if not host:
-            return None
-        q = {k: v[0] for k, v in parse_qs(u.query).items()}
-        proxy = {
-            "name": name,
-            "type": "hysteria2",
-            "server": host,
-            "port": int(port),
-            "password": password or q.get("auth", ""),
-            "sni": q.get("sni") or host,
-            "skip-cert-verify": q.get("insecure", "0") in ("1", "true", "yes"),
-        }
-        if q.get("obfs"):
-            proxy["obfs"] = q.get("obfs")
-            proxy["obfs-password"] = q.get("obfs-password", "")
-        return proxy
-    except Exception:
-        return None
+    return hy2_to_clash(link, name)
 
 
 def _link_to_clash(link: str, name: str) -> dict | None:
@@ -222,7 +169,7 @@ def _link_to_clash(link: str, name: str) -> dict | None:
         return _vmess_to_clash(link, name)
     if link.startswith("trojan://"):
         return _trojan_to_clash(link, name)
-    if link.lower().startswith(("hysteria2://", "hy2://")):
+    if is_hy2(link):
         return _hy2_to_clash(link, name)
     return None
 
@@ -260,7 +207,7 @@ def _api_delay(name: str, timeout_ms: int, test_url: str) -> int | None:
     return None
 
 
-def _delay_with_rotate(name: str, timeout_ms: int) -> tuple[int | None, str | None]:
+def _delay_with_rotate(name: str, timeout_ms: int):
     for test_url in TEST_URLS:
         d = _api_delay(name, timeout_ms, test_url)
         if d is not None:
@@ -268,7 +215,7 @@ def _delay_with_rotate(name: str, timeout_ms: int) -> tuple[int | None, str | No
     return None, None
 
 
-def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
+def run_protocol_test(candidates: list[dict]):
     stats = {
         "engine": "mihomo",
         "enabled": False,
@@ -277,18 +224,14 @@ def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
         "fallback_tcp": False,
         "test_urls": TEST_URLS,
         "workers": PROTOCOL_TEST_WORKERS,
+        "workers_hy2": PROTOCOL_TEST_WORKERS_HY2,
     }
-
     mihomo = _ensure_mihomo()
     if not mihomo:
-        log("mihomo unavailable → TCP fallback")
         stats["fallback_tcp"] = True
         return candidates, stats
 
-    ranked = sorted(candidates, key=lambda c: c.get("score", 0), reverse=True)[
-        :PROTOCOL_TEST_CANDIDATES
-    ]
-
+    ranked = sorted(candidates, key=lambda c: c.get("score", 0), reverse=True)[:PROTOCOL_TEST_CANDIDATES]
     proxies, index = [], []
     for i, c in enumerate(ranked):
         name = f"n{i}"
@@ -296,7 +239,7 @@ def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
         if not proxy:
             continue
         proxies.append(proxy)
-        index.append({**c, "_name": name})
+        index.append({**c, "_name": name, "_hy2": is_hy2(c["raw"])})
 
     if not proxies:
         stats["fallback_tcp"] = True
@@ -306,15 +249,14 @@ def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
     conf_json.parent.mkdir(exist_ok=True)
     conf_json.write_text(json.dumps(_build_config(proxies)), encoding="utf-8")
 
+    has_hy2 = any(c["_hy2"] for c in index)
+    workers = PROTOCOL_TEST_WORKERS_HY2 if has_hy2 else PROTOCOL_TEST_WORKERS
+    stats["workers_used"] = workers
     stats["enabled"] = True
-    log(f"mihomo {len(proxies)} proxies, workers={PROTOCOL_TEST_WORKERS}")
-    proc = subprocess.Popen(
-        [mihomo, "-f", str(conf_json)],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
+    log(f"mihomo proxies={len(proxies)} workers={workers} hy2={has_hy2}")
 
-    passed: list[dict] = []
+    proc = subprocess.Popen([mihomo, "-f", str(conf_json)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    passed = []
     try:
         ready = False
         for _ in range(30):
@@ -332,22 +274,20 @@ def run_protocol_test(candidates: list[dict]) -> tuple[list[dict], dict]:
                 if proc.poll() is not None:
                     break
         if not ready:
-            log("API not ready → TCP fallback")
             stats["fallback_tcp"] = True
             return candidates, stats
 
         timeout_ms = int(PROTOCOL_TEST_TIMEOUT * 1000)
 
-        def job(c: dict):
-            d, used = _delay_with_rotate(c["_name"], timeout_ms)
-            return c, d, used
+        def job(c):
+            return (*(_delay_with_rotate(c["_name"], timeout_ms)), c)
 
-        with ThreadPoolExecutor(max_workers=PROTOCOL_TEST_WORKERS) as pool:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
             futs = [pool.submit(job, c) for c in index]
             for fut in as_completed(futs):
                 stats["tested"] += 1
                 try:
-                    c, delay, used_url = fut.result()
+                    delay, used_url, c = fut.result()
                 except Exception:
                     continue
                 if delay is None:
