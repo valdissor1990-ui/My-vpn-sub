@@ -1,6 +1,6 @@
-#profile-title: base64:TXkgVlBOIMK3IGh5Mg==
+#profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
 # Generated: 2026-09-06 06:05 UTC
 # Count: 0
-# hy2
+# black
 # https://github.com/valdissor1990-ui/My-vpn-sub
