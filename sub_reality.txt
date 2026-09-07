@@ -1,7 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IHJlYWxpdHk=
 #profile-update-interval: 1
-# Generated: 2026-09-06 23:04 UTC
+# Generated: 2026-09-07 00:06 UTC
 # Count: 1
 # reality
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@45.144.28.39:2053?security=reality&encryption=none&pbk=dRLd_E_GYCkCcwxLN5EcRQYsREKqisb26_ZSehxUpWY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=vk.ru&sid=1eb8ea8dae937ae0
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@45.144.28.39:2053?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=dRLd_E_GYCkCcwxLN5EcRQYsREKqisb26_ZSehxUpWY&sid=1eb8ea8dae937ae0&sni=vk.ru#FR 🇫🇷 | @Raydikalx | 91FFBD
