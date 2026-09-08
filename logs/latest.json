@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-08 19:05:54 UTC",
+  "ts": "2026-09-08 20:04:42 UTC",
   "status": {
-    "generated_at": "2026-09-08T19:05:54.487532+00:00",
-    "pick_source": "tcp_fallback",
+    "generated_at": "2026-09-08T20:04:42.557933+00:00",
+    "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 27169,
-      "telegram_links": 432
+      "total_lines": 27115,
+      "telegram_links": 451
     },
     "filter": {
-      "unique": 17593
+      "unique": 17408
     },
     "monitor": {
-      "tcp_alive": 1096,
-      "checked": 2500,
+      "tcp_alive": 1103,
+      "checked": 2449,
       "pre_score_cap": 2500,
-      "skipped_dead": 0,
+      "skipped_dead": 51,
       "dead_cache": {
-        "entries": 52,
-        "active_dead": 52,
+        "entries": 120,
+        "active_dead": 120,
         "hours": 12
       }
     },
@@ -27,8 +27,8 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 0,
-      "fallback_tcp": true,
+      "passed": 2,
+      "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
         "http://cp.cloudflare.com/generate_204",
@@ -40,88 +40,32 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 20,
-      "sub_vision.txt": 20,
-      "sub_white.txt": 20,
+      "sub.txt": 1,
+      "sub_vision.txt": 1,
+      "sub_white.txt": 1,
       "sub_black.txt": 0,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 20,
-      "sub_clash.yaml": 20
+      "sub_reality.txt": 1,
+      "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 27169,
-      "tg_links": 432,
-      "filtered": 17593,
-      "tcp_alive": 1096,
-      "clash_passed": 0,
+      "raw_lines": 27115,
+      "tg_links": 451,
+      "filtered": 17408,
+      "tcp_alive": 1103,
+      "clash_passed": 2,
       "clash_tested": 40,
-      "exported": 20,
-      "pick_source": "tcp_fallback"
+      "exported": 1,
+      "pick_source": "clash_soft_fill"
     },
     "top_scores": [
       {
-        "host": "154.84.164.10",
-        "score": 140,
-        "ping": 8,
-        "clash_delay": null,
+        "host": "45.144.28.39",
+        "score": 200,
+        "ping": 85,
+        "clash_delay": 362,
         "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "138.124.123.96",
-        "score": 140,
-        "ping": 36,
-        "clash_delay": null,
-        "vision": false,
-        "proto_ok": null
-      },
-      {
-        "host": "151.244.30.176",
-        "score": 140,
-        "ping": 42,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "84.17.50.118",
-        "score": 140,
-        "ping": 103,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "146.103.104.93",
-        "score": 140,
-        "ping": 107,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "146.103.105.83",
-        "score": 140,
-        "ping": 111,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "94.159.103.5",
-        "score": 140,
-        "ping": 113,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "94.103.1.44",
-        "score": 140,
-        "ping": 114,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
+        "proto_ok": true
       }
     ],
     "health": "ok",
@@ -135,15 +79,9 @@
   "fixes": [
     {
       "priority": "P0",
-      "code": "CLASH_ZERO",
-      "action": "Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok",
-      "auto": "force_tcp_fallback_pick"
-    },
-    {
-      "priority": "P1",
-      "code": "MIHOMO_DOWN",
-      "action": "mihomo не стартовал — проверить releases URL и bin/mihomo",
-      "auto": "retry_mihomo_download"
+      "code": "LOW_EXPORT",
+      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "auto": "soft_fill_and_raise_pass"
     }
   ]
 }
