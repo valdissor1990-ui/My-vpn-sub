@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-06T11:05:17.937277+00:00",
-  "pick_source": "clash_http",
+  "generated_at": "2026-09-08T09:05:44.551588+00:00",
+  "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 17,
     "sources_fail": 5,
-    "total_lines": 27241,
-    "telegram_links": 403
+    "total_lines": 28152,
+    "telegram_links": 445
   },
   "filter": {
-    "unique": 17865
+    "unique": 17729
   },
   "monitor": {
-    "tcp_alive": 1168,
-    "checked": 2403,
+    "tcp_alive": 1123,
+    "checked": 2499,
     "pre_score_cap": 2500,
-    "skipped_dead": 97,
+    "skipped_dead": 1,
     "dead_cache": {
-      "entries": 38,
-      "active_dead": 38,
+      "entries": 132,
+      "active_dead": 132,
       "hours": 12
     }
   },
@@ -25,7 +25,7 @@
     "engine": "mihomo",
     "enabled": true,
     "tested": 40,
-    "passed": 1,
+    "passed": 2,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -47,21 +47,21 @@
     "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 27241,
-    "tg_links": 403,
-    "filtered": 17865,
-    "tcp_alive": 1168,
-    "clash_passed": 1,
+    "raw_lines": 28152,
+    "tg_links": 445,
+    "filtered": 17729,
+    "tcp_alive": 1123,
+    "clash_passed": 2,
     "clash_tested": 40,
     "exported": 1,
-    "pick_source": "clash_http"
+    "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
       "host": "45.144.28.39",
       "score": 200,
-      "ping": 85,
-      "clash_delay": 3561,
+      "ping": 138,
+      "clash_delay": 509,
       "vision": true,
       "proto_ok": true
     }
@@ -69,6 +69,8 @@
   "health": "ok",
   "mirrors": {
     "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
-    "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt"
+    "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
+    "blog": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/blog.md",
+    "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md"
   }
 }
