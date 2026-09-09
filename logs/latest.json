@@ -1,33 +1,33 @@
 {
-  "ts": "2026-09-09 15:04:27 UTC",
+  "ts": "2026-09-09 16:04:28 UTC",
   "status": {
-    "generated_at": "2026-09-09T15:04:27.352631+00:00",
+    "generated_at": "2026-09-09T16:04:27.998981+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 27849,
-      "telegram_links": 448
+      "total_lines": 26992,
+      "telegram_links": 454
     },
     "filter": {
-      "unique": 18020
+      "unique": 17854
     },
     "monitor": {
-      "tcp_alive": 1195,
-      "checked": 2489,
+      "tcp_alive": 1172,
+      "checked": 2457,
       "pre_score_cap": 2500,
-      "skipped_dead": 11,
+      "skipped_dead": 43,
       "dead_cache": {
-        "entries": 36,
-        "active_dead": 36,
+        "entries": 128,
+        "active_dead": 128,
         "hours": 12
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 38,
-      "passed": 1,
+      "tested": 39,
+      "passed": 2,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -49,12 +49,12 @@
       "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 27849,
-      "tg_links": 448,
-      "filtered": 18020,
-      "tcp_alive": 1195,
-      "clash_passed": 1,
-      "clash_tested": 38,
+      "raw_lines": 26992,
+      "tg_links": 454,
+      "filtered": 17854,
+      "tcp_alive": 1172,
+      "clash_passed": 2,
+      "clash_tested": 39,
       "exported": 1,
       "pick_source": "clash_soft_fill"
     },
@@ -62,8 +62,8 @@
       {
         "host": "45.144.28.39",
         "score": 200,
-        "ping": 80,
-        "clash_delay": 374,
+        "ping": 85,
+        "clash_delay": 364,
         "vision": true,
         "proto_ok": true
       }
@@ -80,14 +80,8 @@
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=1, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
-    },
-    {
-      "priority": "P2",
-      "code": "CLASH_LOW_RATIO",
-      "action": "pass rate 1/38: расширить кандидатов, снизить score bias на мёртвые free-keys",
-      "auto": "raise_candidates"
     }
   ]
 }
