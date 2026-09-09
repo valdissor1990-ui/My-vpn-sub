@@ -1,32 +1,32 @@
 {
-  "ts": "2026-09-09 04:05:13 UTC",
+  "ts": "2026-09-09 05:05:10 UTC",
   "status": {
-    "generated_at": "2026-09-09T04:05:13.495553+00:00",
+    "generated_at": "2026-09-09T05:05:10.037634+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 27700,
-      "telegram_links": 452
+      "total_lines": 28092,
+      "telegram_links": 461
     },
     "filter": {
-      "unique": 17864
+      "unique": 17698
     },
     "monitor": {
-      "tcp_alive": 970,
-      "checked": 2474,
+      "tcp_alive": 964,
+      "checked": 2398,
       "pre_score_cap": 2500,
-      "skipped_dead": 26,
+      "skipped_dead": 102,
       "dead_cache": {
-        "entries": 83,
-        "active_dead": 83,
+        "entries": 72,
+        "active_dead": 72,
         "hours": 12
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 38,
+      "tested": 39,
       "passed": 1,
       "fallback_tcp": false,
       "test_urls": [
@@ -49,12 +49,12 @@
       "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 27700,
-      "tg_links": 452,
-      "filtered": 17864,
-      "tcp_alive": 970,
+      "raw_lines": 28092,
+      "tg_links": 461,
+      "filtered": 17698,
+      "tcp_alive": 964,
       "clash_passed": 1,
-      "clash_tested": 38,
+      "clash_tested": 39,
       "exported": 1,
       "pick_source": "clash_soft_fill"
     },
@@ -62,8 +62,8 @@
       {
         "host": "45.144.28.39",
         "score": 200,
-        "ping": 83,
-        "clash_delay": 352,
+        "ping": 85,
+        "clash_delay": 373,
         "vision": true,
         "proto_ok": true
       }
@@ -86,7 +86,7 @@
     {
       "priority": "P2",
       "code": "CLASH_LOW_RATIO",
-      "action": "pass rate 1/38: расширить кандидатов, снизить score bias на мёртвые free-keys",
+      "action": "pass rate 1/39: расширить кандидатов, снизить score bias на мёртвые free-keys",
       "auto": "raise_candidates"
     }
   ]
