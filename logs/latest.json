@@ -1,32 +1,32 @@
 {
-  "ts": "2026-09-09 14:04:22 UTC",
+  "ts": "2026-09-09 15:04:27 UTC",
   "status": {
-    "generated_at": "2026-09-09T14:04:22.517375+00:00",
+    "generated_at": "2026-09-09T15:04:27.352631+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 27157,
-      "telegram_links": 449
+      "total_lines": 27849,
+      "telegram_links": 448
     },
     "filter": {
-      "unique": 17749
+      "unique": 18020
     },
     "monitor": {
-      "tcp_alive": 1164,
-      "checked": 2472,
+      "tcp_alive": 1195,
+      "checked": 2489,
       "pre_score_cap": 2500,
-      "skipped_dead": 28,
+      "skipped_dead": 11,
       "dead_cache": {
-        "entries": 11,
-        "active_dead": 11,
+        "entries": 36,
+        "active_dead": 36,
         "hours": 12
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 39,
+      "tested": 38,
       "passed": 1,
       "fallback_tcp": false,
       "test_urls": [
@@ -49,12 +49,12 @@
       "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 27157,
-      "tg_links": 449,
-      "filtered": 17749,
-      "tcp_alive": 1164,
+      "raw_lines": 27849,
+      "tg_links": 448,
+      "filtered": 18020,
+      "tcp_alive": 1195,
       "clash_passed": 1,
-      "clash_tested": 39,
+      "clash_tested": 38,
       "exported": 1,
       "pick_source": "clash_soft_fill"
     },
@@ -62,8 +62,8 @@
       {
         "host": "45.144.28.39",
         "score": 200,
-        "ping": 128,
-        "clash_delay": 505,
+        "ping": 80,
+        "clash_delay": 374,
         "vision": true,
         "proto_ok": true
       }
@@ -86,7 +86,7 @@
     {
       "priority": "P2",
       "code": "CLASH_LOW_RATIO",
-      "action": "pass rate 1/39: расширить кандидатов, снизить score bias на мёртвые free-keys",
+      "action": "pass rate 1/38: расширить кандидатов, снизить score bias на мёртвые free-keys",
       "auto": "raise_candidates"
     }
   ]
