@@ -1,12 +1,27 @@
-# My VPN Sub Clash Meta · 2026-09-10 19:04 UTC
-# nodes: 1
+# My VPN Sub Clash Meta · 2026-09-10 20:04 UTC
+# nodes: 2
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 481ms | 45.144.28.39:2053"
+    name: "VISION | 401ms | 195.66.24.168:443"
+    type: vless
+    server: 195.66.24.168
+    port: 443
+    uuid: ea8eb632-7d56-4bfb-8195-dc34268b5844
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: www.vk.com
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 370ms | 45.144.28.39:2053"
     type: vless
     server: 45.144.28.39
     port: 2053
@@ -25,7 +40,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 481ms | 45.144.28.39:2053"
+      - "VISION | 401ms | 195.66.24.168:443"
+      - "VISION | 370ms | 45.144.28.39:2053"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -33,7 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 481ms | 45.144.28.39:2053"
+      - "VISION | 401ms | 195.66.24.168:443"
+      - "VISION | 370ms | 45.144.28.39:2053"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
