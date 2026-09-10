@@ -1,7 +1,14 @@
 {
-  "soft_fill_tcp": false,
+  "soft_fill_tcp": true,
   "force_tcp_fallback_pick": false,
   "raise_candidates": false,
-  "generated_at": "2026-09-10T17:04:51.794353+00:00",
-  "fixes": []
+  "generated_at": "2026-09-10T18:04:46.459352+00:00",
+  "fixes": [
+    {
+      "priority": "P0",
+      "code": "LOW_EXPORT",
+      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "auto": "soft_fill_and_raise_pass"
+    }
+  ]
 }
