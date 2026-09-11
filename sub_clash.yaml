@@ -1,42 +1,12 @@
-# My VPN Sub Clash Meta · 2026-09-11 02:05 UTC
-# nodes: 3
+# My VPN Sub Clash Meta · 2026-09-11 03:04 UTC
+# nodes: 1
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 450ms | 195.66.24.169:1932"
-    type: vless
-    server: 195.66.24.169
-    port: 1932
-    uuid: ea8eb632-7d56-4bfb-8195-dc34268b5844
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: www.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 482ms | 195.66.24.171:443"
-    type: vless
-    server: 195.66.24.171
-    port: 443
-    uuid: ea8eb632-7d56-4bfb-8195-dc34268b5844
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: ios
-    servername: www.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 463ms | 45.144.28.39:2053"
+    name: "VISION | 363ms | 45.144.28.39:2053"
     type: vless
     server: 45.144.28.39
     port: 2053
@@ -44,7 +14,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     servername: vk.ru
     reality-opts:
       public-key: dRLd_E_GYCkCcwxLN5EcRQYsREKqisb26_ZSehxUpWY
@@ -55,9 +25,7 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 450ms | 195.66.24.169:1932"
-      - "VISION | 482ms | 195.66.24.171:443"
-      - "VISION | 463ms | 45.144.28.39:2053"
+      - "VISION | 363ms | 45.144.28.39:2053"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -65,9 +33,7 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 450ms | 195.66.24.169:1932"
-      - "VISION | 482ms | 195.66.24.171:443"
-      - "VISION | 463ms | 45.144.28.39:2053"
+      - "VISION | 363ms | 45.144.28.39:2053"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
