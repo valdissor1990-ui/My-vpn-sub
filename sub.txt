@@ -1,14 +1,9 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-09-11 12:04 UTC
-# Count: 6
-# source=clash_http
-# clash=9/40
+# Generated: 2026-09-11 13:04 UTC
+# Count: 1
+# source=clash_soft_fill
+# clash=1/40
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://47d9b534-8a0a-4bd2-90f1-1d6ade14427e@150.241.101.80:8443/?type=raw&encryption=none&flow=xtls-rprx-vision&sni=yandex.net&fp=chrome&security=reality&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=6ba85179e30d4fc2&packetEncoding=xudp#EE 🇪🇪 | @Raydikalx | EBDB2A
-vless://3710fc0f-5f0c-4b9c-a5d4-40cb419e943a@144.31.93.231:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=WKN5yaRN05O2WdCURXRmS-yBVYaabaFWOvGudX6ohWc&security=reality&sid=b97e7d4582b6fa6e&sni=yandex.ru&type=tcp#RU 🇷🇺 | @Raydikalx | CE64AC
-vless://11aabba0-5fd1-4f15-8068-74c1a466cefc@193.163.203.170:443?type=tcp&security=reality&flow=xtls-rprx-vision&sni=yandex.ru&fp=firefox&pbk=GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o&sid=b28db60d77c50b4f#RU 🇷🇺 | @Raydikalx | 820CA6
-vless://441afe11-a180-4516-bb80-80a8a6b38705@193.163.203.253:443?security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=gE8LUmGFXik94SoDXNiAG5KprGyhjoRwDuhGebgAVWk&sid=5ee019e02e6ed99a&sni=yandex.ru#RU 🇷🇺 | @Raydikalx | 2EBB97
-vless://1c332eae-7e02-4acd-996d-4eb3e652401c@144.31.50.236:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM&security=reality&sid=bbe46bd8f6b96839&sni=yandex.ru&type=tcp#RU 🇷🇺 | @Raydikalx | 73B198
-vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@45.144.28.39:2053?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=dRLd_E_GYCkCcwxLN5EcRQYsREKqisb26_ZSehxUpWY&sid=1eb8ea8dae937ae0&sni=vk.ru#FR 🇫🇷 | @Raydikalx | 91FFBD
+vless://70e20b2e-3b1f-4c25-9a3d-9240570391bb@45.144.28.39:2053?encryption=none&flow=xtls-rprx-vision&fp=&pbk=dRLd_E_GYCkCcwxLN5EcRQYsREKqisb26_ZSehxUpWY&security=reality&sid=1eb8ea8dae937ae0&sni=vk.ru&type=tcp

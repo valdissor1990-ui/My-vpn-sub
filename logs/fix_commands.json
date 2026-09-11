@@ -1,7 +1,20 @@
 {
-  "soft_fill_tcp": false,
+  "soft_fill_tcp": true,
   "force_tcp_fallback_pick": false,
-  "raise_candidates": false,
-  "generated_at": "2026-09-11T12:04:51.447512+00:00",
-  "fixes": []
+  "raise_candidates": true,
+  "generated_at": "2026-09-11T13:04:43.942168+00:00",
+  "fixes": [
+    {
+      "priority": "P0",
+      "code": "LOW_EXPORT",
+      "action": "Clash ok=1, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "auto": "soft_fill_and_raise_pass"
+    },
+    {
+      "priority": "P2",
+      "code": "CLASH_LOW_RATIO",
+      "action": "pass rate 1/40: расширить кандидатов, снизить score bias на мёртвые free-keys",
+      "auto": "raise_candidates"
+    }
+  ]
 }
