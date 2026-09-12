@@ -1,10 +1,3 @@
-{"ts": "2026-09-11 02:02:21 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-11 02:02:29 UTC", "level": "info", "stage": "collect", "msg": "lines=27823 ok=17 fail=5"}
-{"ts": "2026-09-11 02:02:37 UTC", "level": "info", "stage": "tg", "msg": "links=420"}
-{"ts": "2026-09-11 02:02:37 UTC", "level": "info", "stage": "filter", "msg": "unique=17378"}
-{"ts": "2026-09-11 02:04:14 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1268"}
-{"ts": "2026-09-11 02:05:04 UTC", "level": "info", "stage": "clash", "msg": "passed=4/40 enabled=True"}
-{"ts": "2026-09-11 02:05:04 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=4 → pool=4"}
 {"ts": "2026-09-11 02:05:04 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
 {"ts": "2026-09-11 03:01:59 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
 {"ts": "2026-09-11 03:02:09 UTC", "level": "info", "stage": "collect", "msg": "lines=28143 ok=17 fail=5"}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-12 03:03:58 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1307"}
 {"ts": "2026-09-12 03:04:47 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
 {"ts": "2026-09-12 03:04:47 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["CLASH_ZERO", "MIHOMO_DOWN"]}
+{"ts": "2026-09-12 04:01:59 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-12 04:02:13 UTC", "level": "info", "stage": "collect", "msg": "lines=27931 ok=17 fail=5"}
+{"ts": "2026-09-12 04:02:23 UTC", "level": "info", "stage": "tg", "msg": "links=430"}
+{"ts": "2026-09-12 04:02:23 UTC", "level": "info", "stage": "filter", "msg": "unique=17832"}
+{"ts": "2026-09-12 04:03:56 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1322"}
+{"ts": "2026-09-12 04:04:40 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
+{"ts": "2026-09-12 04:04:40 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["CLASH_ZERO", "MIHOMO_DOWN"]}
