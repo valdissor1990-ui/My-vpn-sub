@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-12 09:04:50 UTC",
+  "ts": "2026-09-12 10:04:44 UTC",
   "status": {
-    "generated_at": "2026-09-12T09:04:50.312117+00:00",
+    "generated_at": "2026-09-12T10:04:44.666401+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 28596,
-      "telegram_links": 446
+      "total_lines": 28466,
+      "telegram_links": 437
     },
     "filter": {
-      "unique": 17648
+      "unique": 17632
     },
     "monitor": {
-      "tcp_alive": 1332,
-      "checked": 2476,
+      "tcp_alive": 1328,
+      "checked": 2461,
       "pre_score_cap": 2500,
-      "skipped_dead": 24,
+      "skipped_dead": 39,
       "dead_cache": {
-        "entries": 32,
-        "active_dead": 32,
+        "entries": 83,
+        "active_dead": 83,
         "hours": 12
       }
     },
@@ -27,7 +27,7 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 1,
+      "passed": 2,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -49,11 +49,11 @@
       "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 28596,
-      "tg_links": 446,
-      "filtered": 17648,
-      "tcp_alive": 1332,
-      "clash_passed": 1,
+      "raw_lines": 28466,
+      "tg_links": 437,
+      "filtered": 17632,
+      "tcp_alive": 1328,
+      "clash_passed": 2,
       "clash_tested": 40,
       "exported": 1,
       "pick_source": "clash_soft_fill"
@@ -62,8 +62,8 @@
       {
         "host": "45.144.28.39",
         "score": 200,
-        "ping": 143,
-        "clash_delay": 527,
+        "ping": 101,
+        "clash_delay": 398,
         "vision": true,
         "proto_ok": true
       }
@@ -80,14 +80,8 @@
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=1, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
-    },
-    {
-      "priority": "P2",
-      "code": "CLASH_LOW_RATIO",
-      "action": "pass rate 1/40: расширить кандидатов, снизить score bias на мёртвые free-keys",
-      "auto": "raise_candidates"
     }
   ]
 }
