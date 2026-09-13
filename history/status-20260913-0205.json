@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-11T02:05:04.390216+00:00",
+  "generated_at": "2026-09-13T02:05:03.524450+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 17,
     "sources_fail": 5,
-    "total_lines": 27823,
-    "telegram_links": 420
+    "total_lines": 27970,
+    "telegram_links": 421
   },
   "filter": {
-    "unique": 17378
+    "unique": 16806
   },
   "monitor": {
-    "tcp_alive": 1268,
-    "checked": 2473,
+    "tcp_alive": 1084,
+    "checked": 2498,
     "pre_score_cap": 2500,
-    "skipped_dead": 27,
+    "skipped_dead": 2,
     "dead_cache": {
-      "entries": 7,
-      "active_dead": 7,
+      "entries": 79,
+      "active_dead": 79,
       "hours": 12
     }
   },
@@ -25,7 +25,7 @@
     "engine": "mihomo",
     "enabled": true,
     "tested": 40,
-    "passed": 4,
+    "passed": 1,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -38,46 +38,30 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 3,
-    "sub_vision.txt": 3,
-    "sub_white.txt": 3,
+    "sub.txt": 1,
+    "sub_vision.txt": 1,
+    "sub_white.txt": 1,
     "sub_black.txt": 0,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 3,
-    "sub_clash.yaml": 3
+    "sub_reality.txt": 1,
+    "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 27823,
-    "tg_links": 420,
-    "filtered": 17378,
-    "tcp_alive": 1268,
-    "clash_passed": 4,
+    "raw_lines": 27970,
+    "tg_links": 421,
+    "filtered": 16806,
+    "tcp_alive": 1084,
+    "clash_passed": 1,
     "clash_tested": 40,
-    "exported": 3,
+    "exported": 1,
     "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "195.66.24.169",
-      "score": 200,
-      "ping": 110,
-      "clash_delay": 450,
-      "vision": true,
-      "proto_ok": true
-    },
-    {
-      "host": "195.66.24.171",
-      "score": 200,
-      "ping": 111,
-      "clash_delay": 482,
-      "vision": true,
-      "proto_ok": true
-    },
-    {
       "host": "45.144.28.39",
       "score": 200,
-      "ping": 112,
-      "clash_delay": 463,
+      "ping": 124,
+      "clash_delay": 471,
       "vision": true,
       "proto_ok": true
     }
