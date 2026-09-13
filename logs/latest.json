@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-13 17:04:38 UTC",
+  "ts": "2026-09-13 18:04:55 UTC",
   "status": {
-    "generated_at": "2026-09-13T17:04:38.055889+00:00",
+    "generated_at": "2026-09-13T18:04:55.437919+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 28080,
-      "telegram_links": 413
+      "total_lines": 29446,
+      "telegram_links": 411
     },
     "filter": {
-      "unique": 16885
+      "unique": 17266
     },
     "monitor": {
-      "tcp_alive": 1314,
-      "checked": 2461,
+      "tcp_alive": 1318,
+      "checked": 2434,
       "pre_score_cap": 2500,
-      "skipped_dead": 39,
+      "skipped_dead": 66,
       "dead_cache": {
-        "entries": 56,
-        "active_dead": 56,
+        "entries": 231,
+        "active_dead": 231,
         "hours": 12
       }
     },
@@ -27,7 +27,7 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 2,
+      "passed": 3,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -49,11 +49,11 @@
       "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 28080,
-      "tg_links": 413,
-      "filtered": 16885,
-      "tcp_alive": 1314,
-      "clash_passed": 2,
+      "raw_lines": 29446,
+      "tg_links": 411,
+      "filtered": 17266,
+      "tcp_alive": 1318,
+      "clash_passed": 3,
       "clash_tested": 40,
       "exported": 1,
       "pick_source": "clash_soft_fill"
@@ -62,8 +62,8 @@
       {
         "host": "45.144.28.39",
         "score": 200,
-        "ping": 124,
-        "clash_delay": 486,
+        "ping": 126,
+        "clash_delay": 485,
         "vision": true,
         "proto_ok": true
       }
@@ -80,7 +80,7 @@
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=3, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
     }
   ]
