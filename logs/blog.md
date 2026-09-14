@@ -1,3 +1,15 @@
+## ✅ 2026-09-14 09:06:12 UTC · health=`ok` source=`clash_soft_fill`
+
+- raw=29108 tg=413 filtered=17359
+- tcp_alive=1296 clash=1/40
+- exported=1
+
+### Auto-fix commands
+
+- **P0** `LOW_EXPORT`: Clash ok=1, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
+- **P2** `CLASH_LOW_RATIO`: pass rate 1/40: расширить кандидатов, снизить score bias на мёртвые free-keys
+
+
 ## ✅ 2026-09-14 08:04:53 UTC · health=`ok` source=`clash_soft_fill`
 
 - raw=29070 tg=424 filtered=17432
@@ -379,18 +391,6 @@
 
 - raw=27527 tg=410 filtered=16864
 - tcp_alive=1288 clash=1/40
-- exported=1
-
-### Auto-fix commands
-
-- **P0** `LOW_EXPORT`: Clash ok=1, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
-- **P2** `CLASH_LOW_RATIO`: pass rate 1/40: расширить кандидатов, снизить score bias на мёртвые free-keys
-
-
-## ✅ 2026-09-12 22:04:45 UTC · health=`ok` source=`clash_soft_fill`
-
-- raw=27519 tg=425 filtered=16872
-- tcp_alive=1276 clash=1/40
 - exported=1
 
 ### Auto-fix commands
