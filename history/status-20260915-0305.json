@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-09-13T03:04:45.460309+00:00",
+  "generated_at": "2026-09-15T03:05:27.502031+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 17,
     "sources_fail": 5,
-    "total_lines": 27961,
-    "telegram_links": 428
+    "total_lines": 28425,
+    "telegram_links": 426
   },
   "filter": {
-    "unique": 16794
+    "unique": 17048
   },
   "monitor": {
-    "tcp_alive": 1083,
-    "checked": 2396,
+    "tcp_alive": 1261,
+    "checked": 2432,
     "pre_score_cap": 2500,
-    "skipped_dead": 104,
+    "skipped_dead": 68,
     "dead_cache": {
-      "entries": 310,
-      "active_dead": 310,
+      "entries": 40,
+      "active_dead": 40,
       "hours": 12
     }
   },
@@ -47,10 +47,10 @@
     "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 27961,
-    "tg_links": 428,
-    "filtered": 16794,
-    "tcp_alive": 1083,
+    "raw_lines": 28425,
+    "tg_links": 426,
+    "filtered": 17048,
+    "tcp_alive": 1261,
     "clash_passed": 1,
     "clash_tested": 40,
     "exported": 1,
@@ -60,8 +60,8 @@
     {
       "host": "45.144.28.39",
       "score": 200,
-      "ping": 147,
-      "clash_delay": 551,
+      "ping": 80,
+      "clash_delay": 350,
       "vision": true,
       "proto_ok": true
     }
