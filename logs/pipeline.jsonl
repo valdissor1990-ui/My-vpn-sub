@@ -1,10 +1,3 @@
-{"ts": "2026-09-14 10:02:54 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-14 10:03:06 UTC", "level": "info", "stage": "collect", "msg": "lines=29037 ok=17 fail=5"}
-{"ts": "2026-09-14 10:03:16 UTC", "level": "info", "stage": "tg", "msg": "links=415"}
-{"ts": "2026-09-14 10:03:16 UTC", "level": "info", "stage": "filter", "msg": "unique=17360"}
-{"ts": "2026-09-14 10:05:05 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1266"}
-{"ts": "2026-09-14 10:05:27 UTC", "level": "info", "stage": "clash", "msg": "passed=1/40 enabled=True"}
-{"ts": "2026-09-14 10:05:27 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
 {"ts": "2026-09-14 10:05:27 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
 {"ts": "2026-09-14 11:02:26 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
 {"ts": "2026-09-14 11:02:30 UTC", "level": "info", "stage": "collect", "msg": "lines=28899 ok=17 fail=5"}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-15 10:06:18 UTC", "level": "info", "stage": "clash", "msg": "passed=1/40 enabled=True"}
 {"ts": "2026-09-15 10:06:18 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
 {"ts": "2026-09-15 10:06:18 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
+{"ts": "2026-09-15 11:03:04 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-15 11:03:10 UTC", "level": "info", "stage": "collect", "msg": "lines=27601 ok=17 fail=5"}
+{"ts": "2026-09-15 11:03:21 UTC", "level": "info", "stage": "tg", "msg": "links=420"}
+{"ts": "2026-09-15 11:03:21 UTC", "level": "info", "stage": "filter", "msg": "unique=17273"}
+{"ts": "2026-09-15 11:05:11 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1274"}
+{"ts": "2026-09-15 11:05:38 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
+{"ts": "2026-09-15 11:05:38 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["CLASH_ZERO", "MIHOMO_DOWN"]}
