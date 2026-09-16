@@ -1,3 +1,15 @@
+## ✅ 2026-09-16 10:05:07 UTC · health=`ok` source=`tcp_fallback`
+
+- raw=28801 tg=397 filtered=16893
+- tcp_alive=1224 clash=0/40
+- exported=20
+
+### Auto-fix commands
+
+- **P0** `CLASH_ZERO`: Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok
+- **P1** `MIHOMO_DOWN`: mihomo не стартовал — проверить releases URL и bin/mihomo
+
+
 ## ✅ 2026-09-16 09:06:05 UTC · health=`ok` source=`tcp_fallback`
 
 - raw=28748 tg=405 filtered=16825
@@ -386,15 +398,3 @@
 
 - raw=27810 tg=426 filtered=17035
 - tcp_alive=1240 clash=2/40
-- exported=2
-
-### Auto-fix commands
-
-- **P0** `LOW_EXPORT`: Clash ok=2, export=2: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
-
-
-## ✅ 2026-09-15 00:05:06 UTC · health=`ok` source=`clash_soft_fill`
-
-- raw=27872 tg=440 filtered=17117
-- tcp_alive=1296 clash=1/40
-- exported=1
