@@ -1,12 +1,12 @@
 {
   "tag": "filtered",
-  "count": 16754,
+  "count": 16940,
   "protocols": {
     "hysteria2": 1566,
-    "trojan": 1472,
-    "vless": 12795,
-    "vmess": 735,
-    "hy2": 186
+    "trojan": 1462,
+    "vless": 12973,
+    "vmess": 758,
+    "hy2": 181
   },
-  "generated_at": "2026-09-16T20:02:38.462393+00:00"
+  "generated_at": "2026-09-16T21:02:15.436185+00:00"
 }
