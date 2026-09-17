@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-09-15T16:04:51.171790+00:00",
+  "generated_at": "2026-09-17T16:05:24.723095+00:00",
   "pick_source": "tcp_fallback",
   "collect": {
     "sources_ok": 17,
     "sources_fail": 5,
-    "total_lines": 28392,
-    "telegram_links": 430
+    "total_lines": 27959,
+    "telegram_links": 403
   },
   "filter": {
-    "unique": 16998
+    "unique": 17127
   },
   "monitor": {
-    "tcp_alive": 1274,
-    "checked": 2471,
+    "tcp_alive": 1224,
+    "checked": 2422,
     "pre_score_cap": 2500,
-    "skipped_dead": 29,
+    "skipped_dead": 78,
     "dead_cache": {
-      "entries": 60,
-      "active_dead": 60,
+      "entries": 59,
+      "active_dead": 59,
       "hours": 12
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 40,
+    "tested": 39,
     "passed": 0,
     "fallback_tcp": true,
     "test_urls": [
@@ -47,26 +47,34 @@
     "sub_clash.yaml": 19
   },
   "pipeline": {
-    "raw_lines": 28392,
-    "tg_links": 430,
-    "filtered": 16998,
-    "tcp_alive": 1274,
+    "raw_lines": 27959,
+    "tg_links": 403,
+    "filtered": 17127,
+    "tcp_alive": 1224,
     "clash_passed": 0,
-    "clash_tested": 40,
+    "clash_tested": 39,
     "exported": 20,
     "pick_source": "tcp_fallback"
   },
   "top_scores": [
     {
-      "host": "154.83.246.52",
+      "host": "45.10.164.85",
       "score": 140,
-      "ping": 96,
+      "ping": 36,
       "clash_delay": null,
       "vision": true,
       "proto_ok": null
     },
     {
-      "host": "154.222.9.240",
+      "host": "138.124.123.96",
+      "score": 140,
+      "ping": 38,
+      "clash_delay": null,
+      "vision": false,
+      "proto_ok": null
+    },
+    {
+      "host": "31.76.109.7",
       "score": 140,
       "ping": 105,
       "clash_delay": null,
@@ -74,49 +82,41 @@
       "proto_ok": null
     },
     {
-      "host": "154.83.246.225",
-      "score": 140,
-      "ping": 105,
-      "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "161.97.160.224",
-      "score": 140,
-      "ping": 106,
-      "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "154.222.9.166",
-      "score": 140,
-      "ping": 106,
-      "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "154.222.9.219",
-      "score": 140,
-      "ping": 107,
-      "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "95.85.239.102",
-      "score": 140,
-      "ping": 107,
-      "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "152.53.236.168",
+      "host": "95.85.226.117",
       "score": 140,
       "ping": 108,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "154.83.246.50",
+      "score": 140,
+      "ping": 109,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "45.90.162.226",
+      "score": 140,
+      "ping": 109,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "154.222.9.163",
+      "score": 140,
+      "ping": 112,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "195.66.24.169",
+      "score": 140,
+      "ping": 113,
       "clash_delay": null,
       "vision": true,
       "proto_ok": null
