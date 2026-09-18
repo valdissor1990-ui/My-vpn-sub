@@ -1,12 +1,10 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-09-18 17:05 UTC
-# Count: 4
+# Generated: 2026-09-18 18:05 UTC
+# Count: 2
 # source=clash_soft_fill
-# clash=6/38
+# clash=4/39
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://bae8d9ba-9f5d-4802-bb5e-bc0956a472d6@185.126.67.44:1932?encryption=none&flow=xtls-rprx-vision&fp=&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sni=www.vk.com&type=tcp#DE 🇩🇪 | @Raydikalx | 179462
+vless://bae8d9ba-9f5d-4802-bb5e-bc0956a472d6@185.126.67.44:1932?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.vk.com#🇩🇪 💥Config_jo-244
 vless://8ff62004-b728-4be5-b7e9-5f5c85489921@185.126.67.52:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=www.vk.com&fp=qq&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#0034
-vless://8ff62004-b728-4be5-b7e9-5f5c85489921@185.126.67.60:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sni=www.vk.com&type=tcp#DE 🇩🇪 | @Raydikalx | DB33FA
-vless://16b3793b-3335-4832-b1fd-877b2c5e15d6@45.90.162.226:24443?&security=reality&flow=xtls-rprx-vision&pbk=pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo&sid=4d83d822573492aa&fp=firefox&sni=www.vk.com&type=tcp&headerType=none&host=www.vk.com&path=%2F
