@@ -1,7 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-09-17 23:04 UTC
-# Count: 1
+# Generated: 2026-09-18 00:05 UTC
+# Count: 2
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://bae8d9ba-9f5d-4802-bb5e-bc0956a472d6@185.126.67.44:1932?type=tcp&security=reality&flow=xtls-rprx-vision&fp=qq&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sni=www.vk.com#VLESS-TCP-REALITY-%F0%9F%87%A9%F0%9F%87%AA%28DE%29-185.126.67.44
+vless://bae8d9ba-9f5d-4802-bb5e-bc0956a472d6@185.126.67.44:1932?encryption=none&flow=xtls-rprx-vision&fp=&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sni=www.vk.com&type=tcp#DE 🇩🇪 | @Raydikalx | 179462
+vless://8ff62004-b728-4be5-b7e9-5f5c85489921@185.126.67.52:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sni=www.vk.com#DE 🇩🇪 | @Raydikalx | 2C4B81
