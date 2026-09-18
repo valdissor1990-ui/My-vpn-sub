@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-09-18 16:05 UTC
+# My VPN Sub Clash Meta · 2026-09-18 17:05 UTC
 # nodes: 4
 mixed-port: 7890
 allow-lan: false
@@ -6,22 +6,22 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 561ms | 45.90.162.226:24443"
+    name: "VISION | 476ms | 185.126.67.44:1932"
     type: vless
-    server: 45.90.162.226
-    port: 24443
-    uuid: 16b3793b-3335-4832-b1fd-877b2c5e15d6
+    server: 185.126.67.44
+    port: 1932
+    uuid: bae8d9ba-9f5d-4802-bb5e-bc0956a472d6
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     servername: www.vk.com
     reality-opts:
-      public-key: pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo
-      short-id: 4d83d822573492aa
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 746ms | 185.126.67.52:443"
+    name: "VISION | 465ms | 185.126.67.52:443"
     type: vless
     server: 185.126.67.52
     port: 443
@@ -36,7 +36,7 @@ proxies:
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 434ms | 185.126.67.60:443"
+    name: "VISION | 461ms | 185.126.67.60:443"
     type: vless
     server: 185.126.67.60
     port: 443
@@ -44,36 +44,36 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: qq
+    client-fingerprint: firefox
     servername: www.vk.com
     reality-opts:
       public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 452ms | 185.126.67.44:1932"
+    name: "VISION | 737ms | 45.90.162.226:24443"
     type: vless
-    server: 185.126.67.44
-    port: 1932
-    uuid: bae8d9ba-9f5d-4802-bb5e-bc0956a472d6
+    server: 45.90.162.226
+    port: 24443
+    uuid: 16b3793b-3335-4832-b1fd-877b2c5e15d6
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     servername: www.vk.com
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
+      public-key: pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo
+      short-id: 4d83d822573492aa
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 561ms | 45.90.162.226:24443"
-      - "VISION | 746ms | 185.126.67.52:443"
-      - "VISION | 434ms | 185.126.67.60:443"
-      - "VISION | 452ms | 185.126.67.44:1932"
+      - "VISION | 476ms | 185.126.67.44:1932"
+      - "VISION | 465ms | 185.126.67.52:443"
+      - "VISION | 461ms | 185.126.67.60:443"
+      - "VISION | 737ms | 45.90.162.226:24443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -81,10 +81,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 561ms | 45.90.162.226:24443"
-      - "VISION | 746ms | 185.126.67.52:443"
-      - "VISION | 434ms | 185.126.67.60:443"
-      - "VISION | 452ms | 185.126.67.44:1932"
+      - "VISION | 476ms | 185.126.67.44:1932"
+      - "VISION | 465ms | 185.126.67.52:443"
+      - "VISION | 461ms | 185.126.67.60:443"
+      - "VISION | 737ms | 45.90.162.226:24443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
