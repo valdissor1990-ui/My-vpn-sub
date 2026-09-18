@@ -1,28 +1,9 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-09-18 05:04 UTC
-# Count: 20
-# source=tcp_fallback
-# clash=0/40
+# Generated: 2026-09-18 06:05 UTC
+# Count: 1
+# source=clash_soft_fill
+# clash=1/39
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://5e19b3c8-c1dc-4163-95e2-895319c15d6c@45.10.164.85:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=06GvG7PU5F3Hgq-vUH24tU0tpsbGMCCt26BSvlaBNUE&sid=dfbfa87e9f37f1f0&sni=cloud.mail.ru
-vless://c35474ed-d6a8-4213-8edb-5c333e5b5f7c@138.124.123.96:443?encryption=none&fp=firefox&path=/maps_common/v1/data/subscriptions/web&pbk=SEUx3TGHAcwEfAD2DShY_YdpFHRH6UdTUBpKBrRdyEE&security=reality&sid=d435a0d34ef3b60e&sni=cloud-api.yandex.ru&type=xhttp#%F0%9F%87%AF%F0%9F%87%B5%20Japan%20%7C%20Reality%20%7C%20%40anonymouskeys
-vless://9e09f1ce-45d4-0920-b077-81b0dae00db2@31.76.109.7:80?security=reality&encryption=none&pbk=4iWZChsH0rnqtn89xiB1evDLkFjmgh-3WYjx8cknZC0&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=console.cloud.yandex.ru&sid=a8b9c0d1e2f34567#NL 🇳🇱 | @Raydikalx | A6857F
-vless://aeb9d636-75a2-5742-9778-e999b6290bab@185.236.20.129:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=mRPsim0tDEXMIT7YXC1GetstcvR_zUxOS9aO3amQpXI&security=reality&sid=ffffffffff&sni=vk.com&type=tcp#
-vless://536c58c0-a41d-4381-bb80-0db76a4d6204@154.83.246.41:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&security=reality&sid=d3ee47fc2f553c44&sni=storage.yandex.net&type=tcp#Reality%2C%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%5BV.O.I.D%5D
-vless://7216b4e8-e935-4d68-b959-73d145accdee@154.83.246.50:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&security=reality&sid=500aec9e9e5e2212&sni=storage.yandex.net&type=tcp
-vless://d2042070-c247-4226-a3ac-15337923e00d@154.83.246.225:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&security=reality&sid=500aec9e9e5e2212&sni=storage.yandex.net&type=tcp#Reality%2C%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%5BV.O.I.D%5D
-vless://aa5b231c-4e18-4ae6-b83c-a293f51c0dfa@154.222.9.157:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=storage.yandex.net&security=reality&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&sid=8d3293f0066e129a#[24645][SC][0][VLESS][None][ext_raw.githubusercontent.com][2026-09-16][2026-09-16
-vless://c90f26f0-5a20-4573-a31a-c27b3c96933e@154.83.246.52:443?encryption=none&flow=xtls-rprx-vision&type=raw&headerType=none&security=reality&pbk=pPi-WO8qQFFZ9UJWNLW9YClbjcoAAZWJQ2_FM3Kjhz8&sni=storage.yandex.net&sid=500aec9e9e5e2212#[🇳🇱]
-vless://f552a78e-400c-4332-8265-8e5da1c21eeb@154.222.9.219:8443?type=tcp&security=reality&sni=storage.yandex.net&flow=xtls-rprx-vision&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&sid=5be97fb85093a3a9#@DeltaKroneckerGithub
-vless://7216b4e8-e935-4d68-b959-73d145accdee@154.222.9.240:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&security=reality&sid=8d3293f0066e129a&sni=storage.yandex.net&type=tcp
-vless://16b3793b-3335-4832-b1fd-877b2c5e15d6@45.90.162.226:24443?&security=reality&flow=xtls-rprx-vision&pbk=pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo&sid=4d83d822573492aa&fp=firefox&sni=www.vk.com&type=tcp&headerType=none&host=www.vk.com&path=%2F
-vless://d2042070-c247-4226-a3ac-15337923e00d@154.222.9.166:443?type=tcp&security=reality&sni=storage.yandex.net&flow=xtls-rprx-vision&pbk=ISa-DZOI4LRRb9DHMFYm5oFqBXDjYzz0hVWUfWvzLmo&sid=dc8109baf0f607ea#TCP%2C%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%5BV.O.I.D%5D
-vless://b81b4d1b-7f20-48f1-82dc-d24bef898cab@161.97.160.224:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0&security=reality&sid=e6&sni=passport.yandex.ru&type=tcp#GB 🇬🇧 | @Raydikalx | 026F23
-vless://3f02f5cd-3e03-436c-a151-02a9b9ac5966@78.17.150.127:443?security=reality&encryption=none&pbk=oX_8IyRmI_X4pPWaGTbduLyvlZWwLkZlxJKmtvjmqEg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=smartcaptcha.yandexcloud.net&sid=03a70b17f8036009#@V2rayng_market_1378_bot
-vless://2c5268a3-4d6b-43ec-8930-a5de3d3cbbb7@89.125.78.190:8443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=r5EzvBAd05xtjMQD_gKnYPrHwDyRD-xJvKxWd_Xq7FA&security=reality&sid=fcdc24ecde9642&sni=eh.vk.com&type=tcp
-vless://2c5268a3-4d6b-43ec-8930-a5de3d3cbbb7@89.125.78.81:8443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=r5EzvBAd05xtjMQD_gKnYPrHwDyRD-xJvKxWd_Xq7FA&security=reality&sid=fcdc24ecde9642&sni=eh.vk.com&type=tcp
-vless://fe0afb65-a43e-4493-81b9-6d9edd57f79c@2.26.90.204:443?encryption=none&type=xhttp&path=%2Fvideo%2Fdownload&host=evovpn.pro&mode=stream-up&security=reality&sni=www.yandex.ru&fp=edge&pbk=ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4&sid=b4c823&spx=%2F#AetrisVPN
-vless://8ff62004-b728-4be5-b7e9-5f5c85489921@185.126.67.52:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=www.vk.com&fp=qq&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#0034
-vless://f95706c5-16a0-481b-b6ca-69446130da5e@78.159.247.99:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=GkHB79Vhb0L7LCG9P2MNFfkHxwut2Qql1dQ8zz74pgM&security=reality&sid=0fafb2da2621&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%8C%90%20Czechia%20%7C%20Reality%20Vision%20%7C%20%40anonymouskeys
+vless://bae8d9ba-9f5d-4802-bb5e-bc0956a472d6@185.126.67.44:1932?encryption=none&flow=xtls-rprx-vision&fp=&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sni=www.vk.com&type=tcp#DE 🇩🇪 | @Raydikalx | 179462
