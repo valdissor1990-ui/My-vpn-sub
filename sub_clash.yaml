@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-09-18 18:05 UTC
+# My VPN Sub Clash Meta · 2026-09-18 21:22 UTC
 # nodes: 2
 mixed-port: 7890
 allow-lan: false
@@ -6,7 +6,22 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 783ms | 185.126.67.44:1932"
+    name: "VISION | 387ms | 185.126.67.60:443"
+    type: vless
+    server: 185.126.67.60
+    port: 443
+    uuid: 8ff62004-b728-4be5-b7e9-5f5c85489921
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: www.vk.com
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 380ms | 185.126.67.44:1932"
     type: vless
     server: 185.126.67.44
     port: 1932
@@ -20,28 +35,13 @@ proxies:
       public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
       short-id: 
     flow: xtls-rprx-vision
-  -
-    name: "VISION | 779ms | 185.126.67.52:443"
-    type: vless
-    server: 185.126.67.52
-    port: 443
-    uuid: 8ff62004-b728-4be5-b7e9-5f5c85489921
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: www.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 783ms | 185.126.67.44:1932"
-      - "VISION | 779ms | 185.126.67.52:443"
+      - "VISION | 387ms | 185.126.67.60:443"
+      - "VISION | 380ms | 185.126.67.44:1932"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 783ms | 185.126.67.44:1932"
-      - "VISION | 779ms | 185.126.67.52:443"
+      - "VISION | 387ms | 185.126.67.60:443"
+      - "VISION | 380ms | 185.126.67.44:1932"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
