@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-09-19 02:01 UTC
+# My VPN Sub Clash Meta · 2026-09-19 07:01 UTC
 # nodes: 3
 mixed-port: 7890
 allow-lan: false
@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 563ms | 185.126.67.60:443"
+    name: "VISION | 429ms | 185.126.67.60:443"
     type: vless
     server: 185.126.67.60
     port: 443
@@ -21,7 +21,7 @@ proxies:
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 567ms | 185.126.67.44:1932"
+    name: "VISION | 445ms | 185.126.67.44:1932"
     type: vless
     server: 185.126.67.44
     port: 1932
@@ -36,7 +36,7 @@ proxies:
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 851ms | 185.126.67.52:443"
+    name: "VISION | 740ms | 185.126.67.52:443"
     type: vless
     server: 185.126.67.52
     port: 443
@@ -55,9 +55,9 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 563ms | 185.126.67.60:443"
-      - "VISION | 567ms | 185.126.67.44:1932"
-      - "VISION | 851ms | 185.126.67.52:443"
+      - "VISION | 429ms | 185.126.67.60:443"
+      - "VISION | 445ms | 185.126.67.44:1932"
+      - "VISION | 740ms | 185.126.67.52:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -65,9 +65,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 563ms | 185.126.67.60:443"
-      - "VISION | 567ms | 185.126.67.44:1932"
-      - "VISION | 851ms | 185.126.67.52:443"
+      - "VISION | 429ms | 185.126.67.60:443"
+      - "VISION | 445ms | 185.126.67.44:1932"
+      - "VISION | 740ms | 185.126.67.52:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
