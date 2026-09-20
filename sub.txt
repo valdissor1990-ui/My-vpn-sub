@@ -1,28 +1,9 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-09-19 23:46 UTC
-# Count: 20
-# source=tcp_fallback
-# clash=0/39
+# Generated: 2026-09-20 02:05 UTC
+# Count: 1
+# source=clash_soft_fill
+# clash=1/40
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://f95706c5-16a0-481b-b6ca-69446130da5e@78.159.247.99:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=GkHB79Vhb0L7LCG9P2MNFfkHxwut2Qql1dQ8zz74pgM&security=reality&sid=0fafb2da2621&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%8C%90%20Czechia%20%7C%20Reality%20Vision%20%7C%20%40anonymouskeys
-vless://838de912-398a-4c0e-9228-0fd44b0d1f8b@157.173.27.45:443?type=tcp&security=reality&sni=travel.yandex.ru&fp=firefox&flow=xtls-rprx-vision&pbk=KP-P4zenuMuYe3UxPCjDEVmgqI4GiRZ95UbsAfmL71g&sid=970098f31b96a3e8#TCP%2C%20%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%9F%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%5BV.O.I.D%5D
-vless://5e19b3c8-c1dc-4163-95e2-895319c15d6c@138.124.39.147:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=p3sQ8oByv8AXIm2jaOdFvAmxTeMGjr9uwCqyFvHpJz0&sid=d2cf75c5e1482b4e&sni=cloud.mail.ru#@DeltaKroneckerGithub
-vless://953e3703-4ddc-49a7-a087-c96049d22340@185.32.6.71:443?flow=xtls-rprx-vision&fp=firefox&pbk=lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk&security=reality&sid=99fe1ec015fde70c&sni=storage.yandex.net&type=tcp#%F0%9F%87%B5%F0%9F%87%B1%20AetrisVPN
-vless://e500b0a1-dffa-4983-9217-484913715071@144.31.216.16:444?encryption=none&flow=xtls-rprx-vision&fp=chrome&headerType=none&pbk=wMbKwMppoyj--v07kQdzy73hrnQ2MaM_WfVf4zVqJko&security=reality&sid=6ba85179e30d4fc2&sni=eh.vk.ru&type=tcp#%F0%9F%8C%90%20Kazakhstan%20%7C%20Reality%20Vision%20%7C%20%40anonymouskeys
-vless://3d243df5-9cda-4aac-89d5-354de77d79e2@2.27.57.88:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=mirror.yandex.ru&fp=chrome&pbk=IarU4xicX8qiVO5nqzeHc6MK9A_Vw9YaAtnPHB4DswU&sid=916a&type=tcp&headerType=none
-vless://3cb9f2c2-cd60-4616-963e-6a1c5d1c8b02@144.31.1.133:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=kEhVzEXS_myQF6LPpKPWEI8Ha2-mmNMyLItXoVa8SD4&security=reality&sni=eh.vk.com&type=tcp
-vless://3cb9f2c2-cd60-4616-963e-6a1c5d1c8b02@144.31.1.138:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=eh.vk.com&fp=chrome&pbk=kEhVzEXS_myQF6LPpKPWEI8Ha2-mmNMyLItXoVa8SD4&type=tcp&headerType=none
-vless://5bfc6650-8b56-0012-b0e9-b98fc6367c0d@82.40.62.229:443?security=reality&encryption=none&pbk=NBjOloEUgyAHoLqvcGo_t3jTY8Jya77j5dsNB1VJ8Bo&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=auto.api-yandex.net&sid=0f4dacffd272e65f#PL 🇵🇱 | @Raydikalx | C341E1
-vless://3d243df5-9cda-4aac-89d5-354de77d79e2@2.27.57.89:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=mirror.yandex.ru&pbk=IarU4xicX8qiVO5nqzeHc6MK9A_Vw9YaAtnPHB4DswU&sid=916a&type=tcp#@DeltaKroneckerGithub
-vless://326d116e-25d2-460b-88dc-88052bcff6b4@45.84.222.30:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=0RW5P5qI5sej7PwhLixMUlClXpK-be1TLHKInhMhmh8&security=reality&sni=eh.vk.com&type=tcp
-vless://b5c74983-8400-4fb3-81a7-d5b3ab559537@217.13.104.148:443?type=tcp&security=reality&sni=travel.yandex.ru&fp=chrome&flow=xtls-rprx-vision&pbk=FkmYFobwxLMLEktYXywmjthuEYCZggITsxwPNasTKUg&sid=17802e8ff84f12df
-vless://13b54a52-a29f-4737-9941-26f54a4f87c4@144.31.76.150:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4&sid=b4c823&sni=www.yandex.ru#[338ms
-vless://928beba1-eef6-478a-b06f-db6bc020e078@217.13.105.1:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ZGwYjRp5RxlVpHUTPzi7pB4ZZuDU5FZEaFgBM71teiQ&security=reality&sid=0669a3e6b300d069&sni=eh.vk.com&type=tcp#[342ms
-vless://40b33e55-6049-4fac-940e-7b38a3f5f270@217.13.104.133:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=randomized&sni=eh.vk.com&pbk=ZGwYjRp5RxlVpHUTPzi7pB4ZZuDU5FZEaFgBM71teiQ&sid=0669a3e6b300d069&spx=/#%F0%9F%87%AD%F0%9F%87%BA%20HU%20%7C%20%E2%80%94%20%7C%2097%20%7C%20%40ByeWhiteLists2
-vless://d7d26654-6979-480a-8865-9ed3563123e4@5.252.155.225:443?security=reality&flow=xtls-rprx-vision&pbk=Ua80Sem5yHVDbRu37u1yYM5vWBzinhru__7ACrvnx1E&type=tcp&headerType=none&encryption=none&sni=console.cloud.yandex.ru&fp=chrome#DE 🇩🇪 | @Raydikalx | B9399C
-vless://c478248b-6e59-424f-82f1-4791e7f8c4bb@189.74.117.4:443?&security=reality&flow=xtls-rprx-vision&pbk=IuvAXlAWBpeXehmEk0P-FIGTctUhny2H3UilbWWfJC0&sid=122218f4c1f172e4&fp=firefox&sni=api.yandex-api.org&type=tcp&headerType=none&host=api.yandex-api.org&path=%2F#@DeltaKroneckerGithub
-vless://3d243df5-9cda-4aac-89d5-354de77d79e2@2.27.57.92:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=mirror.yandex.ru&pbk=IarU4xicX8qiVO5nqzeHc6MK9A_Vw9YaAtnPHB4DswU&sid=916a&type=tcp&headerType=none
-vless://87b47efd-34a7-4271-a544-0b8f9feb115c@217.13.105.4:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=m.vkvideo.cs7777.vk.ru&pbk=dfpjZXFTymcxlvi1QnQwuja8AVmTBtHiKMOecY3_l2E#TCP%2C%20VK%20%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%20%5BV.O.I.D%5D
-vless://953358cb-82ba-4296-960d-6d2ec3468f4c@193.148.57.60:24444?security=reality&encryption=none&pbk=l84FK9JIi4Bx-mhBZIm4K4Td5V_ekOobJmkvNAvklSM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yandex.ru&sid=107acb307423c5aa#FI 🇫🇮 | @Raydikalx | A69672
+vless://6a9f6c23-2b38-4720-9305-337f494f50a4@138.124.109.158:443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=api-maps.yandex.ru&fp=firefox&pbk=cttKOS1BlF-u-mvX63PWNPJK6W_RXfx1wo8yjBEt1hI&sid=a2eb8d694a5480ff&allowInsecure=1#DailyCfg%20%F0%9F%87%B3%F0%9F%87%B1%20%E2%94%87%20VLESS%20%C2%B7%20Aeza%20International%20LTD
