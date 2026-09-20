@@ -1,9 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-09-20 16:38 UTC
-# Count: 3
+# Generated: 2026-09-20 19:11 UTC
+# Count: 1
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://18bac717-76b7-4673-804a-39b63752b20c@93.152.224.133:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&security=reality&encryption=none&pbk=IYeCWMyOQAzAizI5Ll_bXInQnUpdz_J-l3hTD1dq_ns&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=eh.vk.ru&sid=13c51b23da07703c#DE 🇩🇪 | @Raydikalx | 3859E2
-vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@193.56.135.212:9543?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=storage.yandexcloud.net&fp=chrome&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&sid=123abcde&allowInsecure=1#IQ 🇮🇶 | @Raydikalx | FDB97D
-vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@91.196.32.216:9543?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&host=storage.yandexcloud.net&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcdf#DE 🇩🇪 | @Raydikalx | 317826
+vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@91.196.32.216:9543?security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&host=storage.yandexcloud.net&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcdf#DE 🇩🇪 | @Raydikalx | 317826
