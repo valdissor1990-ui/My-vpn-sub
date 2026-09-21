@@ -1,12 +1,27 @@
-# My VPN Sub Clash Meta · 2026-09-21 20:13 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-09-21 23:45 UTC
+# nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 516ms | 193.56.135.212:9543"
+    name: "VISION | 2685ms | 144.31.214.172:9443"
+    type: vless
+    server: 144.31.214.172
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2bc
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 594ms | 193.56.135.212:9543"
     type: vless
     server: 193.56.135.212
     port: 9543
@@ -21,7 +36,7 @@ proxies:
       short-id: 123abcde
     flow: xtls-rprx-vision
   -
-    name: "VISION | 645ms | 91.196.32.216:9543"
+    name: "VISION | 557ms | 91.196.32.216:9543"
     type: vless
     server: 91.196.32.216
     port: 9543
@@ -29,7 +44,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: safari
+    client-fingerprint: chrome
     servername: storage.yandexcloud.net
     reality-opts:
       public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
@@ -40,8 +55,9 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 516ms | 193.56.135.212:9543"
-      - "VISION | 645ms | 91.196.32.216:9543"
+      - "VISION | 2685ms | 144.31.214.172:9443"
+      - "VISION | 594ms | 193.56.135.212:9543"
+      - "VISION | 557ms | 91.196.32.216:9543"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +65,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 516ms | 193.56.135.212:9543"
-      - "VISION | 645ms | 91.196.32.216:9543"
+      - "VISION | 2685ms | 144.31.214.172:9443"
+      - "VISION | 594ms | 193.56.135.212:9543"
+      - "VISION | 557ms | 91.196.32.216:9543"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
