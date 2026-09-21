@@ -1,8 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-09-21 08:20 UTC
-# Count: 2
+# Generated: 2026-09-21 15:28 UTC
+# Count: 1
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
 vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@91.196.32.216:9543?security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&host=storage.yandexcloud.net&headerType=none&fp=safari&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcdf#%F0%9F%87%A9%F0%9F%87%AA177253%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me%2FSOSkeyNET
-vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@193.56.135.212:9543?security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcde#IQ 🇮🇶 | @Raydikalx | FDB97D
