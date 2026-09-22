@@ -1,14 +1,29 @@
-# My VPN Sub Clash Meta · 2026-09-22 13:15 UTC
-# nodes: 3
+# My VPN Sub Clash Meta · 2026-09-22 17:50 UTC
+# nodes: 5
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 6095ms | 194.150.166.229:9443"
+    name: "VISION | 5447ms | 194.150.166.227:9443"
     type: vless
-    server: 194.150.166.229
+    server: 194.150.166.227
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2ba
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 1180ms | 145.223.70.129:9443"
+    type: vless
+    server: 145.223.70.129
     port: 9443
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -18,10 +33,25 @@ proxies:
     servername: storage.yandexcloud.net
     reality-opts:
       public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: ad20d2ba
+      short-id: ad20d2bc
     flow: xtls-rprx-vision
   -
-    name: "VISION | 407ms | 193.56.135.212:9543"
+    name: "VISION | 554ms | 144.31.214.172:9443"
+    type: vless
+    server: 144.31.214.172
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2bc
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 386ms | 193.56.135.212:9543"
     type: vless
     server: 193.56.135.212
     port: 9543
@@ -36,28 +66,30 @@ proxies:
       short-id: 123abcde
     flow: xtls-rprx-vision
   -
-    name: "VISION | 366ms | 91.196.32.216:9543"
+    name: "VISION | 6776ms | 194.150.166.229:9443"
     type: vless
-    server: 91.196.32.216
-    port: 9543
+    server: 194.150.166.229
+    port: 9443
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: safari
     servername: storage.yandexcloud.net
     reality-opts:
       public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: 123abcdf
+      short-id: ad20d2ba
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 6095ms | 194.150.166.229:9443"
-      - "VISION | 407ms | 193.56.135.212:9543"
-      - "VISION | 366ms | 91.196.32.216:9543"
+      - "VISION | 5447ms | 194.150.166.227:9443"
+      - "VISION | 1180ms | 145.223.70.129:9443"
+      - "VISION | 554ms | 144.31.214.172:9443"
+      - "VISION | 386ms | 193.56.135.212:9543"
+      - "VISION | 6776ms | 194.150.166.229:9443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -65,9 +97,11 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 6095ms | 194.150.166.229:9443"
-      - "VISION | 407ms | 193.56.135.212:9543"
-      - "VISION | 366ms | 91.196.32.216:9543"
+      - "VISION | 5447ms | 194.150.166.227:9443"
+      - "VISION | 1180ms | 145.223.70.129:9443"
+      - "VISION | 554ms | 144.31.214.172:9443"
+      - "VISION | 386ms | 193.56.135.212:9543"
+      - "VISION | 6776ms | 194.150.166.229:9443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
