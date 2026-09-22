@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-09-22 02:12 UTC
+# My VPN Sub Clash Meta · 2026-09-22 08:03 UTC
 # nodes: 2
 mixed-port: 7890
 allow-lan: false
@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 415ms | 193.56.135.212:9543"
+    name: "VISION | 526ms | 193.56.135.212:9543"
     type: vless
     server: 193.56.135.212
     port: 9543
@@ -21,7 +21,7 @@ proxies:
       short-id: 123abcde
     flow: xtls-rprx-vision
   -
-    name: "VISION | 354ms | 91.196.32.216:9543"
+    name: "VISION | 520ms | 91.196.32.216:9543"
     type: vless
     server: 91.196.32.216
     port: 9543
@@ -40,8 +40,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 415ms | 193.56.135.212:9543"
-      - "VISION | 354ms | 91.196.32.216:9543"
+      - "VISION | 526ms | 193.56.135.212:9543"
+      - "VISION | 520ms | 91.196.32.216:9543"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 415ms | 193.56.135.212:9543"
-      - "VISION | 354ms | 91.196.32.216:9543"
+      - "VISION | 526ms | 193.56.135.212:9543"
+      - "VISION | 520ms | 91.196.32.216:9543"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
