@@ -1,8 +1,9 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-09-22 08:03 UTC
-# Count: 2
+# Generated: 2026-09-22 13:15 UTC
+# Count: 3
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
+vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@194.150.166.229:9443?encryption=none&type=tcp&flow=xtls-rprx-vision&security=reality&sni=storage.yandexcloud.net&fp=safari&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&sid=ad20d2ba&allowInsecure=1#GB 🇬🇧 | @Raydikalx | 5FDD52
+vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@91.196.32.216:9543?security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&host=storage.yandexcloud.net&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcdf#DE 🇩🇪 | @Raydikalx | 317826
 vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@193.56.135.212:9543?security=reality&encryption=none&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&sid=123abcde#IQ 🇮🇶 | @Raydikalx | FDB97D
-vless://ff6d2dda-7b90-404e-9951-34b3124bfdfa@91.196.32.216:9543?security=reality&flow=xtls-rprx-vision&sni=storage.yandexcloud.net&type=tcp&host=storage.yandexcloud.net&fp=safari&pbk=M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc&sid=123abcdf#🔒

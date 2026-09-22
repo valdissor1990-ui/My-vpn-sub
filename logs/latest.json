@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-22 08:03:36 UTC",
+  "ts": "2026-09-22 13:15:09 UTC",
   "status": {
-    "generated_at": "2026-09-22T08:03:36.645030+00:00",
+    "generated_at": "2026-09-22T13:15:09.000739+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 28655,
-      "telegram_links": 450
+      "total_lines": 28379,
+      "telegram_links": 451
     },
     "filter": {
-      "unique": 16576
+      "unique": 16696
     },
     "monitor": {
-      "tcp_alive": 1067,
-      "checked": 2466,
+      "tcp_alive": 1060,
+      "checked": 2500,
       "pre_score_cap": 2500,
-      "skipped_dead": 34,
+      "skipped_dead": 0,
       "dead_cache": {
-        "entries": 0,
-        "active_dead": 0,
+        "entries": 78,
+        "active_dead": 78,
         "hours": 12
       }
     },
@@ -27,7 +27,7 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 2,
+      "passed": 5,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -40,38 +40,46 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 2,
-      "sub_vision.txt": 2,
-      "sub_white.txt": 2,
+      "sub.txt": 3,
+      "sub_vision.txt": 3,
+      "sub_white.txt": 3,
       "sub_black.txt": 0,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 2,
-      "sub_clash.yaml": 2
+      "sub_reality.txt": 3,
+      "sub_clash.yaml": 3
     },
     "pipeline": {
-      "raw_lines": 28655,
-      "tg_links": 450,
-      "filtered": 16576,
-      "tcp_alive": 1067,
-      "clash_passed": 2,
+      "raw_lines": 28379,
+      "tg_links": 451,
+      "filtered": 16696,
+      "tcp_alive": 1060,
+      "clash_passed": 5,
       "clash_tested": 40,
-      "exported": 2,
+      "exported": 3,
       "pick_source": "clash_soft_fill"
     },
     "top_scores": [
       {
+        "host": "194.150.166.229",
+        "score": 200,
+        "ping": 80,
+        "clash_delay": 6095,
+        "vision": true,
+        "proto_ok": true
+      },
+      {
         "host": "193.56.135.212",
         "score": 200,
-        "ping": 134,
-        "clash_delay": 526,
+        "ping": 91,
+        "clash_delay": 407,
         "vision": true,
         "proto_ok": true
       },
       {
         "host": "91.196.32.216",
         "score": 200,
-        "ping": 135,
-        "clash_delay": 520,
+        "ping": 89,
+        "clash_delay": 366,
         "vision": true,
         "proto_ok": true
       }
@@ -88,7 +96,7 @@
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=2, export=2: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=5, export=3: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
     }
   ]
