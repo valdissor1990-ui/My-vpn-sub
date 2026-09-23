@@ -1,74 +1,14 @@
-# My VPN Sub Clash Meta · 2026-09-23 13:58 UTC
-# nodes: 9
+# My VPN Sub Clash Meta · 2026-09-23 18:06 UTC
+# nodes: 7
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 393ms | 193.56.135.137:9543"
+    name: "VISION | 851ms | 132.243.242.97:9543"
     type: vless
-    server: 193.56.135.137
-    port: 9543
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: 123abcde
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 373ms | 193.56.135.212:9543"
-    type: vless
-    server: 193.56.135.212
-    port: 9543
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: 123abcde
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 418ms | 179.254.111.0:443"
-    type: vless
-    server: 179.254.111.0
-    port: 443
-    uuid: 94006a20-6cd6-4751-a14d-c5a0bacb68bb
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: safari
-    servername: yandex.ru
-    reality-opts:
-      public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-      short-id: 992e5a9a
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 406ms | 193.56.135.233:9543"
-    type: vless
-    server: 193.56.135.233
-    port: 9543
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: safari
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: 123abcde
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 396ms | 91.196.32.216:9543"
-    type: vless
-    server: 91.196.32.216
+    server: 132.243.242.97
     port: 9543
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -81,24 +21,9 @@ proxies:
       short-id: 123abcdf
     flow: xtls-rprx-vision
   -
-    name: "VISION | 462ms | 194.150.166.108:9443"
+    name: "VISION | 738ms | 194.150.166.230:9443"
     type: vless
-    server: 194.150.166.108
-    port: 9443
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: ad20d2ba
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 360ms | 194.150.166.229:9443"
-    type: vless
-    server: 194.150.166.229
+    server: 194.150.166.230
     port: 9443
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -111,7 +36,22 @@ proxies:
       short-id: ad20d2ba
     flow: xtls-rprx-vision
   -
-    name: "VISION | 344ms | 194.150.166.227:9443"
+    name: "VISION | 5768ms | 193.56.135.137:9543"
+    type: vless
+    server: 193.56.135.137
+    port: 9543
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: 123abcde
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 523ms | 194.150.166.227:9443"
     type: vless
     server: 194.150.166.227
     port: 9443
@@ -126,9 +66,39 @@ proxies:
       short-id: ad20d2ba
     flow: xtls-rprx-vision
   -
-    name: "VISION | 1394ms | 145.223.70.129:9443"
+    name: "VISION | 514ms | 194.150.166.108:9443"
     type: vless
-    server: 145.223.70.129
+    server: 194.150.166.108
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2ba
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 636ms | 179.254.111.0:443"
+    type: vless
+    server: 179.254.111.0
+    port: 443
+    uuid: 94006a20-6cd6-4751-a14d-c5a0bacb68bb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: yandex.ru
+    reality-opts:
+      public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
+      short-id: 992e5a9a
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 524ms | 194.150.166.229:9443"
+    type: vless
+    server: 194.150.166.229
     port: 9443
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -138,22 +108,20 @@ proxies:
     servername: storage.yandexcloud.net
     reality-opts:
       public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: ad20d2bc
+      short-id: ad20d2ba
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 393ms | 193.56.135.137:9543"
-      - "VISION | 373ms | 193.56.135.212:9543"
-      - "VISION | 418ms | 179.254.111.0:443"
-      - "VISION | 406ms | 193.56.135.233:9543"
-      - "VISION | 396ms | 91.196.32.216:9543"
-      - "VISION | 462ms | 194.150.166.108:9443"
-      - "VISION | 360ms | 194.150.166.229:9443"
-      - "VISION | 344ms | 194.150.166.227:9443"
-      - "VISION | 1394ms | 145.223.70.129:9443"
+      - "VISION | 851ms | 132.243.242.97:9543"
+      - "VISION | 738ms | 194.150.166.230:9443"
+      - "VISION | 5768ms | 193.56.135.137:9543"
+      - "VISION | 523ms | 194.150.166.227:9443"
+      - "VISION | 514ms | 194.150.166.108:9443"
+      - "VISION | 636ms | 179.254.111.0:443"
+      - "VISION | 524ms | 194.150.166.229:9443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -161,15 +129,13 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 393ms | 193.56.135.137:9543"
-      - "VISION | 373ms | 193.56.135.212:9543"
-      - "VISION | 418ms | 179.254.111.0:443"
-      - "VISION | 406ms | 193.56.135.233:9543"
-      - "VISION | 396ms | 91.196.32.216:9543"
-      - "VISION | 462ms | 194.150.166.108:9443"
-      - "VISION | 360ms | 194.150.166.229:9443"
-      - "VISION | 344ms | 194.150.166.227:9443"
-      - "VISION | 1394ms | 145.223.70.129:9443"
+      - "VISION | 851ms | 132.243.242.97:9543"
+      - "VISION | 738ms | 194.150.166.230:9443"
+      - "VISION | 5768ms | 193.56.135.137:9543"
+      - "VISION | 523ms | 194.150.166.227:9443"
+      - "VISION | 514ms | 194.150.166.108:9443"
+      - "VISION | 636ms | 179.254.111.0:443"
+      - "VISION | 524ms | 194.150.166.229:9443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"

@@ -1,10 +1,3 @@
-{"ts": "2026-09-19 11:49:03 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
-{"ts": "2026-09-19 11:49:03 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
-{"ts": "2026-09-19 14:56:54 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-19 14:57:07 UTC", "level": "info", "stage": "collect", "msg": "lines=28438 ok=17 fail=5"}
-{"ts": "2026-09-19 14:57:16 UTC", "level": "info", "stage": "tg", "msg": "links=398"}
-{"ts": "2026-09-19 14:57:16 UTC", "level": "info", "stage": "filter", "msg": "unique=16647"}
-{"ts": "2026-09-19 14:59:16 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1109"}
 {"ts": "2026-09-19 14:59:34 UTC", "level": "info", "stage": "clash", "msg": "passed=2/39 enabled=True"}
 {"ts": "2026-09-19 14:59:34 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=2 → pool=2"}
 {"ts": "2026-09-19 14:59:34 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-23 13:57:48 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1038"}
 {"ts": "2026-09-23 13:58:54 UTC", "level": "info", "stage": "clash", "msg": "passed=13/40 enabled=True"}
 {"ts": "2026-09-23 13:58:54 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
+{"ts": "2026-09-23 18:02:31 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-23 18:02:44 UTC", "level": "info", "stage": "collect", "msg": "lines=28240 ok=17 fail=5"}
+{"ts": "2026-09-23 18:02:54 UTC", "level": "info", "stage": "tg", "msg": "links=442"}
+{"ts": "2026-09-23 18:02:54 UTC", "level": "info", "stage": "filter", "msg": "unique=16605"}
+{"ts": "2026-09-23 18:05:00 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1047"}
+{"ts": "2026-09-23 18:06:04 UTC", "level": "info", "stage": "clash", "msg": "passed=11/40 enabled=True"}
+{"ts": "2026-09-23 18:06:04 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}

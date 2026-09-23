@@ -1,3 +1,10 @@
+## ✅ 2026-09-23 18:06:04 UTC · health=`ok` source=`clash_http`
+
+- raw=28240 tg=442 filtered=16605
+- tcp_alive=1047 clash=11/40
+- exported=7
+
+
 ## ✅ 2026-09-23 13:58:54 UTC · health=`ok` source=`clash_http`
 
 - raw=28543 tg=434 filtered=16642
@@ -391,10 +398,3 @@
 
 ### Auto-fix commands
 
-- **P0** `LOW_EXPORT`: Clash ok=5, export=3: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
-
-
-## ✅ 2026-09-18 12:05:14 UTC · health=`ok` source=`tcp_fallback`
-
-- raw=27746 tg=392 filtered=16838
-- tcp_alive=1227 clash=0/39
