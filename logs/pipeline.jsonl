@@ -1,10 +1,3 @@
-{"ts": "2026-09-20 02:04:02 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1138"}
-{"ts": "2026-09-20 02:05:06 UTC", "level": "info", "stage": "clash", "msg": "passed=1/40 enabled=True"}
-{"ts": "2026-09-20 02:05:06 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=1 → pool=1"}
-{"ts": "2026-09-20 02:05:06 UTC", "level": "info", "stage": "health", "msg": "fixes=2", "codes": ["LOW_EXPORT", "CLASH_LOW_RATIO"]}
-{"ts": "2026-09-20 07:58:23 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-20 07:58:29 UTC", "level": "info", "stage": "collect", "msg": "lines=29552 ok=17 fail=5"}
-{"ts": "2026-09-20 07:58:37 UTC", "level": "info", "stage": "tg", "msg": "links=402"}
 {"ts": "2026-09-20 07:58:37 UTC", "level": "info", "stage": "filter", "msg": "unique=17215"}
 {"ts": "2026-09-20 08:00:34 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1120"}
 {"ts": "2026-09-20 08:01:34 UTC", "level": "info", "stage": "clash", "msg": "passed=0/40 enabled=True"}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-24 19:36:59 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1051"}
 {"ts": "2026-09-24 19:37:55 UTC", "level": "info", "stage": "clash", "msg": "passed=15/40 enabled=True"}
 {"ts": "2026-09-24 19:37:55 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
+{"ts": "2026-09-24 22:47:17 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-24 22:47:28 UTC", "level": "info", "stage": "collect", "msg": "lines=27794 ok=17 fail=5"}
+{"ts": "2026-09-24 22:47:36 UTC", "level": "info", "stage": "tg", "msg": "links=429"}
+{"ts": "2026-09-24 22:47:36 UTC", "level": "info", "stage": "filter", "msg": "unique=16960"}
+{"ts": "2026-09-24 22:49:33 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1043"}
+{"ts": "2026-09-24 22:50:27 UTC", "level": "info", "stage": "clash", "msg": "passed=12/40 enabled=True"}
+{"ts": "2026-09-24 22:50:27 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
