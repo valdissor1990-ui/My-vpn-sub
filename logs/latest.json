@@ -1,25 +1,25 @@
 {
-  "ts": "2026-09-24 00:08:22 UTC",
+  "ts": "2026-09-24 05:39:48 UTC",
   "status": {
-    "generated_at": "2026-09-24T00:08:22.481816+00:00",
+    "generated_at": "2026-09-24T05:39:48.617475+00:00",
     "pick_source": "clash_http",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 28277,
-      "telegram_links": 430
+      "total_lines": 28621,
+      "telegram_links": 444
     },
     "filter": {
-      "unique": 16631
+      "unique": 16471
     },
     "monitor": {
-      "tcp_alive": 1026,
-      "checked": 2499,
+      "tcp_alive": 1035,
+      "checked": 2468,
       "pre_score_cap": 2500,
-      "skipped_dead": 1,
+      "skipped_dead": 32,
       "dead_cache": {
-        "entries": 72,
-        "active_dead": 72,
+        "entries": 11,
+        "active_dead": 11,
         "hours": 12
       }
     },
@@ -27,7 +27,7 @@
       "engine": "mihomo",
       "enabled": true,
       "tested": 40,
-      "passed": 13,
+      "passed": 15,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -40,86 +40,86 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 8,
-      "sub_vision.txt": 8,
-      "sub_white.txt": 8,
+      "sub.txt": 11,
+      "sub_vision.txt": 11,
+      "sub_white.txt": 11,
       "sub_black.txt": 0,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 8,
-      "sub_clash.yaml": 8
+      "sub_reality.txt": 11,
+      "sub_clash.yaml": 11
     },
     "pipeline": {
-      "raw_lines": 28277,
-      "tg_links": 430,
-      "filtered": 16631,
-      "tcp_alive": 1026,
-      "clash_passed": 13,
+      "raw_lines": 28621,
+      "tg_links": 444,
+      "filtered": 16471,
+      "tcp_alive": 1035,
+      "clash_passed": 15,
       "clash_tested": 40,
-      "exported": 8,
+      "exported": 11,
       "pick_source": "clash_http"
     },
     "top_scores": [
       {
-        "host": "194.150.166.230",
+        "host": "88.218.248.89",
         "score": 200,
-        "ping": 100,
-        "clash_delay": 396,
+        "ping": 113,
+        "clash_delay": 1022,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "91.196.32.216",
+        "host": "31.76.82.109",
         "score": 200,
-        "ping": 102,
-        "clash_delay": 832,
+        "ping": 114,
+        "clash_delay": 458,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "194.150.166.108",
+        "host": "193.56.135.212",
         "score": 200,
-        "ping": 90,
-        "clash_delay": 383,
+        "ping": 118,
+        "clash_delay": 513,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "194.150.166.227",
+        "host": "144.31.214.172",
         "score": 200,
-        "ping": 90,
-        "clash_delay": 392,
-        "vision": true,
-        "proto_ok": true
-      },
-      {
-        "host": "194.150.166.229",
-        "score": 200,
-        "ping": 92,
-        "clash_delay": 403,
+        "ping": 118,
+        "clash_delay": 522,
         "vision": true,
         "proto_ok": true
       },
       {
         "host": "194.150.166.228",
         "score": 200,
-        "ping": 94,
-        "clash_delay": 1435,
+        "ping": 106,
+        "clash_delay": 443,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "145.223.70.129",
+        "host": "194.150.166.108",
         "score": 200,
-        "ping": 102,
-        "clash_delay": 465,
+        "ping": 107,
+        "clash_delay": 433,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "64.188.79.106",
+        "host": "194.150.166.230",
         "score": 200,
-        "ping": 103,
-        "clash_delay": 398,
+        "ping": 109,
+        "clash_delay": 419,
+        "vision": true,
+        "proto_ok": true
+      },
+      {
+        "host": "194.150.166.227",
+        "score": 200,
+        "ping": 110,
+        "clash_delay": 476,
         "vision": true,
         "proto_ok": true
       }
