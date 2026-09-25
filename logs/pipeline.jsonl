@@ -1,10 +1,3 @@
-{"ts": "2026-09-20 16:35:25 UTC", "level": "info", "stage": "filter", "msg": "unique=17174"}
-{"ts": "2026-09-20 16:37:22 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1139"}
-{"ts": "2026-09-20 16:38:19 UTC", "level": "info", "stage": "clash", "msg": "passed=3/40 enabled=True"}
-{"ts": "2026-09-20 16:38:19 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=3 → pool=3"}
-{"ts": "2026-09-20 16:38:19 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
-{"ts": "2026-09-20 19:08:31 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-20 19:08:37 UTC", "level": "info", "stage": "collect", "msg": "lines=28406 ok=17 fail=5"}
 {"ts": "2026-09-20 19:08:44 UTC", "level": "info", "stage": "tg", "msg": "links=426"}
 {"ts": "2026-09-20 19:08:44 UTC", "level": "info", "stage": "filter", "msg": "unique=17184"}
 {"ts": "2026-09-20 19:10:45 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1136"}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-25 05:54:09 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1043"}
 {"ts": "2026-09-25 05:54:56 UTC", "level": "info", "stage": "clash", "msg": "passed=12/40 enabled=True"}
 {"ts": "2026-09-25 05:54:56 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
+{"ts": "2026-09-25 10:42:49 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-25 10:42:55 UTC", "level": "info", "stage": "collect", "msg": "lines=28456 ok=17 fail=5"}
+{"ts": "2026-09-25 10:43:07 UTC", "level": "info", "stage": "tg", "msg": "links=408"}
+{"ts": "2026-09-25 10:43:07 UTC", "level": "info", "stage": "filter", "msg": "unique=16899"}
+{"ts": "2026-09-25 10:45:15 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1036"}
+{"ts": "2026-09-25 10:46:12 UTC", "level": "info", "stage": "clash", "msg": "passed=13/40 enabled=True"}
+{"ts": "2026-09-25 10:46:12 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
