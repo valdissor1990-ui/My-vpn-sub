@@ -1,3 +1,10 @@
+## ✅ 2026-09-25 22:57:07 UTC · health=`ok` source=`clash_http`
+
+- raw=26791 tg=412 filtered=16280
+- tcp_alive=1107 clash=11/40
+- exported=7
+
+
 ## ✅ 2026-09-25 19:42:01 UTC · health=`ok` source=`clash_http`
 
 - raw=26959 tg=430 filtered=16585
@@ -391,10 +398,3 @@
 
 
 ## ✅ 2026-09-18 23:46:01 UTC · health=`ok` source=`clash_soft_fill`
-
-- raw=28137 tg=378 filtered=17096
-- tcp_alive=1116 clash=4/38
-- exported=3
-
-### Auto-fix commands
-
