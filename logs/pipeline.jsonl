@@ -1,10 +1,3 @@
-{"ts": "2026-09-21 02:05:36 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
-{"ts": "2026-09-21 08:17:11 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-09-21 08:17:24 UTC", "level": "info", "stage": "collect", "msg": "lines=29536 ok=17 fail=5"}
-{"ts": "2026-09-21 08:17:32 UTC", "level": "info", "stage": "tg", "msg": "links=416"}
-{"ts": "2026-09-21 08:17:32 UTC", "level": "info", "stage": "filter", "msg": "unique=17209"}
-{"ts": "2026-09-21 08:19:33 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1146"}
-{"ts": "2026-09-21 08:20:27 UTC", "level": "info", "stage": "clash", "msg": "passed=2/40 enabled=True"}
 {"ts": "2026-09-21 08:20:27 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=2 → pool=2"}
 {"ts": "2026-09-21 08:20:27 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
 {"ts": "2026-09-21 15:24:53 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
@@ -198,3 +191,10 @@
 {"ts": "2026-09-26 01:04:15 UTC", "level": "info", "stage": "clash", "msg": "passed=7/40 enabled=True"}
 {"ts": "2026-09-26 01:04:15 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=7 → pool=7"}
 {"ts": "2026-09-26 01:04:15 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
+{"ts": "2026-09-26 06:45:58 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-09-26 06:46:09 UTC", "level": "info", "stage": "collect", "msg": "lines=27304 ok=17 fail=5"}
+{"ts": "2026-09-26 06:46:18 UTC", "level": "info", "stage": "tg", "msg": "links=431"}
+{"ts": "2026-09-26 06:46:18 UTC", "level": "info", "stage": "filter", "msg": "unique=16873"}
+{"ts": "2026-09-26 06:48:14 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=1113"}
+{"ts": "2026-09-26 06:49:06 UTC", "level": "info", "stage": "clash", "msg": "passed=11/40 enabled=True"}
+{"ts": "2026-09-26 06:49:06 UTC", "level": "info", "stage": "health", "msg": "fixes=0", "codes": []}
