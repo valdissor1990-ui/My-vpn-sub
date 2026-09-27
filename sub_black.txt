@@ -1,6 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
-# Generated: 2026-09-27 18:47 UTC
-# Count: 0
+# Generated: 2026-09-27 21:45 UTC
+# Count: 1
 # black
 # https://github.com/valdissor1990-ui/My-vpn-sub
+vless://206234ff-0e18-4b95-923b-90f60d846d7d@31.207.7.246:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=nordic.global-cdn.org&fp=random&pbk=nF_kEdHan2dgl2tlQ_dtNaKZ4oORhuiFrXHbtEDcT2Q&sid=2d6d073dc88f22a8&spx=%2F&type=tcp#%F0%9F%8C%80%20CYBERPORTAL%20%7C%20VLESS%20Black%20All%20RU%20%7C%20%F0%9F%87%B8%F0%9F%87%AA%20%D0%A8%D0%B2%D0%B5%D1%86%D0%B8%D1%8F%20%23120
