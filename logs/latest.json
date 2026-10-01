@@ -1,25 +1,25 @@
 {
-  "ts": "2026-10-01 16:48:07 UTC",
+  "ts": "2026-10-01 21:31:06 UTC",
   "status": {
-    "generated_at": "2026-10-01T16:48:07.028435+00:00",
+    "generated_at": "2026-10-01T21:31:06.604302+00:00",
     "pick_source": "tcp_fallback",
     "collect": {
       "sources_ok": 17,
       "sources_fail": 5,
-      "total_lines": 28231,
-      "telegram_links": 423
+      "total_lines": 28212,
+      "telegram_links": 425
     },
     "filter": {
-      "unique": 15743
+      "unique": 15877
     },
     "monitor": {
-      "tcp_alive": 1111,
-      "checked": 2354,
+      "tcp_alive": 1150,
+      "checked": 2482,
       "pre_score_cap": 2500,
-      "skipped_dead": 146,
+      "skipped_dead": 18,
       "dead_cache": {
-        "entries": 17,
-        "active_dead": 17,
+        "entries": 180,
+        "active_dead": 180,
         "hours": 12
       }
     },
@@ -46,13 +46,13 @@
       "sub_black.txt": 0,
       "sub_hy2.txt": 0,
       "sub_reality.txt": 20,
-      "sub_clash.yaml": 19
+      "sub_clash.yaml": 20
     },
     "pipeline": {
-      "raw_lines": 28231,
-      "tg_links": 423,
-      "filtered": 15743,
-      "tcp_alive": 1111,
+      "raw_lines": 28212,
+      "tg_links": 425,
+      "filtered": 15877,
+      "tcp_alive": 1150,
       "clash_passed": 0,
       "clash_tested": 39,
       "exported": 20,
@@ -60,31 +60,31 @@
     },
     "top_scores": [
       {
-        "host": "104.233.209.210",
+        "host": "159.195.239.91",
         "score": 140,
-        "ping": 45,
+        "ping": 32,
         "clash_delay": null,
         "vision": true,
         "proto_ok": null
       },
       {
-        "host": "194.150.166.228",
+        "host": "194.150.166.227",
         "score": 140,
-        "ping": 97,
+        "ping": 101,
         "clash_delay": null,
         "vision": true,
         "proto_ok": null
       },
       {
-        "host": "194.150.166.229",
+        "host": "91.193.17.111",
         "score": 140,
-        "ping": 99,
+        "ping": 102,
         "clash_delay": null,
         "vision": true,
         "proto_ok": null
       },
       {
-        "host": "31.76.109.187",
+        "host": "194.150.166.230",
         "score": 140,
         "ping": 104,
         "clash_delay": null,
@@ -92,15 +92,23 @@
         "proto_ok": null
       },
       {
-        "host": "45.90.162.226",
+        "host": "78.17.150.127",
         "score": 140,
-        "ping": 106,
+        "ping": 111,
         "clash_delay": null,
         "vision": true,
         "proto_ok": null
       },
       {
-        "host": "145.249.115.115",
+        "host": "gpt-plus.vepene.site",
+        "score": 140,
+        "ping": 111,
+        "clash_delay": null,
+        "vision": true,
+        "proto_ok": null
+      },
+      {
+        "host": "62.60.247.40",
         "score": 140,
         "ping": 112,
         "clash_delay": null,
@@ -108,17 +116,9 @@
         "proto_ok": null
       },
       {
-        "host": "193.56.135.233",
+        "host": "94.103.1.44",
         "score": 140,
-        "ping": 113,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "64.188.79.106",
-        "score": 140,
-        "ping": 113,
+        "ping": 112,
         "clash_delay": null,
         "vision": true,
         "proto_ok": null
