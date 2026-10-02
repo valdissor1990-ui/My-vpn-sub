@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-01 21:31 UTC
+# My VPN Sub Clash Meta · 2026-10-02 01:12 UTC
 # nodes: 20
 mixed-port: 7890
 allow-lan: false
@@ -6,24 +6,57 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 159.195.239.91:443"
+    name: "VISION | usa141.luckerusa.org:443"
     type: vless
-    server: 159.195.239.91
+    server: usa141.luckerusa.org
     port: 443
-    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    uuid: 2473ced1-b0e6-4d39-873b-acd41be42258
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: usself.yandex-api.com
+    client-fingerprint: chrome
+    servername: www.vk.com
     reality-opts:
-      public-key: HXFe_cPryw01zqXchAFjZciDAS4UJg1-xScx6vjgjjY
-      short-id: 7f2e9c4b1a8d6e25
+      public-key: BhTJ3phnq-Z-10aFKSsj1lzhA8mULR4L6leE4-0WTAs
+      short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 194.150.166.227:9443"
+    name: "us.bmbrvpn.cc:8443"
     type: vless
-    server: 194.150.166.227
+    server: us.bmbrvpn.cc
+    port: 8443
+    uuid: aded9f36-430b-46de-9e66-fdf2d88464c7
+    network: xhttp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: yandex.net
+    reality-opts:
+      public-key: -jS5r_zRub0PUNrxa26onMXxV1Pg99Jz1leSboROfRE
+      short-id: 44887df5d47e
+    xhttp-opts:
+      path: /
+      host: yandex.net
+      mode: auto
+  -
+    name: "VISION | 194.150.166.228:9443"
+    type: vless
+    server: 194.150.166.228
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2ba
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 194.150.166.229:9443"
+    type: vless
+    server: 194.150.166.229
     port: 9443
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -36,240 +69,72 @@ proxies:
       short-id: ad20d2ba
     flow: xtls-rprx-vision
   -
-    name: "VISION | 91.193.17.111:443"
+    name: "VISION | 193.17.183.25:443"
     type: vless
-    server: 91.193.17.111
+    server: 193.17.183.25
     port: 443
-    uuid: 7d40449f-92df-4256-9607-679241455d49
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: drive.yandex.ru
-    reality-opts:
-      public-key: 6Jm0J6DFfO2P-OOUd1OygjPigR4nQjLY5vpUsM83OXM
-      short-id: 4967e8608eb2a42c
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 194.150.166.230:9443"
-    type: vless
-    server: 194.150.166.230
-    port: 9443
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    uuid: a733f483-c385-5565-94f9-66b08c06afeb
     network: tcp
     udp: true
     tls: true
     client-fingerprint: chrome
-    servername: storage.yandexcloud.net
+    servername: cloud.mail.ru
     reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: ad20d2ba
+      public-key: vOIENT-XtmYcRP3QM2GY4EsRsb2zUm39BXFo8g5aaEk
+      short-id: df2adea56e49
     flow: xtls-rprx-vision
   -
-    name: "VISION | 78.17.150.127:443"
+    name: "VISION | 145.249.115.115:443"
     type: vless
-    server: 78.17.150.127
+    server: 145.249.115.115
     port: 443
-    uuid: 3f02f5cd-3e03-436c-a151-02a9b9ac5966
+    uuid: c8d1c6d3-388f-48fc-a8f0-ed90d955d096
     network: tcp
     udp: true
     tls: true
     client-fingerprint: chrome
-    servername: smartcaptcha.yandexcloud.net
-    reality-opts:
-      public-key: oX_8IyRmI_X4pPWaGTbduLyvlZWwLkZlxJKmtvjmqEg
-      short-id: 03a70b17f8036009
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | gpt-plus.vepene.site:443"
-    type: vless
-    server: gpt-plus.vepene.site
-    port: 443
-    uuid: 38009570-f150-4ebd-9517-cdcb8a1e7cff
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: api-maps.yandex.ru
-    reality-opts:
-      public-key: BgH8ba_xaAeLa5pyvwwJp6HT7i09aNoiAsE1HgTXXkU
-      short-id: 3275b9d98d3b69fc
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 62.60.247.40:8443"
-    type: vless
-    server: 62.60.247.40
-    port: 8443
-    uuid: 5bb7df8d-ad02-41fa-a8e6-8a8a4650d2c4
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: storage.yandex.net
-    reality-opts:
-      public-key: XZa7f7bABj7lY4HuLopVCBBBYTu-RB7QyIZ96njvYwo
-      short-id: 7bcfc0bc
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 94.103.1.44:443"
-    type: vless
-    server: 94.103.1.44
-    port: 443
-    uuid: b2b0791a-14f8-4260-baab-b9dee270ffec
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: disk.yandex.ru
-    reality-opts:
-      public-key: wffi6nrJbxOiA0g7IuiXB4FZ7tkFtb9eRkPS9UvWPks
-      short-id: 9ec7e0
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 91.196.32.216:9543"
-    type: vless
-    server: 91.196.32.216
-    port: 9543
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: 123abcdf
-    flow: xtls-rprx-vision
-  -
-    name: "94.156.122.251:443"
-    type: vless
-    server: 94.156.122.251
-    port: 443
-    uuid: ca428a2e-7f82-4030-851b-cab731a5645a
-    network: xhttp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: yandex.by
-    reality-opts:
-      public-key: F2MKDw5CCtP1oXIej2EgNxB01k3eyNu7tKCFfucgnRA
-      short-id: 
-    xhttp-opts:
-      path: /xh
-      host: yandex.by
-      mode: auto
-  -
-    name: "VISION | 144.31.214.172:9443"
-    type: vless
-    server: 144.31.214.172
-    port: 9443
-    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
-      short-id: ad20d2bc
-    flow: xtls-rprx-vision
-  -
-    name: "194.48.250.69:8443"
-    type: vless
-    server: 194.48.250.69
-    port: 8443
-    uuid: a0ba8b74-4845-4197-8526-c02f1c27ab28
-    network: xhttp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: yandex.ru
-    reality-opts:
-      public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
-      short-id: f9d89d4a
-    xhttp-opts:
-      path: /upd8svpn-xhttp
-      host: yandex.ru
-      mode: auto
-  -
-    name: "VISION | 94.159.103.5:27189"
-    type: vless
-    server: 94.159.103.5
-    port: 27189
-    uuid: df715bf7-d073-435b-94fa-d5aa4dbbd84c
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
     servername: www.vk.com
     reality-opts:
-      public-key: QhzHhG3TRaDF3MNj1pBGT1rSPCfRJUfrzc5rBUmuRQ4
-      short-id: 65
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 2.26.96.173:8443"
-    type: vless
-    server: 2.26.96.173
-    port: 8443
-    uuid: b27ab9aa-a525-4deb-a1fd-6d16c9614612
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: yandex.net
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      public-key: nPcUKydxoRI66O3tT9O4QCZpLjOBvkGsiXG7pDX1BBw
       short-id: 6ba85179e30d4fc2
     flow: xtls-rprx-vision
   -
-    name: "VISION | 77.110.102.1:443"
+    name: "13.143.185.29:8448"
     type: vless
-    server: 77.110.102.1
-    port: 443
-    uuid: d94e4126-76ed-4425-96bd-ef7e9fca414e
-    network: tcp
+    server: 13.143.185.29
+    port: 8448
+    uuid: 2897717e-55b6-4d3d-8752-72c5fd4614ae
+    network: xhttp
     udp: true
     tls: true
     client-fingerprint: firefox
-    servername: storage.yandexcloud.net
-    reality-opts:
-      public-key: UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk
-      short-id: 54861d36
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 93.152.224.133:443"
-    type: vless
-    server: 93.152.224.133
-    port: 443
-    uuid: 18bac717-76b7-4673-804a-39b63752b20c
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: eh.vk.ru
-    reality-opts:
-      public-key: IYeCWMyOQAzAizI5Ll_bXInQnUpdz_J-l3hTD1dq_ns
-      short-id: 13c51b23da07703c
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 144.31.164.108:443"
-    type: vless
-    server: 144.31.164.108
-    port: 443
-    uuid: 8a4d32e8-ab02-4398-84a7-8d7672426ad6
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
     servername: api-maps.yandex.ru
     reality-opts:
-      public-key: p2kybyvJhP9F98fLS4TcL8nNcFE-MdhfGoVBlGkdHUs
-      short-id: d1
+      public-key: SEFnqOIUiHZpOgtXZ3FFFhVTALc1ReEVt78femI770U
+      short-id: c90743ca346c8da7
+    xhttp-opts:
+      path: /assets/v2
+      host: 13.143.185.29
+      mode: auto
+  -
+    name: "VISION | 185.134.203.61:8445"
+    type: vless
+    server: 185.134.203.61
+    port: 8445
+    uuid: bb26e00a-f640-408b-bc9a-279879085c29
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: passport.yandex.ru
+    reality-opts:
+      public-key: jevHLhaXUL4xbcFLBB-1rA1T04VrMvXKBhJbCs67Lkc
+      short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 193.56.135.137:9543"
+    name: "VISION | 193.56.135.212:9543"
     type: vless
-    server: 193.56.135.137
+    server: 193.56.135.212
     port: 9543
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -282,24 +147,114 @@ proxies:
       short-id: 123abcde
     flow: xtls-rprx-vision
   -
-    name: "VISION | 150.241.101.80:8443"
+    name: "VISION | 193.56.135.233:9543"
     type: vless
-    server: 150.241.101.80
-    port: 8443
-    uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+    server: 193.56.135.233
+    port: 9543
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
     udp: true
     tls: true
     client-fingerprint: chrome
-    servername: yandex.net
+    servername: storage.yandexcloud.net
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 6ba85179e30d4fc2
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: 123abcde
     flow: xtls-rprx-vision
   -
-    name: "VISION | 146.103.43.8:9543"
+    name: "VISION | 91.220.8.177:443"
     type: vless
-    server: 146.103.43.8
+    server: 91.220.8.177
+    port: 443
+    uuid: 0eb0019b66404203a7e07701f61bf766
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: m.vk.com
+    reality-opts:
+      public-key: n0e-y_JNPYLzhJkFuhlq6-k1lgUG43cmiQXkP2Pv_wc
+      short-id: aabbccdd
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 64.188.79.106:443"
+    type: vless
+    server: 64.188.79.106
+    port: 443
+    uuid: 94006a20-6cd6-4751-a14d-c5a0bacb68bb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: yandex.ru
+    reality-opts:
+      public-key: dBvFkg2zny545Ws6H_LXKEohOYV2MW_zACRrRQE1IUg
+      short-id: 992e5a9a
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 45.90.162.226:24443"
+    type: vless
+    server: 45.90.162.226
+    port: 24443
+    uuid: 16b3793b-3335-4832-b1fd-877b2c5e15d6
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: www.vk.com
+    reality-opts:
+      public-key: pCIyfmbMRts0miZB4KFKNNm0zvJr0JEx8_XykIllwUo
+      short-id: 4d83d822573492aa
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 95.85.239.102:443"
+    type: vless
+    server: 95.85.239.102
+    port: 443
+    uuid: 7d40449f-92df-4256-9607-679241455d49
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: qq
+    servername: drive.yandex.ru
+    reality-opts:
+      public-key: JCY4HTvbv3PLZV8lBETziQpoU-DK-FSUp5qK-vCnDwQ
+      short-id: d534122e6a18eb59
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 145.223.70.129:9443"
+    type: vless
+    server: 145.223.70.129
+    port: 9443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: ad20d2bc
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 191.44.118.250:2053"
+    type: vless
+    server: 191.44.118.250
+    port: 2053
+    uuid: b6c29ae7-4748-4049-b642-b695c0d2c776
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: vk.ru
+    reality-opts:
+      public-key: E6u2RbffXIPvia5v5iIZVj6U_VpSBWmGTsHHNtH-5Rg
+      short-id: 417063feab794131
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 132.243.242.97:9543"
+    type: vless
+    server: 132.243.242.97
     port: 9543
     uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
     network: tcp
@@ -311,31 +266,76 @@ proxies:
       public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
       short-id: 123abcdf
     flow: xtls-rprx-vision
+  -
+    name: "VISION | 152.53.236.168:443"
+    type: vless
+    server: 152.53.236.168
+    port: 443
+    uuid: 9032f390-3f3a-4684-8c08-eb43a8221840
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: vk.ru
+    reality-opts:
+      public-key: wnGvj74U0YBW_9DvIya4LGUdF_UONMCg8xqCHyRrhws
+      short-id: cb3b1ae3cfb0
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 89.124.69.148:8443"
+    type: vless
+    server: 89.124.69.148
+    port: 8443
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: storage.yandexcloud.net
+    reality-opts:
+      public-key: M6Ck7wUfOLhQl4582CBnaXwscPEP6SCpdEkUDzoj4Fc
+      short-id: d8d4ee29
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 78.159.247.99:443"
+    type: vless
+    server: 78.159.247.99
+    port: 443
+    uuid: f95706c5-16a0-481b-b6ca-69446130da5e
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: smartcaptcha.yandexcloud.net
+    reality-opts:
+      public-key: GkHB79Vhb0L7LCG9P2MNFfkHxwut2Qql1dQ8zz74pgM
+      short-id: 0fafb2da2621
+    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 159.195.239.91:443"
-      - "VISION | 194.150.166.227:9443"
-      - "VISION | 91.193.17.111:443"
-      - "VISION | 194.150.166.230:9443"
-      - "VISION | 78.17.150.127:443"
-      - "VISION | gpt-plus.vepene.site:443"
-      - "VISION | 62.60.247.40:8443"
-      - "VISION | 94.103.1.44:443"
-      - "VISION | 91.196.32.216:9543"
-      - "94.156.122.251:443"
-      - "VISION | 144.31.214.172:9443"
-      - "194.48.250.69:8443"
-      - "VISION | 94.159.103.5:27189"
-      - "VISION | 2.26.96.173:8443"
-      - "VISION | 77.110.102.1:443"
-      - "VISION | 93.152.224.133:443"
-      - "VISION | 144.31.164.108:443"
-      - "VISION | 193.56.135.137:9543"
-      - "VISION | 150.241.101.80:8443"
-      - "VISION | 146.103.43.8:9543"
+      - "VISION | usa141.luckerusa.org:443"
+      - "us.bmbrvpn.cc:8443"
+      - "VISION | 194.150.166.228:9443"
+      - "VISION | 194.150.166.229:9443"
+      - "VISION | 193.17.183.25:443"
+      - "VISION | 145.249.115.115:443"
+      - "13.143.185.29:8448"
+      - "VISION | 185.134.203.61:8445"
+      - "VISION | 193.56.135.212:9543"
+      - "VISION | 193.56.135.233:9543"
+      - "VISION | 91.220.8.177:443"
+      - "VISION | 64.188.79.106:443"
+      - "VISION | 45.90.162.226:24443"
+      - "VISION | 95.85.239.102:443"
+      - "VISION | 145.223.70.129:9443"
+      - "VISION | 191.44.118.250:2053"
+      - "VISION | 132.243.242.97:9543"
+      - "VISION | 152.53.236.168:443"
+      - "VISION | 89.124.69.148:8443"
+      - "VISION | 78.159.247.99:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -343,26 +343,26 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 159.195.239.91:443"
-      - "VISION | 194.150.166.227:9443"
-      - "VISION | 91.193.17.111:443"
-      - "VISION | 194.150.166.230:9443"
-      - "VISION | 78.17.150.127:443"
-      - "VISION | gpt-plus.vepene.site:443"
-      - "VISION | 62.60.247.40:8443"
-      - "VISION | 94.103.1.44:443"
-      - "VISION | 91.196.32.216:9543"
-      - "94.156.122.251:443"
-      - "VISION | 144.31.214.172:9443"
-      - "194.48.250.69:8443"
-      - "VISION | 94.159.103.5:27189"
-      - "VISION | 2.26.96.173:8443"
-      - "VISION | 77.110.102.1:443"
-      - "VISION | 93.152.224.133:443"
-      - "VISION | 144.31.164.108:443"
-      - "VISION | 193.56.135.137:9543"
-      - "VISION | 150.241.101.80:8443"
-      - "VISION | 146.103.43.8:9543"
+      - "VISION | usa141.luckerusa.org:443"
+      - "us.bmbrvpn.cc:8443"
+      - "VISION | 194.150.166.228:9443"
+      - "VISION | 194.150.166.229:9443"
+      - "VISION | 193.17.183.25:443"
+      - "VISION | 145.249.115.115:443"
+      - "13.143.185.29:8448"
+      - "VISION | 185.134.203.61:8445"
+      - "VISION | 193.56.135.212:9543"
+      - "VISION | 193.56.135.233:9543"
+      - "VISION | 91.220.8.177:443"
+      - "VISION | 64.188.79.106:443"
+      - "VISION | 45.90.162.226:24443"
+      - "VISION | 95.85.239.102:443"
+      - "VISION | 145.223.70.129:9443"
+      - "VISION | 191.44.118.250:2053"
+      - "VISION | 132.243.242.97:9543"
+      - "VISION | 152.53.236.168:443"
+      - "VISION | 89.124.69.148:8443"
+      - "VISION | 78.159.247.99:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
