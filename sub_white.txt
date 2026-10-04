@@ -1,7 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-04 12:57 UTC
+# Generated: 2026-10-04 17:12 UTC
 # Count: 1
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://7f86f371-5a85-48be-babc-7af1ae7ffb75@198.55.102.59:4443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=9gYnZLxZAPxIKzu9e-cOLBpbCn9p9og9gBodOCh5HB8&security=reality&sid=ce6767c3f1&sni=vk.com&type=tcp#IE 🇮🇪 | @Raydikalx | 2B41AB
+vless://7f86f371-5a85-48be-babc-7af1ae7ffb75@198.55.102.59:4443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=vk.com&fp=chrome&security=reality&pbk=9gYnZLxZAPxIKzu9e-cOLBpbCn9p9og9gBodOCh5HB8&sid=ce6767c3f1#IE 🇮🇪 | @Raydikalx | 2B41AB
