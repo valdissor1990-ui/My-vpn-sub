@@ -1,6 +1,14 @@
 #profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
-# Generated: 2026-10-04 18:23 UTC
-# Count: 0
+# Generated: 2026-10-04 20:36 UTC
+# Count: 8
 # black
 # https://github.com/valdissor1990-ui/My-vpn-sub
+vless://f6e3e6b4-a2af-41f0-95d1-2bea54b8b8d3@188.225.25.14:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-13.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom%20%E2%80%94%20%2367
+vless://1bb2af63-4472-44ed-9c70-8f316258b68b@62.152.58.90:443?encryption=none&fp=chrome&mode=gun&pbk=JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k&security=reality&sid=27e53bbcab7593d7&sni=360.yandex.ru&spx=%2F&type=grpc#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23127
+vless://b8f9ee3b-f621-491c-9e70-aec39c98f464@87.242.95.164:9443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc&sid=8375b32501373f41&sni=passport.yandex.ru&spx=%2F&type=grpc#%F0%9F%87%B3%F0%9F%87%B4%20Norway%20%E2%80%94%20%23102
+vless://7fab503a-458a-45e6-b985-e60523eb7954@188.225.37.132:443?encryption=none&fp=firefox&mode=gun&pbk=-Rr9E_n1_cBdsHQ_Sy3yMQXUMGjmTp-dUU_IQHy_FVQ&security=reality&serviceName=grpc443&sid=6ba85179e30d4fc2&sni=rbc.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%23111
+vless://7fab503a-458a-45e6-b985-e60523eb7954@188.225.18.91:443?encryption=none&fp=firefox&mode=gun&pbk=-Rr9E_n1_cBdsHQ_Sy3yMQXUMGjmTp-dUU_IQHy_FVQ&security=reality&serviceName=grpc443&sid=6ba85179e30d4fc2&sni=rbc.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%23112
+vless://7fab503a-458a-45e6-b985-e60523eb7954@95.163.232.143:443?encryption=none&fp=firefox&mode=gun&pbk=-Rr9E_n1_cBdsHQ_Sy3yMQXUMGjmTp-dUU_IQHy_FVQ&security=reality&serviceName=grpc443&sid=6ba85179e30d4fc2&sni=rbc.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%23110
+vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&fp=qq&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2320
+vless://65616081-1772-49d7-a793-42bc13d22f69@185.104.114.92:443?encryption=none&fp=edge&pbk=gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg&security=reality&sni=ru-1-5.imnotgay.party&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2342
