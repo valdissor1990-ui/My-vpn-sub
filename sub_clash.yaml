@@ -1,338 +1,47 @@
-# My VPN Sub Clash Meta · 2026-10-05 09:45 UTC
-# nodes: 20
+# My VPN Sub Clash Meta · 2026-10-05 18:58 UTC
+# nodes: 2
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 185.229.9.175:443"
+    name: "VISION | 9936ms | 90.156.218.163:443"
     type: vless
-    server: 185.229.9.175
+    server: 90.156.218.163
     port: 443
-    uuid: 4c0ef2bc-1a32-4850-af99-1be19632c4a8
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: yandex.ru
-    reality-opts:
-      public-key: 1ea_kTf2MvXh9PtpzQdjQWb5ls5BjyUtSbn-qiR8ZXk
-      short-id: cb0e256070ac91c7
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 91.240.87.166:443"
-    type: vless
-    server: 91.240.87.166
-    port: 443
-    uuid: 4c0ef2bc-1a32-4850-af99-1be19632c4a8
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: www.vk.com
-    reality-opts:
-      public-key: nkpZyXHfG7nhEh1vjBjEDV-Tn7UhHEb5iN9iA8gc9VE
-      short-id: c31188450fe50718
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 185.229.9.234:443"
-    type: vless
-    server: 185.229.9.234
-    port: 443
-    uuid: 5077b305-478d-4341-957e-091d994b9197
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: yandex.ru
-    reality-opts:
-      public-key: fsyvGBPzzwpnSA0UnJML_cDqviNSEdj9zktpC1EeFhY
-      short-id: 743541f932fa3959
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 31.177.111.114:443"
-    type: vless
-    server: 31.177.111.114
-    port: 443
-    uuid: 5077b305-478d-4341-957e-091d994b9197
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: yandex.ru
-    reality-opts:
-      public-key: k-E1YJ4oOVPhmILq1gBiBm_u3Vo8oYrMNDp85h80Pig
-      short-id: 035818587187be68
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 46.243.234.157:7445"
-    type: vless
-    server: 46.243.234.157
-    port: 7445
-    uuid: 4c0ef2bc-1a32-4850-af99-1be19632c4a8
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: passport.yandex.ru
-    reality-opts:
-      public-key: 0w339GBhpDiYwa9Wgqu3z3epu8dHAzeYUFXPtvzK8To
-      short-id: 190c27ae5f2e4d2c
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 31.130.155.114:443"
-    type: vless
-    server: 31.130.155.114
-    port: 443
-    uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: edge
-    servername: api.max.ru
-    reality-opts:
-      public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
-      short-id: 6c183039c8fe2676
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 46.243.234.157:7443"
-    type: vless
-    server: 46.243.234.157
-    port: 7443
-    uuid: 9973919d-6e74-4c47-849e-7424f457d6e9
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: s1.cdnguard.org
-    reality-opts:
-      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
-      short-id: f7d9e9a2e78e9a17
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 37.139.42.208:9444"
-    type: vless
-    server: 37.139.42.208
-    port: 9444
-    uuid: 9973919d-6e74-4c47-849e-7424f457d6e9
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: res.cdnguard.org
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 185.229.9.235:43005"
-    type: vless
-    server: 185.229.9.235
-    port: 43005
-    uuid: 5077b305-478d-4341-957e-091d994b9197
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: max.ru
-    reality-opts:
-      public-key: tP_mtYuA3fZq8C6WatAA4TmDv0_Wigq9xYcmb5UsTRA
-      short-id: 93653ee07ff5124c
-    flow: xtls-rprx-vision
-  -
-    name: "188.225.25.14:443"
-    type: vless
-    server: 188.225.25.14
-    port: 443
-    uuid: 83538eda-3a9b-4921-be97-3035bd5ff35f
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: cloudcdn-m9-13.cdn.yandex.net
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc_vless
-  -
-    name: "87.242.95.164:9443"
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 83538eda-3a9b-4921-be97-3035bd5ff35f
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: passport.yandex.ru
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc
-  -
-    name: "62.152.58.90:443"
-    type: vless
-    server: 62.152.58.90
-    port: 443
-    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: 360.yandex.ru
-    reality-opts:
-      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
-      short-id: 27e53bbcab7593d7
-    grpc-opts:
-      grpc-service-name: 
-  -
-    name: "VISION | 188.225.24.201:443"
-    type: vless
-    server: 188.225.24.201
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: app11.betust.net
-    reality-opts:
-      public-key: XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY
-      short-id: 91c2269c
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.35.207:443"
-    type: vless
-    server: 188.225.35.207
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: demo.betust.net
-    reality-opts:
-      public-key: -lLmJilTNFk_DYxnbvWJH_swC9a5JRheZrN1KPVMjCc
-      short-id: 219a891b
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.25.142:443"
-    type: vless
-    server: 188.225.25.142
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: prime.betust.net
-    reality-opts:
-      public-key: SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk
-      short-id: 8681edc9
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.25.195:443"
-    type: vless
-    server: 188.225.25.195
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: app25.betust.net
-    reality-opts:
-      public-key: Fe_144ALuRRedGs06ljDnE1f_G2B2wE4i9_diqw5LnY
-      short-id: a16bc894
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.57.78:443"
-    type: vless
-    server: 188.225.57.78
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: app4.betust.net
-    reality-opts:
-      public-key: NCW-zK60GXsiDdlbxww18Pqp4kz3zTG1URHWS_bnfDk
-      short-id: 3f7e0363
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.77.241:443"
-    type: vless
-    server: 188.225.77.241
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: api.betust.net
-    reality-opts:
-      public-key: YczbievYAOeZIypa58aRpil6XbfdyifK_0cFJWn8-yg
-      short-id: d6c172d3
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 188.225.42.6:443"
-    type: vless
-    server: 188.225.42.6
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
     network: tcp
     udp: true
     tls: true
     client-fingerprint: chrome
-    servername: app6.betust.net
+    servername: eh.vk.ru
     reality-opts:
-      public-key: sS3x_ZygtA9uZ5WaYm7pHjy0_lPNUUK7kOSLz0BNhCs
-      short-id: 54ac91da
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
   -
-    name: "VISION | 188.225.58.238:443"
+    name: "VISION | 271ms | 189.74.114.148:443"
     type: vless
-    server: 188.225.58.238
+    server: 189.74.114.148
     port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
+    uuid: 84c9ff14-75b9-420b-8a5c-dc25e19ec11a
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: app5.betust.net
+    client-fingerprint: ios
+    servername: api.mediagavan.cc
     reality-opts:
-      public-key: laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk
-      short-id: e84029c5
+      public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+      short-id: a8
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 185.229.9.175:443"
-      - "VISION | 91.240.87.166:443"
-      - "VISION | 185.229.9.234:443"
-      - "VISION | 31.177.111.114:443"
-      - "VISION | 46.243.234.157:7445"
-      - "VISION | 31.130.155.114:443"
-      - "VISION | 46.243.234.157:7443"
-      - "VISION | 37.139.42.208:9444"
-      - "VISION | 185.229.9.235:43005"
-      - "188.225.25.14:443"
-      - "87.242.95.164:9443"
-      - "62.152.58.90:443"
-      - "VISION | 188.225.24.201:443"
-      - "VISION | 188.225.35.207:443"
-      - "VISION | 188.225.25.142:443"
-      - "VISION | 188.225.25.195:443"
-      - "VISION | 188.225.57.78:443"
-      - "VISION | 188.225.77.241:443"
-      - "VISION | 188.225.42.6:443"
-      - "VISION | 188.225.58.238:443"
+      - "VISION | 9936ms | 90.156.218.163:443"
+      - "VISION | 271ms | 189.74.114.148:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -340,26 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 185.229.9.175:443"
-      - "VISION | 91.240.87.166:443"
-      - "VISION | 185.229.9.234:443"
-      - "VISION | 31.177.111.114:443"
-      - "VISION | 46.243.234.157:7445"
-      - "VISION | 31.130.155.114:443"
-      - "VISION | 46.243.234.157:7443"
-      - "VISION | 37.139.42.208:9444"
-      - "VISION | 185.229.9.235:43005"
-      - "188.225.25.14:443"
-      - "87.242.95.164:9443"
-      - "62.152.58.90:443"
-      - "VISION | 188.225.24.201:443"
-      - "VISION | 188.225.35.207:443"
-      - "VISION | 188.225.25.142:443"
-      - "VISION | 188.225.25.195:443"
-      - "VISION | 188.225.57.78:443"
-      - "VISION | 188.225.77.241:443"
-      - "VISION | 188.225.42.6:443"
-      - "VISION | 188.225.58.238:443"
+      - "VISION | 9936ms | 90.156.218.163:443"
+      - "VISION | 271ms | 189.74.114.148:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
