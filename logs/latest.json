@@ -1,33 +1,33 @@
 {
-  "ts": "2026-10-06 00:27:35 UTC",
+  "ts": "2026-10-06 07:00:28 UTC",
   "status": {
-    "generated_at": "2026-10-06T00:27:35.145397+00:00",
+    "generated_at": "2026-10-06T07:00:28.987441+00:00",
     "pick_source": "clash_http",
     "collect": {
       "sources_ok": 6,
       "sources_fail": 0,
-      "total_lines": 452,
+      "total_lines": 407,
       "telegram_links": 0
     },
     "filter": {
-      "unique": 56
+      "unique": 77
     },
     "monitor": {
-      "tcp_alive": 49,
-      "checked": 55,
+      "tcp_alive": 59,
+      "checked": 77,
       "pre_score_cap": 500,
-      "skipped_dead": 1,
+      "skipped_dead": 0,
       "dead_cache": {
-        "entries": 2,
-        "active_dead": 2,
+        "entries": 3,
+        "active_dead": 3,
         "hours": 6
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 49,
-      "passed": 12,
+      "tested": 59,
+      "passed": 8,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -40,70 +40,54 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 6,
-      "sub_vision.txt": 5,
-      "sub_white.txt": 5,
+      "sub.txt": 4,
+      "sub_vision.txt": 3,
+      "sub_white.txt": 3,
       "sub_black.txt": 1,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 6,
-      "sub_clash.yaml": 6
+      "sub_reality.txt": 4,
+      "sub_clash.yaml": 4
     },
     "pipeline": {
-      "raw_lines": 452,
+      "raw_lines": 407,
       "tg_links": 0,
-      "filtered": 56,
-      "tcp_alive": 49,
-      "clash_passed": 12,
-      "clash_tested": 49,
-      "exported": 6,
+      "filtered": 77,
+      "tcp_alive": 59,
+      "clash_passed": 8,
+      "clash_tested": 59,
+      "exported": 4,
       "pick_source": "clash_http"
     },
     "top_scores": [
       {
-        "host": "189.74.117.15",
-        "score": 177,
-        "ping": 146,
-        "clash_delay": 461,
+        "host": "46.254.19.190",
+        "score": 210,
+        "ping": 195,
+        "clash_delay": 4836,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "189.74.116.13",
+        "host": "109.69.17.166",
         "score": 177,
-        "ping": 158,
-        "clash_delay": 516,
+        "ping": 170,
+        "clash_delay": 559,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "189.74.106.85",
+        "host": "217.26.25.250",
         "score": 177,
-        "ping": 159,
-        "clash_delay": 465,
-        "vision": true,
-        "proto_ok": true
-      },
-      {
-        "host": "188.130.209.224",
-        "score": 177,
-        "ping": 166,
-        "clash_delay": 538,
-        "vision": true,
-        "proto_ok": true
-      },
-      {
-        "host": "92.51.23.88",
-        "score": 177,
-        "ping": 176,
-        "clash_delay": 564,
+        "ping": 173,
+        "clash_delay": 5578,
         "vision": true,
         "proto_ok": true
       },
       {
         "host": "45.12.75.242",
         "score": 130,
-        "ping": 199,
-        "clash_delay": 991,
+        "ping": 284,
+        "clash_delay": 1993,
         "vision": false,
         "proto_ok": true
       }
@@ -116,5 +100,12 @@
       "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md"
     }
   },
-  "fixes": []
+  "fixes": [
+    {
+      "priority": "P0",
+      "code": "LOW_EXPORT",
+      "action": "Clash ok=8, export=4: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "auto": "soft_fill_and_raise_pass"
+    }
+  ]
 }
