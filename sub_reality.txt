@@ -1,10 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IHJlYWxpdHk=
 #profile-update-interval: 1
-# Generated: 2026-10-06 07:00 UTC
-# Count: 4
+# Generated: 2026-10-06 13:55 UTC
+# Count: 2
 # reality
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://0d6e70a5-abfd-4766-8ad4-e502173ba82b@46.254.19.190:443?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=RX4VBHIJ29Oo4oQYRtdmBX5IN35vHwENneqUvwLpjlU&security=reality&sid=b90185a1&sni=yandex.ru&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2331
-vless://0d6e70a5-abfd-4766-8ad4-e502173ba82b@109.69.17.166:443?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=lVSON4vUK765zNEFQtf0GbZNDc-g37JMairlF7hg6y0&security=reality&sid=bb34e8c0603c6686&sni=ru.virtez.pro&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2317
-vless://ee18d188-14cc-417e-beb1-70e4add6d023@217.26.25.250:8443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=asfnItYJIxiQpAEBiqeGI-CtbeVQt83jz8EY44wHvFQ&security=reality&sid=5aab0b0401044801&sni=it.nztvpn.com&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2318
-vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&fp=firefox&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2316
+vless://93996a55-febe-4183-9366-df6cb11a34dd@201.24.125.126:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=r6lN34m1nN-xQZ458j5NPD5xJ3_QBF2bGzY4KJEo4ic&security=reality&sid=abbcd128&sni=sun9-38.userapi.com&type=raw#%F0%9F%87%B9%F0%9F%87%B7%20T%C3%BCrkiye%20%E2%80%94%20%2375
+vless://3c23a041-b686-4d93-af6b-2d793f5c45dc@31.130.155.114:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA&security=reality&sid=6c183039c8fe2676&sni=api.max.ru&type=raw#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%2350
