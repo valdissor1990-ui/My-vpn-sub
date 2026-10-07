@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-07 03:02 UTC
+# My VPN Sub Clash Meta · 2026-10-07 10:40 UTC
 # nodes: 3
 mixed-port: 7890
 allow-lan: false
@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "191ms | 45.139.26.179:443"
+    name: "4644ms | 45.139.26.179:443"
     type: vless
     server: 45.139.26.179
     port: 443
@@ -22,7 +22,7 @@ proxies:
     grpc-opts:
       grpc-service-name: api
   -
-    name: "726ms | 176.108.252.139:9881"
+    name: "1959ms | 176.108.252.139:9881"
     type: vless
     server: 176.108.252.139
     port: 9881
@@ -30,7 +30,7 @@ proxies:
     network: grpc
     udp: true
     tls: true
-    client-fingerprint: safari
+    client-fingerprint: ios
     servername: dl.google.com
     reality-opts:
       public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
@@ -38,7 +38,7 @@ proxies:
     grpc-opts:
       grpc-service-name: grpc-tunnel
   -
-    name: "1577ms | 45.12.75.242:26424"
+    name: "1252ms | 45.12.75.242:26424"
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -46,7 +46,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: qq
     servername: ya.ru
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
@@ -56,9 +56,9 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "191ms | 45.139.26.179:443"
-      - "726ms | 176.108.252.139:9881"
-      - "1577ms | 45.12.75.242:26424"
+      - "4644ms | 45.139.26.179:443"
+      - "1959ms | 176.108.252.139:9881"
+      - "1252ms | 45.12.75.242:26424"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -66,9 +66,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "191ms | 45.139.26.179:443"
-      - "726ms | 176.108.252.139:9881"
-      - "1577ms | 45.12.75.242:26424"
+      - "4644ms | 45.139.26.179:443"
+      - "1959ms | 176.108.252.139:9881"
+      - "1252ms | 45.12.75.242:26424"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
