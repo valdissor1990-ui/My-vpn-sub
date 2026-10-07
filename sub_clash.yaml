@@ -1,27 +1,44 @@
-# My VPN Sub Clash Meta · 2026-10-06 23:25 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-07 03:02 UTC
+# nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 547ms | 217.19.122.214:8448"
+    name: "191ms | 45.139.26.179:443"
     type: vless
-    server: 217.19.122.214
-    port: 8448
-    uuid: a2bbb4ba-6d21-4ae0-9682-dacfbea98ae9
-    network: tcp
+    server: 45.139.26.179
+    port: 443
+    uuid: 2b781b4a-5942-48e0-a7f3-5a07b7b488c1
+    network: grpc
     udp: true
     tls: true
-    client-fingerprint: qq
-    servername: cdp.x5.ru
+    client-fingerprint: firefox
+    servername: ads.x5.ru
     reality-opts:
-      public-key: jOBo4R259-p0H2EcHMPO_R1uPZ8hyM_Yj1K5Nejch2U
-      short-id: d681ac08
-    flow: xtls-rprx-vision
+      public-key: AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI
+      short-id: 15bcc0a77c3cacdf
+    grpc-opts:
+      grpc-service-name: api
   -
-    name: "822ms | 45.12.75.242:26424"
+    name: "726ms | 176.108.252.139:9881"
+    type: vless
+    server: 176.108.252.139
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: dl.google.com
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aabb
+    grpc-opts:
+      grpc-service-name: grpc-tunnel
+  -
+    name: "1577ms | 45.12.75.242:26424"
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -39,8 +56,9 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 547ms | 217.19.122.214:8448"
-      - "822ms | 45.12.75.242:26424"
+      - "191ms | 45.139.26.179:443"
+      - "726ms | 176.108.252.139:9881"
+      - "1577ms | 45.12.75.242:26424"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -48,8 +66,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 547ms | 217.19.122.214:8448"
-      - "822ms | 45.12.75.242:26424"
+      - "191ms | 45.139.26.179:443"
+      - "726ms | 176.108.252.139:9881"
+      - "1577ms | 45.12.75.242:26424"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
