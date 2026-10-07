@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-07 17:37 UTC
+# My VPN Sub Clash Meta · 2026-10-07 22:25 UTC
 # nodes: 2
 mixed-port: 7890
 allow-lan: false
@@ -6,42 +6,42 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 796ms | 109.120.181.153:443"
+    name: "VISION | 641ms | 188.225.58.19:443"
     type: vless
-    server: 109.120.181.153
+    server: 188.225.58.19
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: 9e9b0c09-dc28-4888-9b21-888a93541987
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
-    servername: eh.vk.ru
+    client-fingerprint: safari
+    servername: smartcaptcha.yandexcloud.net
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
+      public-key: -HXpsd4_-Rh8PxkK7dwmEzsAHsss5MQSG-ePRSygFWs
+      short-id: 7dcd042eaf3ba4b1
     flow: xtls-rprx-vision
   -
-    name: "VISION | 746ms | 90.156.218.163:443"
+    name: "VISION | 1638ms | 5.178.85.182:443"
     type: vless
-    server: 90.156.218.163
+    server: 5.178.85.182
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: adff89a7-bde7-4614-962a-4068a65a655e
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: edge
-    servername: eh.vk.ru
+    client-fingerprint: random
+    servername: d2-ee.cloud-cdn.xyz
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
+      public-key: F_W8Mou4PjlAdLKqfZuPFZ9TOk--9fnUzBZyClgp61o
+      short-id: 480359ff44b7fa73
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 796ms | 109.120.181.153:443"
-      - "VISION | 746ms | 90.156.218.163:443"
+      - "VISION | 641ms | 188.225.58.19:443"
+      - "VISION | 1638ms | 5.178.85.182:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 796ms | 109.120.181.153:443"
-      - "VISION | 746ms | 90.156.218.163:443"
+      - "VISION | 641ms | 188.225.58.19:443"
+      - "VISION | 1638ms | 5.178.85.182:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
