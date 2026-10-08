@@ -1,12 +1,118 @@
-# My VPN Sub Clash Meta · 2026-10-08 09:41 UTC
-# nodes: 4
+# My VPN Sub Clash Meta · 2026-10-08 17:04 UTC
+# nodes: 8
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "868ms | 45.12.75.242:26424"
+    name: "VISION | 1289ms | 90.156.218.163:443"
+    type: vless
+    server: 90.156.218.163
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: edge
+    servername: eh.vk.ru
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 4777ms | 46.254.19.103:1443"
+    type: vless
+    server: 46.254.19.103
+    port: 1443
+    uuid: b44f98e8-a37f-4929-ac5d-81322e6bce14
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: settings.dev-yandex.sbs
+    reality-opts:
+      public-key: eIwe5pSZs414JJDSuBA3R4-ikllq0oITezzVIdUkACI
+      short-id: ad7dab462a323acb
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 1233ms | 81.94.148.148:8443"
+    type: vless
+    server: 81.94.148.148
+    port: 8443
+    uuid: 24b5a8bc-3648-42e1-b02d-227ceeead1c9
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: random
+    servername: passport.yandex.ru
+    reality-opts:
+      public-key: Mkk6A1DbTaQYd3DHsQsDfRVIcS5-gpN3IXj1F_fxZjI
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 739ms | 31.130.155.114:443"
+    type: vless
+    server: 31.130.155.114
+    port: 443
+    uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: edge
+    servername: api.max.ru
+    reality-opts:
+      public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
+      short-id: 6c183039c8fe2676
+    flow: xtls-rprx-vision
+  -
+    name: "1461ms | 188.225.77.178:443"
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: 0e02050d-a87e-4262-8ff2-c9be31103637
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: qq
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    grpc-opts:
+      grpc-service-name: grpc_vless
+  -
+    name: "1101ms | 81.94.148.104:2096"
+    type: vless
+    server: 81.94.148.104
+    port: 2096
+    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: random
+    servername: id.vk.com
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 
+    grpc-opts:
+      grpc-service-name: vless-grpc-reality
+  -
+    name: "6289ms | 87.228.92.108:25178"
+    type: vless
+    server: 87.228.92.108
+    port: 25178
+    uuid: 95003356-20f9-4c84-a21f-2f9c1fc285eb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: www.icloud.com
+    reality-opts:
+      public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
+      short-id: ce43937e79bc30f0
+  -
+    name: "1541ms | 45.12.75.242:26424"
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -14,68 +120,24 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: qq
     servername: ya.ru
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
-  -
-    name: "8292ms | 45.132.176.190:9892"
-    type: vless
-    server: 45.132.176.190
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: dl.google.com
-    reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-      short-id: aabbccdd
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-  -
-    name: "1302ms | 176.108.252.139:9881"
-    type: vless
-    server: 176.108.252.139
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: safari
-    servername: dl.google.com
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aabb
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-  -
-    name: "2209ms | 45.132.176.225:9881"
-    type: vless
-    server: 45.132.176.225
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: edge
-    servername: dl.google.com
-    reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-      short-id: aabb
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "868ms | 45.12.75.242:26424"
-      - "8292ms | 45.132.176.190:9892"
-      - "1302ms | 176.108.252.139:9881"
-      - "2209ms | 45.132.176.225:9881"
+      - "VISION | 1289ms | 90.156.218.163:443"
+      - "VISION | 4777ms | 46.254.19.103:1443"
+      - "VISION | 1233ms | 81.94.148.148:8443"
+      - "VISION | 739ms | 31.130.155.114:443"
+      - "1461ms | 188.225.77.178:443"
+      - "1101ms | 81.94.148.104:2096"
+      - "6289ms | 87.228.92.108:25178"
+      - "1541ms | 45.12.75.242:26424"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -83,10 +145,14 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "868ms | 45.12.75.242:26424"
-      - "8292ms | 45.132.176.190:9892"
-      - "1302ms | 176.108.252.139:9881"
-      - "2209ms | 45.132.176.225:9881"
+      - "VISION | 1289ms | 90.156.218.163:443"
+      - "VISION | 4777ms | 46.254.19.103:1443"
+      - "VISION | 1233ms | 81.94.148.148:8443"
+      - "VISION | 739ms | 31.130.155.114:443"
+      - "1461ms | 188.225.77.178:443"
+      - "1101ms | 81.94.148.104:2096"
+      - "6289ms | 87.228.92.108:25178"
+      - "1541ms | 45.12.75.242:26424"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
