@@ -1,12 +1,104 @@
-# My VPN Sub Clash Meta · 2026-10-07 22:25 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-08 02:22 UTC
+# nodes: 7
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 641ms | 188.225.58.19:443"
+    name: "1005ms | 188.225.77.178:443"
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: ee2da2dc-7d4b-43dd-8c8e-5bb4099203ab
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: qq
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    grpc-opts:
+      grpc-service-name: grpc_vless
+  -
+    name: "586ms | 45.132.176.190:9892"
+    type: vless
+    server: 45.132.176.190
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: qq
+    servername: dl.google.com
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+      short-id: aabbccdd
+    grpc-opts:
+      grpc-service-name: grpc-tunnel
+  -
+    name: "767ms | 176.108.252.139:9881"
+    type: vless
+    server: 176.108.252.139
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: dl.google.com
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aabb
+    grpc-opts:
+      grpc-service-name: grpc-tunnel
+  -
+    name: "2132ms | 45.132.176.225:9881"
+    type: vless
+    server: 45.132.176.225
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: edge
+    servername: dl.google.com
+    reality-opts:
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aabb
+    grpc-opts:
+      grpc-service-name: grpc-tunnel
+  -
+    name: "861ms | 45.12.75.242:26424"
+    type: vless
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: ya.ru
+    reality-opts:
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
+  -
+    name: "7129ms | 87.228.92.108:25178"
+    type: vless
+    server: 87.228.92.108
+    port: 25178
+    uuid: 95003356-20f9-4c84-a21f-2f9c1fc285eb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: www.icloud.com
+    reality-opts:
+      public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
+      short-id: ce43937e79bc30f0
+  -
+    name: "VISION | 622ms | 188.225.58.19:443"
     type: vless
     server: 188.225.58.19
     port: 443
@@ -14,34 +106,24 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: safari
+    client-fingerprint: firefox
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: -HXpsd4_-Rh8PxkK7dwmEzsAHsss5MQSG-ePRSygFWs
       short-id: 7dcd042eaf3ba4b1
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 1638ms | 5.178.85.182:443"
-    type: vless
-    server: 5.178.85.182
-    port: 443
-    uuid: adff89a7-bde7-4614-962a-4068a65a655e
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: d2-ee.cloud-cdn.xyz
-    reality-opts:
-      public-key: F_W8Mou4PjlAdLKqfZuPFZ9TOk--9fnUzBZyClgp61o
-      short-id: 480359ff44b7fa73
     flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 641ms | 188.225.58.19:443"
-      - "VISION | 1638ms | 5.178.85.182:443"
+      - "1005ms | 188.225.77.178:443"
+      - "586ms | 45.132.176.190:9892"
+      - "767ms | 176.108.252.139:9881"
+      - "2132ms | 45.132.176.225:9881"
+      - "861ms | 45.12.75.242:26424"
+      - "7129ms | 87.228.92.108:25178"
+      - "VISION | 622ms | 188.225.58.19:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +131,13 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 641ms | 188.225.58.19:443"
-      - "VISION | 1638ms | 5.178.85.182:443"
+      - "1005ms | 188.225.77.178:443"
+      - "586ms | 45.132.176.190:9892"
+      - "767ms | 176.108.252.139:9881"
+      - "2132ms | 45.132.176.225:9881"
+      - "861ms | 45.12.75.242:26424"
+      - "7129ms | 87.228.92.108:25178"
+      - "VISION | 622ms | 188.225.58.19:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
