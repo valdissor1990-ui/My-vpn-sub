@@ -1,28 +1,26 @@
-# My VPN Sub Clash Meta · 2026-10-08 02:22 UTC
-# nodes: 7
+# My VPN Sub Clash Meta · 2026-10-08 09:41 UTC
+# nodes: 4
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "1005ms | 188.225.77.178:443"
+    name: "868ms | 45.12.75.242:26424"
     type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: ee2da2dc-7d4b-43dd-8c8e-5bb4099203ab
-    network: grpc
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    network: tcp
     udp: true
     tls: true
-    client-fingerprint: qq
-    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: chrome
+    servername: ya.ru
     reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc_vless
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
   -
-    name: "586ms | 45.132.176.190:9892"
+    name: "8292ms | 45.132.176.190:9892"
     type: vless
     server: 45.132.176.190
     port: 9892
@@ -38,7 +36,7 @@ proxies:
     grpc-opts:
       grpc-service-name: grpc-tunnel
   -
-    name: "767ms | 176.108.252.139:9881"
+    name: "1302ms | 176.108.252.139:9881"
     type: vless
     server: 176.108.252.139
     port: 9881
@@ -54,7 +52,7 @@ proxies:
     grpc-opts:
       grpc-service-name: grpc-tunnel
   -
-    name: "2132ms | 45.132.176.225:9881"
+    name: "2209ms | 45.132.176.225:9881"
     type: vless
     server: 45.132.176.225
     port: 9881
@@ -69,61 +67,15 @@ proxies:
       short-id: aabb
     grpc-opts:
       grpc-service-name: grpc-tunnel
-  -
-    name: "861ms | 45.12.75.242:26424"
-    type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: ya.ru
-    reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
-  -
-    name: "7129ms | 87.228.92.108:25178"
-    type: vless
-    server: 87.228.92.108
-    port: 25178
-    uuid: 95003356-20f9-4c84-a21f-2f9c1fc285eb
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: www.icloud.com
-    reality-opts:
-      public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
-      short-id: ce43937e79bc30f0
-  -
-    name: "VISION | 622ms | 188.225.58.19:443"
-    type: vless
-    server: 188.225.58.19
-    port: 443
-    uuid: 9e9b0c09-dc28-4888-9b21-888a93541987
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: smartcaptcha.yandexcloud.net
-    reality-opts:
-      public-key: -HXpsd4_-Rh8PxkK7dwmEzsAHsss5MQSG-ePRSygFWs
-      short-id: 7dcd042eaf3ba4b1
-    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "1005ms | 188.225.77.178:443"
-      - "586ms | 45.132.176.190:9892"
-      - "767ms | 176.108.252.139:9881"
-      - "2132ms | 45.132.176.225:9881"
-      - "861ms | 45.12.75.242:26424"
-      - "7129ms | 87.228.92.108:25178"
-      - "VISION | 622ms | 188.225.58.19:443"
+      - "868ms | 45.12.75.242:26424"
+      - "8292ms | 45.132.176.190:9892"
+      - "1302ms | 176.108.252.139:9881"
+      - "2209ms | 45.132.176.225:9881"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -131,13 +83,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "1005ms | 188.225.77.178:443"
-      - "586ms | 45.132.176.190:9892"
-      - "767ms | 176.108.252.139:9881"
-      - "2132ms | 45.132.176.225:9881"
-      - "861ms | 45.12.75.242:26424"
-      - "7129ms | 87.228.92.108:25178"
-      - "VISION | 622ms | 188.225.58.19:443"
+      - "868ms | 45.12.75.242:26424"
+      - "8292ms | 45.132.176.190:9892"
+      - "1302ms | 176.108.252.139:9881"
+      - "2209ms | 45.132.176.225:9881"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
