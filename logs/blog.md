@@ -1,3 +1,10 @@
+## ✅ 2026-10-08 22:35:14 UTC · health=`ok` source=`clash_http`
+
+- raw=506 tg=0 filtered=42
+- tcp_alive=29 clash=11/29
+- exported=7
+
+
 ## ✅ 2026-10-08 17:04:55 UTC · health=`ok` source=`clash_http`
 
 - raw=302 tg=0 filtered=63
@@ -391,10 +398,3 @@
 
 ## ✅ 2026-10-01 02:50:56 UTC · health=`ok` source=`tcp_fallback`
 
-- raw=28106 tg=416 filtered=16276
-- tcp_alive=1080 clash=0/40
-- exported=20
-
-### Auto-fix commands
-
-- **P0** `CLASH_ZERO`: Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok
