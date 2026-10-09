@@ -1,42 +1,71 @@
-# My VPN Sub Clash Meta · 2026-10-09 02:39 UTC
-# nodes: 8
+# My VPN Sub Clash Meta · 2026-10-09 09:46 UTC
+# nodes: 5
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 738ms | 185.241.195.152:9445"
+    name: "VISION | 7643ms | 147.45.153.91:443"
     type: vless
-    server: 185.241.195.152
-    port: 9445
-    uuid: d91dc97c-a09b-40fa-9da0-a3d1729f7427
+    server: 147.45.153.91
+    port: 443
+    uuid: 186a7d6f-e360-4c5f-bafb-a816f79e231b
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: yandex.ru
+    client-fingerprint: qq
+    servername: msk-ind-1.movietop24.site
     reality-opts:
-      public-key: i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0
-      short-id: 02827ef87f4a23c0
+      public-key: eQxMfeeby4Sn3_GHWBLm2D1yWma0dbvIQ3H_6u4CQB0
+      short-id: ec90c36c44225df1
     flow: xtls-rprx-vision
   -
-    name: "VISION | 748ms | 81.94.148.148:7443"
+    name: "2203ms | 45.12.75.242:26424"
     type: vless
-    server: 81.94.148.148
-    port: 7443
-    uuid: d91dc97c-a09b-40fa-9da0-a3d1729f7427
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: s3.yandexcloud.net
+    client-fingerprint: chrome
+    servername: ya.ru
     reality-opts:
-      public-key: i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0
-      short-id: 02827ef87f4a23c0
-    flow: xtls-rprx-vision
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
   -
-    name: "VISION | 1132ms | 217.19.122.214:7449"
+    name: "2690ms | 45.133.151.163:25895"
+    type: vless
+    server: 45.133.151.163
+    port: 25895
+    uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: www.samsung.com
+    reality-opts:
+      public-key: jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k
+      short-id: a73f0410d728c823
+  -
+    name: "2122ms | 81.94.148.104:2096"
+    type: vless
+    server: 81.94.148.104
+    port: 2096
+    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: id.vk.com
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 
+    grpc-opts:
+      grpc-service-name: vless-grpc-reality
+  -
+    name: "VISION | 6308ms | 217.19.122.214:7449"
     type: vless
     server: 217.19.122.214
     port: 7449
@@ -50,98 +79,16 @@ proxies:
       public-key: OGMQnJGgrCYDojFm4u7YrvOoOmtjK6iZ4_q-Kmanozs
       short-id: 03cf706025caa46e
     flow: xtls-rprx-vision
-  -
-    name: "VISION | 2310ms | 188.225.36.154:4444"
-    type: vless
-    server: 188.225.36.154
-    port: 4444
-    uuid: d91dc97c-a09b-40fa-9da0-a3d1729f7427
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: safari
-    servername: s3.yandexcloud.net
-    reality-opts:
-      public-key: i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0
-      short-id: 02827ef87f4a23c0
-    flow: xtls-rprx-vision
-  -
-    name: "1155ms | 188.225.77.178:443"
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: 2bb77612-62b2-4c79-aed6-3d93942cd0ca
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc_vless
-  -
-    name: "1028ms | 188.120.236.239:2096"
-    type: vless
-    server: 188.120.236.239
-    port: 2096
-    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
-  -
-    name: "1112ms | 188.120.236.224:2096"
-    type: vless
-    server: 188.120.236.224
-    port: 2096
-    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
-  -
-    name: "1155ms | 81.94.148.104:2096"
-    type: vless
-    server: 81.94.148.104
-    port: 2096
-    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 738ms | 185.241.195.152:9445"
-      - "VISION | 748ms | 81.94.148.148:7443"
-      - "VISION | 1132ms | 217.19.122.214:7449"
-      - "VISION | 2310ms | 188.225.36.154:4444"
-      - "1155ms | 188.225.77.178:443"
-      - "1028ms | 188.120.236.239:2096"
-      - "1112ms | 188.120.236.224:2096"
-      - "1155ms | 81.94.148.104:2096"
+      - "VISION | 7643ms | 147.45.153.91:443"
+      - "2203ms | 45.12.75.242:26424"
+      - "2690ms | 45.133.151.163:25895"
+      - "2122ms | 81.94.148.104:2096"
+      - "VISION | 6308ms | 217.19.122.214:7449"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -149,14 +96,11 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 738ms | 185.241.195.152:9445"
-      - "VISION | 748ms | 81.94.148.148:7443"
-      - "VISION | 1132ms | 217.19.122.214:7449"
-      - "VISION | 2310ms | 188.225.36.154:4444"
-      - "1155ms | 188.225.77.178:443"
-      - "1028ms | 188.120.236.239:2096"
-      - "1112ms | 188.120.236.224:2096"
-      - "1155ms | 81.94.148.104:2096"
+      - "VISION | 7643ms | 147.45.153.91:443"
+      - "2203ms | 45.12.75.242:26424"
+      - "2690ms | 45.133.151.163:25895"
+      - "2122ms | 81.94.148.104:2096"
+      - "VISION | 6308ms | 217.19.122.214:7449"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"

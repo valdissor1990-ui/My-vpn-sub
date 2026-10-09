@@ -1,3 +1,10 @@
+## ✅ 2026-10-09 09:46:30 UTC · health=`ok` source=`clash_http`
+
+- raw=384 tg=0 filtered=64
+- tcp_alive=51 clash=9/51
+- exported=5
+
+
 ## ✅ 2026-10-09 02:39:25 UTC · health=`ok` source=`clash_http`
 
 - raw=544 tg=0 filtered=80
@@ -391,10 +398,3 @@
 - **P1** `MIHOMO_DOWN`: mihomo не стартовал — проверить releases URL и bin/mihomo
 
 
-## ✅ 2026-10-01 09:34:58 UTC · health=`ok` source=`tcp_fallback`
-
-- raw=29060 tg=437 filtered=15928
-- tcp_alive=1090 clash=0/40
-- exported=20
-
-### Auto-fix commands

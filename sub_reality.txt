@@ -1,14 +1,11 @@
 #profile-title: base64:TXkgVlBOIMK3IHJlYWxpdHk=
 #profile-update-interval: 1
-# Generated: 2026-10-09 02:39 UTC
-# Count: 8
+# Generated: 2026-10-09 09:46 UTC
+# Count: 5
 # reality
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@185.241.195.152:9445?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=yandex.ru&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2335
-vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@81.94.148.148:7443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=s3.yandexcloud.net&type=raw#%F0%9F%87%B8%F0%9F%87%AA%20Sweden%20%E2%80%94%20%2384
-vless://985fbc4e-f2fd-4a7f-b09f-f9b7728dd0a4@217.19.122.214:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=OGMQnJGgrCYDojFm4u7YrvOoOmtjK6iZ4_q-Kmanozs&security=reality&sid=03cf706025caa46e&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2359
-vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@188.225.36.154:4444?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=s3.yandexcloud.net&type=raw#%F0%9F%87%B8%F0%9F%87%AA%20Sweden%20%E2%80%94%20%2383
-vless://2bb77612-62b2-4c79-aed6-3d93942cd0ca@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2352
-vless://4f4ba283-2dd7-4eda-9211-63ae357373cf@188.120.236.239:2096?encryption=none&fp=chrome&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2329
-vless://4f4ba283-2dd7-4eda-9211-63ae357373cf@188.120.236.224:2096?encryption=none&fp=qq&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2331
-vless://4f4ba283-2dd7-4eda-9211-63ae357373cf@81.94.148.104:2096?encryption=none&fp=chrome&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2326
+vless://186a7d6f-e360-4c5f-bafb-a816f79e231b@147.45.153.91:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=eQxMfeeby4Sn3_GHWBLm2D1yWma0dbvIQ3H_6u4CQB0&security=reality&sid=ec90c36c44225df1&sni=msk-ind-1.movietop24.site&type=raw#%F0%9F%87%AE%F0%9F%87%A9%20Indonesia%20%E2%80%94%20%2337
+vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%233
+vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@45.133.151.163:25895?encryption=none&fp=chrome&pbk=jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k&security=reality&sid=a73f0410d728c823&sni=www.samsung.com&type=raw#%F0%9F%87%AA%F0%9F%87%AA%20Estonia%20%E2%80%94%20%2329
+vless://4f4ba283-2dd7-4eda-9211-63ae357373cf@81.94.148.104:2096?encryption=none&fp=firefox&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%237
+vless://985fbc4e-f2fd-4a7f-b09f-f9b7728dd0a4@217.19.122.214:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=OGMQnJGgrCYDojFm4u7YrvOoOmtjK6iZ4_q-Kmanozs&security=reality&sid=03cf706025caa46e&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2333
