@@ -1,7 +1,10 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-08 22:35 UTC
-# Count: 1
+# Generated: 2026-10-09 02:39 UTC
+# Count: 4
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://a6be94fc-e742-4714-8a38-c8d7410ae066@188.130.209.227:444?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=P7F65GjTQGZju-N8CVHtlKNaWebVe_76Xt7Lm00RuH0&security=reality&sni=vextor.win&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Delta%20%E2%80%94%20%2322
+vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@185.241.195.152:9445?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=yandex.ru&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2335
+vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@81.94.148.148:7443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=s3.yandexcloud.net&type=raw#%F0%9F%87%B8%F0%9F%87%AA%20Sweden%20%E2%80%94%20%2384
+vless://985fbc4e-f2fd-4a7f-b09f-f9b7728dd0a4@217.19.122.214:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=OGMQnJGgrCYDojFm4u7YrvOoOmtjK6iZ4_q-Kmanozs&security=reality&sid=03cf706025caa46e&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2359
+vless://d91dc97c-a09b-40fa-9da0-a3d1729f7427@188.225.36.154:4444?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0&security=reality&sid=02827ef87f4a23c0&sni=s3.yandexcloud.net&type=raw#%F0%9F%87%B8%F0%9F%87%AA%20Sweden%20%E2%80%94%20%2383

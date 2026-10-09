@@ -1,33 +1,33 @@
 {
-  "ts": "2026-10-08 22:35:14 UTC",
+  "ts": "2026-10-09 02:39:25 UTC",
   "status": {
-    "generated_at": "2026-10-08T22:35:14.987626+00:00",
+    "generated_at": "2026-10-09T02:39:25.716392+00:00",
     "pick_source": "clash_http",
     "collect": {
       "sources_ok": 6,
       "sources_fail": 0,
-      "total_lines": 506,
+      "total_lines": 544,
       "telegram_links": 0
     },
     "filter": {
-      "unique": 42
+      "unique": 80
     },
     "monitor": {
-      "tcp_alive": 29,
-      "checked": 37,
+      "tcp_alive": 63,
+      "checked": 76,
       "pre_score_cap": 500,
-      "skipped_dead": 5,
+      "skipped_dead": 4,
       "dead_cache": {
-        "entries": 1,
-        "active_dead": 1,
+        "entries": 2,
+        "active_dead": 2,
         "hours": 6
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 29,
-      "passed": 11,
+      "tested": 60,
+      "passed": 15,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -40,78 +40,86 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 7,
-      "sub_vision.txt": 1,
-      "sub_white.txt": 1,
-      "sub_black.txt": 6,
+      "sub.txt": 8,
+      "sub_vision.txt": 4,
+      "sub_white.txt": 4,
+      "sub_black.txt": 4,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 7,
-      "sub_clash.yaml": 7
+      "sub_reality.txt": 8,
+      "sub_clash.yaml": 8
     },
     "pipeline": {
-      "raw_lines": 506,
+      "raw_lines": 544,
       "tg_links": 0,
-      "filtered": 42,
-      "tcp_alive": 29,
-      "clash_passed": 11,
-      "clash_tested": 29,
-      "exported": 7,
+      "filtered": 80,
+      "tcp_alive": 63,
+      "clash_passed": 15,
+      "clash_tested": 60,
+      "exported": 8,
       "pick_source": "clash_http"
     },
     "top_scores": [
       {
-        "host": "188.120.236.233",
-        "score": 180,
-        "ping": 141,
-        "clash_delay": 950,
-        "vision": false,
+        "host": "185.241.195.152",
+        "score": 210,
+        "ping": 155,
+        "clash_delay": 738,
+        "vision": true,
         "proto_ok": true
       },
       {
-        "host": "188.120.236.224",
+        "host": "81.94.148.148",
+        "score": 210,
+        "ping": 164,
+        "clash_delay": 748,
+        "vision": true,
+        "proto_ok": true
+      },
+      {
+        "host": "217.19.122.214",
+        "score": 210,
+        "ping": 168,
+        "clash_delay": 1132,
+        "vision": true,
+        "proto_ok": true
+      },
+      {
+        "host": "188.225.36.154",
+        "score": 210,
+        "ping": 192,
+        "clash_delay": 2310,
+        "vision": true,
+        "proto_ok": true
+      },
+      {
+        "host": "188.225.77.178",
         "score": 180,
-        "ping": 142,
-        "clash_delay": 711,
+        "ping": 151,
+        "clash_delay": 1155,
         "vision": false,
         "proto_ok": true
       },
       {
         "host": "188.120.236.239",
         "score": 180,
-        "ping": 143,
-        "clash_delay": 874,
+        "ping": 155,
+        "clash_delay": 1028,
         "vision": false,
         "proto_ok": true
       },
       {
-        "host": "188.130.209.227",
-        "score": 177,
-        "ping": 192,
-        "clash_delay": 505,
-        "vision": true,
-        "proto_ok": true
-      },
-      {
-        "host": "87.228.92.103",
-        "score": 110,
-        "ping": 839,
-        "clash_delay": 6565,
+        "host": "188.120.236.224",
+        "score": 180,
+        "ping": 156,
+        "clash_delay": 1112,
         "vision": false,
         "proto_ok": true
       },
       {
         "host": "81.94.148.104",
         "score": 180,
-        "ping": 197,
-        "clash_delay": 1059,
-        "vision": false,
-        "proto_ok": true
-      },
-      {
-        "host": "45.12.75.242",
-        "score": 118,
-        "ping": 1143,
-        "clash_delay": 2051,
+        "ping": 227,
+        "clash_delay": 1155,
         "vision": false,
         "proto_ok": true
       }
