@@ -1,8 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-10-09 09:46 UTC
+# Generated: 2026-10-09 16:42 UTC
 # Count: 2
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://985fbc4e-f2fd-4a7f-b09f-f9b7728dd0a4@217.19.122.214:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=OGMQnJGgrCYDojFm4u7YrvOoOmtjK6iZ4_q-Kmanozs&security=reality&sid=03cf706025caa46e&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2333
-vless://186a7d6f-e360-4c5f-bafb-a816f79e231b@147.45.153.91:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=eQxMfeeby4Sn3_GHWBLm2D1yWma0dbvIQ3H_6u4CQB0&security=reality&sid=ec90c36c44225df1&sni=msk-ind-1.movietop24.site&type=raw#%F0%9F%87%AE%F0%9F%87%A9%20Indonesia%20%E2%80%94%20%2337
+vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&security=reality&sid=db04ce8bdb8900f1&sni=eh.vk.ru&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%2338
+vless://6ed6162d-fc15-447c-b04c-5d6975d2231d@31.130.155.114:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA&security=reality&sid=6c183039c8fe2676&sni=api.max.ru&type=raw#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%2335
