@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-09 16:42 UTC
+# My VPN Sub Clash Meta · 2026-10-09 21:24 UTC
 # nodes: 4
 mixed-port: 7890
 allow-lan: false
@@ -6,53 +6,52 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 658ms | 109.120.181.153:443"
+    name: "VISION | 715ms | 78.159.250.28:8449"
     type: vless
-    server: 109.120.181.153
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: eh.vk.ru
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 638ms | 31.130.155.114:443"
-    type: vless
-    server: 31.130.155.114
-    port: 443
-    uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
+    server: 78.159.250.28
+    port: 8449
+    uuid: 30292475-4666-4c26-bcb2-338a0919958b
     network: tcp
     udp: true
     tls: true
     client-fingerprint: edge
-    servername: api.max.ru
+    servername: nothere.lalibobi.online
     reality-opts:
-      public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
-      short-id: 6c183039c8fe2676
+      public-key: SL4NO13dbw_PiwY4l1HXILs0Iiy5qhO_oITVHlDB_GA
+      short-id: a47976c441bf585a
     flow: xtls-rprx-vision
   -
-    name: "3431ms | 81.94.148.104:2096"
+    name: "2156ms | 188.225.45.77:443"
     type: vless
-    server: 81.94.148.104
-    port: 2096
-    uuid: 4f4ba283-2dd7-4eda-9211-63ae357373cf
+    server: 188.225.45.77
+    port: 443
+    uuid: 57284239-1ceb-439f-826e-cd25fcc1c1c5
     network: grpc
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: id.vk.com
+    client-fingerprint: firefox
+    servername: 5post-gate.x5.ru
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
+      public-key: 5SjHShy0uFG9MmzFbZ21Ozg623ZXKwLf3pzC_QA8CBE
+      short-id: 5803463a64073dfc
     grpc-opts:
-      grpc-service-name: vless-grpc-reality
+      grpc-service-name: grpc
   -
-    name: "5757ms | 45.133.151.163:25895"
+    name: "4235ms | 87.228.92.103:25178"
+    type: vless
+    server: 87.228.92.103
+    port: 25178
+    uuid: 95003356-20f9-4c84-a21f-2f9c1fc285eb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: www.icloud.com
+    reality-opts:
+      public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
+      short-id: ce43937e79bc30f0
+  -
+    name: "1960ms | 45.133.151.163:25895"
     type: vless
     server: 45.133.151.163
     port: 25895
@@ -70,10 +69,10 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 658ms | 109.120.181.153:443"
-      - "VISION | 638ms | 31.130.155.114:443"
-      - "3431ms | 81.94.148.104:2096"
-      - "5757ms | 45.133.151.163:25895"
+      - "VISION | 715ms | 78.159.250.28:8449"
+      - "2156ms | 188.225.45.77:443"
+      - "4235ms | 87.228.92.103:25178"
+      - "1960ms | 45.133.151.163:25895"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -81,10 +80,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 658ms | 109.120.181.153:443"
-      - "VISION | 638ms | 31.130.155.114:443"
-      - "3431ms | 81.94.148.104:2096"
-      - "5757ms | 45.133.151.163:25895"
+      - "VISION | 715ms | 78.159.250.28:8449"
+      - "2156ms | 188.225.45.77:443"
+      - "4235ms | 87.228.92.103:25178"
+      - "1960ms | 45.133.151.163:25895"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"

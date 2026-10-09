@@ -1,8 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-10-09 16:42 UTC
-# Count: 2
+# Generated: 2026-10-09 21:24 UTC
+# Count: 1
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@109.120.181.153:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&security=reality&sid=db04ce8bdb8900f1&sni=eh.vk.ru&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%2338
-vless://6ed6162d-fc15-447c-b04c-5d6975d2231d@31.130.155.114:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA&security=reality&sid=6c183039c8fe2676&sni=api.max.ru&type=raw#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%2335
+vless://30292475-4666-4c26-bcb2-338a0919958b@78.159.250.28:8449?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=SL4NO13dbw_PiwY4l1HXILs0Iiy5qhO_oITVHlDB_GA&security=reality&sid=a47976c441bf585a&sni=nothere.lalibobi.online&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2311
