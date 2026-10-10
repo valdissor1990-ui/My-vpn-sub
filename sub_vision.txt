@@ -1,9 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-10-10 01:23 UTC
-# Count: 3
+# Generated: 2026-10-10 07:51 UTC
+# Count: 2
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://f23bc4f1-cc71-4003-ae6c-d6abe21d8191@46.243.235.246:7449?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=TixECE6AqdT0DEihGXGqBAovNYMxZSB2csK0Lmm1ch0&security=reality&sid=11e097a032298bd8&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2343
-vless://aeb00fa8-4c19-0008-8f41-3b9f76383064@188.225.74.139:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=Sx6bJWPbDlwuMfKjcz-sUyJxZkuks4uLqqLa-1uyjH4&security=reality&sni=yabro-wbplugin.edadeal.yandex.ru&type=raw#%F0%9F%87%AA%F0%9F%87%AA%20Estonia%20%E2%80%94%20%2340
-vless://ee18d188-14cc-417e-beb1-70e4add6d023@217.149.30.73:8443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=p87u9cOh91BaXsKS-HoCoOUXxHcOwkM6ByTWmz_6b2Y&security=reality&sid=0da7e14db353e7d0&sni=time.nztvpn.com&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2311
+vless://f23bc4f1-cc71-4003-ae6c-d6abe21d8191@46.243.235.246:7449?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=TixECE6AqdT0DEihGXGqBAovNYMxZSB2csK0Lmm1ch0&security=reality&sid=11e097a032298bd8&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2380
+vless://ee18d188-14cc-417e-beb1-70e4add6d023@217.149.30.73:8443?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=p87u9cOh91BaXsKS-HoCoOUXxHcOwkM6ByTWmz_6b2Y&security=reality&sid=0da7e14db353e7d0&sni=time.nztvpn.com&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2340
