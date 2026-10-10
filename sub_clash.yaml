@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-09 21:24 UTC
+# My VPN Sub Clash Meta · 2026-10-10 01:23 UTC
 # nodes: 4
 mixed-port: 7890
 allow-lan: false
@@ -6,73 +6,75 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 715ms | 78.159.250.28:8449"
+    name: "VISION | 721ms | 46.243.235.246:7449"
     type: vless
-    server: 78.159.250.28
-    port: 8449
-    uuid: 30292475-4666-4c26-bcb2-338a0919958b
+    server: 46.243.235.246
+    port: 7449
+    uuid: f23bc4f1-cc71-4003-ae6c-d6abe21d8191
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: edge
-    servername: nothere.lalibobi.online
+    client-fingerprint: ios
+    servername: passport.yandex.ru
     reality-opts:
-      public-key: SL4NO13dbw_PiwY4l1HXILs0Iiy5qhO_oITVHlDB_GA
-      short-id: a47976c441bf585a
+      public-key: TixECE6AqdT0DEihGXGqBAovNYMxZSB2csK0Lmm1ch0
+      short-id: 11e097a032298bd8
     flow: xtls-rprx-vision
   -
-    name: "2156ms | 188.225.45.77:443"
+    name: "VISION | 554ms | 188.225.74.139:443"
     type: vless
-    server: 188.225.45.77
+    server: 188.225.74.139
     port: 443
-    uuid: 57284239-1ceb-439f-826e-cd25fcc1c1c5
+    uuid: aeb00fa8-4c19-0008-8f41-3b9f76383064
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: random
+    servername: yabro-wbplugin.edadeal.yandex.ru
+    reality-opts:
+      public-key: Sx6bJWPbDlwuMfKjcz-sUyJxZkuks4uLqqLa-1uyjH4
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "1370ms | 188.225.77.178:443"
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: a747dbbb-87f6-47ea-a6b7-24463bbdbdb6
     network: grpc
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: 5post-gate.x5.ru
+    client-fingerprint: qq
+    servername: cloudcdn-m9-12.cdn.yandex.net
     reality-opts:
-      public-key: 5SjHShy0uFG9MmzFbZ21Ozg623ZXKwLf3pzC_QA8CBE
-      short-id: 5803463a64073dfc
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     grpc-opts:
-      grpc-service-name: grpc
+      grpc-service-name: grpc_vless
   -
-    name: "4235ms | 87.228.92.103:25178"
+    name: "VISION | 415ms | 217.149.30.73:8443"
     type: vless
-    server: 87.228.92.103
-    port: 25178
-    uuid: 95003356-20f9-4c84-a21f-2f9c1fc285eb
+    server: 217.149.30.73
+    port: 8443
+    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: www.icloud.com
+    client-fingerprint: ios
+    servername: time.nztvpn.com
     reality-opts:
-      public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
-      short-id: ce43937e79bc30f0
-  -
-    name: "1960ms | 45.133.151.163:25895"
-    type: vless
-    server: 45.133.151.163
-    port: 25895
-    uuid: f90b7d43-69e2-4b46-a672-8029bc6796a2
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: www.samsung.com
-    reality-opts:
-      public-key: jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k
-      short-id: a73f0410d728c823
+      public-key: p87u9cOh91BaXsKS-HoCoOUXxHcOwkM6ByTWmz_6b2Y
+      short-id: 0da7e14db353e7d0
+    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 715ms | 78.159.250.28:8449"
-      - "2156ms | 188.225.45.77:443"
-      - "4235ms | 87.228.92.103:25178"
-      - "1960ms | 45.133.151.163:25895"
+      - "VISION | 721ms | 46.243.235.246:7449"
+      - "VISION | 554ms | 188.225.74.139:443"
+      - "1370ms | 188.225.77.178:443"
+      - "VISION | 415ms | 217.149.30.73:8443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -80,10 +82,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 715ms | 78.159.250.28:8449"
-      - "2156ms | 188.225.45.77:443"
-      - "4235ms | 87.228.92.103:25178"
-      - "1960ms | 45.133.151.163:25895"
+      - "VISION | 721ms | 46.243.235.246:7449"
+      - "VISION | 554ms | 188.225.74.139:443"
+      - "1370ms | 188.225.77.178:443"
+      - "VISION | 415ms | 217.149.30.73:8443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"

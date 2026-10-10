@@ -1,12 +1,12 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-10-09 21:24 UTC
+# Generated: 2026-10-10 01:23 UTC
 # Count: 4
-# source=clash_soft_fill
-# clash=6/58
+# source=clash_http
+# clash=8/60
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://30292475-4666-4c26-bcb2-338a0919958b@78.159.250.28:8449?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=SL4NO13dbw_PiwY4l1HXILs0Iiy5qhO_oITVHlDB_GA&security=reality&sid=a47976c441bf585a&sni=nothere.lalibobi.online&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2311
-vless://57284239-1ceb-439f-826e-cd25fcc1c1c5@188.225.45.77:443?encryption=none&fp=firefox&mode=gun&pbk=5SjHShy0uFG9MmzFbZ21Ozg623ZXKwLf3pzC_QA8CBE&security=reality&serviceName=grpc&sid=5803463a64073dfc&sni=5post-gate.x5.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%2336
-vless://95003356-20f9-4c84-a21f-2f9c1fc285eb@87.228.92.103:25178?encryption=none&fp=firefox&pbk=UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4&security=reality&sid=ce43937e79bc30f0&sni=www.icloud.com&spx=%2F&type=raw#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20%E2%80%94%20%2348
-vless://f90b7d43-69e2-4b46-a672-8029bc6796a2@45.133.151.163:25895?encryption=none&fp=chrome&pbk=jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k&security=reality&sid=a73f0410d728c823&sni=www.samsung.com&type=raw#%F0%9F%87%AA%F0%9F%87%AA%20Estonia%20%E2%80%94%20%2330
+vless://f23bc4f1-cc71-4003-ae6c-d6abe21d8191@46.243.235.246:7449?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=TixECE6AqdT0DEihGXGqBAovNYMxZSB2csK0Lmm1ch0&security=reality&sid=11e097a032298bd8&sni=passport.yandex.ru&type=raw#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%2343
+vless://aeb00fa8-4c19-0008-8f41-3b9f76383064@188.225.74.139:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=Sx6bJWPbDlwuMfKjcz-sUyJxZkuks4uLqqLa-1uyjH4&security=reality&sni=yabro-wbplugin.edadeal.yandex.ru&type=raw#%F0%9F%87%AA%F0%9F%87%AA%20Estonia%20%E2%80%94%20%2340
+vless://a747dbbb-87f6-47ea-a6b7-24463bbdbdb6@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2335
+vless://ee18d188-14cc-417e-beb1-70e4add6d023@217.149.30.73:8443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=p87u9cOh91BaXsKS-HoCoOUXxHcOwkM6ByTWmz_6b2Y&security=reality&sid=0da7e14db353e7d0&sni=time.nztvpn.com&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2311
