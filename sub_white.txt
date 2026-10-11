@@ -1,7 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-10 23:03 UTC
+# Generated: 2026-10-11 02:35 UTC
 # Count: 1
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@90.156.218.163:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&security=reality&sid=db04ce8bdb8900f1&sni=eh.vk.ru&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%2357
+vless://accfae78-b31c-47cb-86a1-bb9a07973e4a@194.55.239.101:8443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=vxA0Fdcn39Z6w1JrR958Ii0W9uLk2Knxg5XDagcPtxQ&security=reality&sid=e016190556fb1c9b&sni=passport.yandex.ru&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2383
