@@ -1,10 +1,10 @@
 #profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
-# Generated: 2026-10-11 20:02 UTC
+# Generated: 2026-10-11 23:28 UTC
 # Count: 4
 # black
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://89752e80-ea38-437a-abc4-dd296fc32aa4@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2340
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.7:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2315
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.0:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2314
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@81.94.148.104:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2318
+vless://cd8de56b-cc79-4ed9-a5d5-cdf23672452f@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%23105
+vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.7:2096?encryption=none&fp=qq&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2372
+vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.1:2096?encryption=none&fp=edge&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2371
+vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@81.94.148.104:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2370

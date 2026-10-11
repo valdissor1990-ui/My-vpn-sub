@@ -1,10 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-11 20:02 UTC
-# Count: 4
+# Generated: 2026-10-11 23:28 UTC
+# Count: 2
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://89752e80-ea38-437a-abc4-dd296fc32aa4@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2340
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.7:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2315
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.0:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2314
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@81.94.148.104:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2318
+vless://5ce2085b-9dee-4c0b-8a74-800c4ea1739c@185.229.9.79:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM&security=reality&sid=0bb3fbdc6cb178d4&sni=www.vk.com&spx=%2F&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2398
+vless://c9c219dc-50da-4135-8e5b-67020291f0ec@104.171.136.85:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA&security=reality&sni=yl4ooxmi.static-edge.site&spx=%2F&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2360
