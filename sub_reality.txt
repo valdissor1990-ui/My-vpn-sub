@@ -1,15 +1,9 @@
 #profile-title: base64:TXkgVlBOIMK3IHJlYWxpdHk=
 #profile-update-interval: 1
-# Generated: 2026-10-12 03:00 UTC
-# Count: 9
+# Generated: 2026-10-12 10:15 UTC
+# Count: 3
 # reality
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.163.255:2096?encryption=none&fp=edge&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2361
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.0:2096?encryption=none&fp=qq&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2362
-vless://c3db7657-88ce-42a6-b998-1e0364b277ac@194.55.239.229:4510?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23131
-vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23132
-vless://c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8@93.188.184.150:443?encryption=none&fp=edge&mode=gun&pbk=aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk&security=reality&serviceName=ru-api&sni=ru-1-2.unturned-rust-dead.lol&type=grpc#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2326
-vless://c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8@159.194.244.247:443?encryption=none&fp=random&mode=gun&pbk=aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk&security=reality&serviceName=ru-api&sni=ru-1-3.unturned-rust-dead.lol&type=grpc#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2323
-vless://51c607ab-2833-4678-b109-34bce9564d82@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2398
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@153.76.164.7:2096?encryption=none&fp=edge&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%E2%80%94%20%23102
-vless://3fcec4e4-a674-44d2-8cae-c253cec43b9c@81.94.148.104:2096?encryption=none&fp=random&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%A8%F0%9F%87%AD%20Switzerland%20%E2%80%94%20%2358
+vless://730e3135-8c02-4d87-be1e-45c71a06dfd8@185.229.9.79:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fsyvGBPzzwpnSA0UnJML_cDqviNSEdj9zktpC1EeFhY&security=reality&sid=743541f932fa3959&sni=yandex.ru&spx=%2F&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2384
+vless://4136705c-c83c-4548-948b-687e35f1fe85@188.225.77.178:443?encryption=none&fp=qq&mode=gun&pbk=9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ&security=reality&serviceName=grpc_vless&sid=8375b32501373f41&sni=cloudcdn-m9-12.cdn.yandex.net&spx=%2F&type=grpc#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2386
+vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23107

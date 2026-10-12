@@ -1,59 +1,43 @@
-# My VPN Sub Clash Meta · 2026-10-12 03:00 UTC
-# nodes: 9
+# My VPN Sub Clash Meta · 2026-10-12 10:15 UTC
+# nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "845ms | 153.76.163.255:2096"
+    name: "VISION | 1984ms | 185.229.9.79:443"
     type: vless
-    server: 153.76.163.255
-    port: 2096
-    uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
-    network: grpc
+    server: 185.229.9.79
+    port: 443
+    uuid: 730e3135-8c02-4d87-be1e-45c71a06dfd8
+    network: tcp
     udp: true
     tls: true
-    client-fingerprint: edge
-    servername: id.vk.com
+    client-fingerprint: firefox
+    servername: yandex.ru
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
+      public-key: fsyvGBPzzwpnSA0UnJML_cDqviNSEdj9zktpC1EeFhY
+      short-id: 743541f932fa3959
+    flow: xtls-rprx-vision
   -
-    name: "839ms | 153.76.164.0:2096"
+    name: "1430ms | 188.225.77.178:443"
     type: vless
-    server: 153.76.164.0
-    port: 2096
-    uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
+    server: 188.225.77.178
+    port: 443
+    uuid: 4136705c-c83c-4548-948b-687e35f1fe85
     network: grpc
     udp: true
     tls: true
     client-fingerprint: qq
-    servername: id.vk.com
+    servername: cloudcdn-m9-12.cdn.yandex.net
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     grpc-opts:
-      grpc-service-name: vless-grpc-reality
+      grpc-service-name: grpc_vless
   -
-    name: "VISION | 825ms | 194.55.239.229:4510"
-    type: vless
-    server: 194.55.239.229
-    port: 4510
-    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: 9c99da.usecache.net
-    reality-opts:
-      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
-      short-id: 2d0c188798bae174
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 831ms | 78.159.250.34:4510"
+    name: "VISION | 1234ms | 78.159.250.34:4510"
     type: vless
     server: 78.159.250.34
     port: 4510
@@ -67,100 +51,14 @@ proxies:
       public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
       short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
-  -
-    name: "2865ms | 93.188.184.150:443"
-    type: vless
-    server: 93.188.184.150
-    port: 443
-    uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: edge
-    servername: ru-1-2.unturned-rust-dead.lol
-    reality-opts:
-      public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
-      short-id: 
-    grpc-opts:
-      grpc-service-name: ru-api
-  -
-    name: "200ms | 159.194.244.247:443"
-    type: vless
-    server: 159.194.244.247
-    port: 443
-    uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: ru-1-3.unturned-rust-dead.lol
-    reality-opts:
-      public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
-      short-id: 
-    grpc-opts:
-      grpc-service-name: ru-api
-  -
-    name: "1150ms | 188.225.77.178:443"
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: 51c607ab-2833-4678-b109-34bce9564d82
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc_vless
-  -
-    name: "816ms | 153.76.164.7:2096"
-    type: vless
-    server: 153.76.164.7
-    port: 2096
-    uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: edge
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
-  -
-    name: "1172ms | 81.94.148.104:2096"
-    type: vless
-    server: 81.94.148.104
-    port: 2096
-    uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "845ms | 153.76.163.255:2096"
-      - "839ms | 153.76.164.0:2096"
-      - "VISION | 825ms | 194.55.239.229:4510"
-      - "VISION | 831ms | 78.159.250.34:4510"
-      - "2865ms | 93.188.184.150:443"
-      - "200ms | 159.194.244.247:443"
-      - "1150ms | 188.225.77.178:443"
-      - "816ms | 153.76.164.7:2096"
-      - "1172ms | 81.94.148.104:2096"
+      - "VISION | 1984ms | 185.229.9.79:443"
+      - "1430ms | 188.225.77.178:443"
+      - "VISION | 1234ms | 78.159.250.34:4510"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -168,15 +66,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "845ms | 153.76.163.255:2096"
-      - "839ms | 153.76.164.0:2096"
-      - "VISION | 825ms | 194.55.239.229:4510"
-      - "VISION | 831ms | 78.159.250.34:4510"
-      - "2865ms | 93.188.184.150:443"
-      - "200ms | 159.194.244.247:443"
-      - "1150ms | 188.225.77.178:443"
-      - "816ms | 153.76.164.7:2096"
-      - "1172ms | 81.94.148.104:2096"
+      - "VISION | 1984ms | 185.229.9.79:443"
+      - "1430ms | 188.225.77.178:443"
+      - "VISION | 1234ms | 78.159.250.34:4510"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
