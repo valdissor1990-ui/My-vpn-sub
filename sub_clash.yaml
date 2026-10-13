@@ -1,12 +1,57 @@
-# My VPN Sub Clash Meta · 2026-10-12 20:04 UTC
-# nodes: 3
+# My VPN Sub Clash Meta · 2026-10-13 02:19 UTC
+# nodes: 5
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 471ms | 188.225.37.224:443"
+    name: "VISION | 5682ms | 81.94.148.50:7449"
+    type: vless
+    server: 81.94.148.50
+    port: 7449
+    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: passport.yandex.ru
+    reality-opts:
+      public-key: SbSuvgEeMrvFIV7C3tLaJhEADo_2RQdGvwFFrfJJQE0
+      short-id: 7abd137540629e9d
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 673ms | 37.18.14.145:4510"
+    type: vless
+    server: 37.18.14.145
+    port: 4510
+    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: 9c99da.usecache.net
+    reality-opts:
+      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
+      short-id: 2d0c188798bae174
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 758ms | 185.229.9.79:443"
+    type: vless
+    server: 185.229.9.79
+    port: 443
+    uuid: 3dd89210-48b3-4a5a-ab4f-e6ffc784499b
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: yandex.ru
+    reality-opts:
+      public-key: fsyvGBPzzwpnSA0UnJML_cDqviNSEdj9zktpC1EeFhY
+      short-id: 743541f932fa3959
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 429ms | 188.225.37.224:443"
     type: vless
     server: 188.225.37.224
     port: 443
@@ -14,29 +59,14 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: qq
+    client-fingerprint: firefox
     servername: max.ru
     reality-opts:
       public-key: lWZR5WmRc_qa11MTPhUzHF3ijTDdz7rDaTuzj9sglSs
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 4588ms | 185.229.9.79:443"
-    type: vless
-    server: 185.229.9.79
-    port: 443
-    uuid: f87dcdfe-019f-4b1c-90cf-28ab7a3d8a61
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: www.vk.com
-    reality-opts:
-      public-key: 7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM
-      short-id: 0bb3fbdc6cb178d4
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 2440ms | 78.159.250.34:4510"
+    name: "VISION | 697ms | 78.159.250.34:4510"
     type: vless
     server: 78.159.250.34
     port: 4510
@@ -55,9 +85,11 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 471ms | 188.225.37.224:443"
-      - "VISION | 4588ms | 185.229.9.79:443"
-      - "VISION | 2440ms | 78.159.250.34:4510"
+      - "VISION | 5682ms | 81.94.148.50:7449"
+      - "VISION | 673ms | 37.18.14.145:4510"
+      - "VISION | 758ms | 185.229.9.79:443"
+      - "VISION | 429ms | 188.225.37.224:443"
+      - "VISION | 697ms | 78.159.250.34:4510"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -65,9 +97,11 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 471ms | 188.225.37.224:443"
-      - "VISION | 4588ms | 185.229.9.79:443"
-      - "VISION | 2440ms | 78.159.250.34:4510"
+      - "VISION | 5682ms | 81.94.148.50:7449"
+      - "VISION | 673ms | 37.18.14.145:4510"
+      - "VISION | 758ms | 185.229.9.79:443"
+      - "VISION | 429ms | 188.225.37.224:443"
+      - "VISION | 697ms | 78.159.250.34:4510"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
