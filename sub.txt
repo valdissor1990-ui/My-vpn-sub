@@ -1,13 +1,12 @@
 #profile-title: base64:TXkgVlBOIMK3IGxpdmU=
 #profile-update-interval: 1
-# Generated: 2026-10-13 02:19 UTC
-# Count: 5
-# source=clash_http
-# clash=9/60
+# Generated: 2026-10-13 09:53 UTC
+# Count: 4
+# source=clash_soft_fill
+# clash=7/60
 # rotate+soft_fill; last_export only for sub.txt
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://7ac594a4-fabc-486c-9a91-5662c09e63cd@81.94.148.50:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=SbSuvgEeMrvFIV7C3tLaJhEADo_2RQdGvwFFrfJJQE0&security=reality&sid=7abd137540629e9d&sni=passport.yandex.ru&type=raw#%F0%9F%87%A8%F0%9F%87%BF%20Czechia%20%E2%80%94%20%2363
-vless://c3db7657-88ce-42a6-b998-1e0364b277ac@37.18.14.145:4510?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23140
-vless://3dd89210-48b3-4a5a-ab4f-e6ffc784499b@185.229.9.79:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=fsyvGBPzzwpnSA0UnJML_cDqviNSEdj9zktpC1EeFhY&security=reality&sid=743541f932fa3959&sni=yandex.ru&spx=%2F&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%23109
-vless://2db2d74d-f653-459c-818e-22a294e24175@188.225.37.224:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=lWZR5WmRc_qa11MTPhUzHF3ijTDdz7rDaTuzj9sglSs&security=reality&sni=max.ru&type=raw#%F0%9F%87%B1%F0%9F%87%B9%20Lithuania%20%E2%80%94%20%23125
-vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%23137
+vless://ed8704b8-9e9e-48e6-b55b-ae9079ab3a59@176.124.214.107:8443?encryption=none&fp=qq&mode=gun&pbk=i5a8i2AWUSMZ-rYA6hGBRCBBoe7W5ah33SCdF5JkMk4&security=reality&serviceName=grpc-tunnel&sid=8bcfe256cf216fd8&sni=apple.com&type=grpc#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2312
+vless://7ac594a4-fabc-486c-9a91-5662c09e63cd@81.94.148.50:7449?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=SbSuvgEeMrvFIV7C3tLaJhEADo_2RQdGvwFFrfJJQE0&security=reality&sid=7abd137540629e9d&sni=passport.yandex.ru&type=raw#%F0%9F%87%A8%F0%9F%87%BF%20Czechia%20%E2%80%94%20%2316
+vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%2378
+vless://c3db7657-88ce-42a6-b998-1e0364b277ac@37.18.14.145:4510?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw#%F0%9F%87%B5%F0%9F%87%B1%20Poland%20%E2%80%94%20%2375

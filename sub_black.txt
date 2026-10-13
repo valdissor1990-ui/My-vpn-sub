@@ -1,6 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
-# Generated: 2026-10-13 02:19 UTC
-# Count: 0
+# Generated: 2026-10-13 09:53 UTC
+# Count: 1
 # black
 # https://github.com/valdissor1990-ui/My-vpn-sub
+vless://ed8704b8-9e9e-48e6-b55b-ae9079ab3a59@176.124.214.107:8443?encryption=none&fp=qq&mode=gun&pbk=i5a8i2AWUSMZ-rYA6hGBRCBBoe7W5ah33SCdF5JkMk4&security=reality&serviceName=grpc-tunnel&sid=8bcfe256cf216fd8&sni=apple.com&type=grpc#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2312
