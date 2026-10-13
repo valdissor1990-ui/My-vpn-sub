@@ -1,3 +1,10 @@
+## ✅ 2026-10-13 22:03:35 UTC · health=`ok` source=`clash_http`
+
+- raw=610 tg=0 filtered=80
+- tcp_alive=58 clash=9/58
+- exported=5
+
+
 ## ✅ 2026-10-13 17:15:13 UTC · health=`ok` source=`clash_soft_fill`
 
 - raw=612 tg=0 filtered=82
@@ -391,10 +398,3 @@
 - **P2** `CLASH_LOW_RATIO`: pass rate 1/60: расширить кандидатов, снизить score bias на мёртвые free-keys
 
 
-## ✅ 2026-10-04 17:12:45 UTC · health=`ok` source=`clash_soft_fill`
-
-- raw=27187 tg=427 filtered=15145
-- tcp_alive=939 clash=2/40
-- exported=1
-
-### Auto-fix commands
