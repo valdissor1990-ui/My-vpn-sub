@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-10-13T17:15:13.473536+00:00",
+  "pick_source": "clash_soft_fill",
+  "collect": {
+    "sources_ok": 6,
+    "sources_fail": 0,
+    "total_lines": 612,
+    "telegram_links": 0
+  },
+  "filter": {
+    "unique": 82
+  },
+  "monitor": {
+    "tcp_alive": 62,
+    "checked": 82,
+    "pre_score_cap": 500,
+    "skipped_dead": 0,
+    "dead_cache": {
+      "entries": 1,
+      "active_dead": 1,
+      "hours": 6
+    }
+  },
+  "protocol_test": {
+    "engine": "mihomo",
+    "enabled": true,
+    "tested": 60,
+    "passed": 2,
+    "fallback_tcp": false,
+    "test_urls": [
+      "http://www.gstatic.com/generate_204",
+      "http://cp.cloudflare.com/generate_204",
+      "http://connectivitycheck.gstatic.com/generate_204",
+      "http://www.msftconnecttest.com/connecttest.txt"
+    ],
+    "workers": 4,
+    "workers_hy2": 2,
+    "workers_used": 4
+  },
+  "output": {
+    "sub.txt": 2,
+    "sub_vision.txt": 2,
+    "sub_white.txt": 2,
+    "sub_black.txt": 0,
+    "sub_hy2.txt": 0,
+    "sub_reality.txt": 2,
+    "sub_clash.yaml": 2
+  },
+  "pipeline": {
+    "raw_lines": 612,
+    "tg_links": 0,
+    "filtered": 82,
+    "tcp_alive": 62,
+    "clash_passed": 2,
+    "clash_tested": 60,
+    "exported": 2,
+    "pick_source": "clash_soft_fill"
+  },
+  "top_scores": [
+    {
+      "host": "90.156.218.163",
+      "score": 210,
+      "ping": 185,
+      "clash_delay": 2780,
+      "vision": true,
+      "proto_ok": true
+    },
+    {
+      "host": "37.18.14.145",
+      "score": 177,
+      "ping": 159,
+      "clash_delay": 3525,
+      "vision": true,
+      "proto_ok": true
+    }
+  ],
+  "health": "ok",
+  "mirrors": {
+    "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
+    "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
+    "blog": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/blog.md",
+    "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md"
+  }
+}

@@ -1,58 +1,27 @@
-# My VPN Sub Clash Meta · 2026-10-13 09:53 UTC
-# nodes: 4
+# My VPN Sub Clash Meta · 2026-10-13 17:15 UTC
+# nodes: 2
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "521ms | 176.124.214.107:8443"
+    name: "VISION | 2780ms | 90.156.218.163:443"
     type: vless
-    server: 176.124.214.107
-    port: 8443
-    uuid: ed8704b8-9e9e-48e6-b55b-ae9079ab3a59
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: apple.com
-    reality-opts:
-      public-key: i5a8i2AWUSMZ-rYA6hGBRCBBoe7W5ah33SCdF5JkMk4
-      short-id: 8bcfe256cf216fd8
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
-  -
-    name: "VISION | 4096ms | 81.94.148.50:7449"
-    type: vless
-    server: 81.94.148.50
-    port: 7449
-    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
+    server: 90.156.218.163
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: passport.yandex.ru
+    client-fingerprint: random
+    servername: eh.vk.ru
     reality-opts:
-      public-key: SbSuvgEeMrvFIV7C3tLaJhEADo_2RQdGvwFFrfJJQE0
-      short-id: 7abd137540629e9d
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
   -
-    name: "VISION | 9891ms | 78.159.250.34:4510"
-    type: vless
-    server: 78.159.250.34
-    port: 4510
-    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: 9c99da.usecache.net
-    reality-opts:
-      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
-      short-id: 2d0c188798bae174
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 2538ms | 37.18.14.145:4510"
+    name: "VISION | 3525ms | 37.18.14.145:4510"
     type: vless
     server: 37.18.14.145
     port: 4510
@@ -71,10 +40,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "521ms | 176.124.214.107:8443"
-      - "VISION | 4096ms | 81.94.148.50:7449"
-      - "VISION | 9891ms | 78.159.250.34:4510"
-      - "VISION | 2538ms | 37.18.14.145:4510"
+      - "VISION | 2780ms | 90.156.218.163:443"
+      - "VISION | 3525ms | 37.18.14.145:4510"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -82,10 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "521ms | 176.124.214.107:8443"
-      - "VISION | 4096ms | 81.94.148.50:7449"
-      - "VISION | 9891ms | 78.159.250.34:4510"
-      - "VISION | 2538ms | 37.18.14.145:4510"
+      - "VISION | 2780ms | 90.156.218.163:443"
+      - "VISION | 3525ms | 37.18.14.145:4510"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
