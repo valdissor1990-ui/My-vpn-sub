@@ -1,42 +1,12 @@
-# My VPN Sub Clash Meta · 2026-10-14 17:41 UTC
-# nodes: 3
+# My VPN Sub Clash Meta · 2026-10-14 21:04 UTC
+# nodes: 1
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 1709ms | 109.120.181.153:443"
-    type: vless
-    server: 109.120.181.153
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: eh.vk.ru
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 2350ms | 90.156.218.163:443"
-    type: vless
-    server: 90.156.218.163
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: eh.vk.ru
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 3336ms | 37.18.14.145:4510"
+    name: "VISION | 734ms | 37.18.14.145:4510"
     type: vless
     server: 37.18.14.145
     port: 4510
@@ -44,7 +14,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: random
+    client-fingerprint: firefox
     servername: 9c99da.usecache.net
     reality-opts:
       public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
@@ -55,9 +25,7 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 1709ms | 109.120.181.153:443"
-      - "VISION | 2350ms | 90.156.218.163:443"
-      - "VISION | 3336ms | 37.18.14.145:4510"
+      - "VISION | 734ms | 37.18.14.145:4510"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -65,9 +33,7 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 1709ms | 109.120.181.153:443"
-      - "VISION | 2350ms | 90.156.218.163:443"
-      - "VISION | 3336ms | 37.18.14.145:4510"
+      - "VISION | 734ms | 37.18.14.145:4510"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
