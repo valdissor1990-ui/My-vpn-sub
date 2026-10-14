@@ -1,9 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IGJsYWNr
 #profile-update-interval: 1
-# Generated: 2026-10-14 01:29 UTC
-# Count: 3
+# Generated: 2026-10-14 06:52 UTC
+# Count: 1
 # black
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://768712b8-81dc-440f-9b38-4523bf767df4@78.24.216.134:2096?encryption=none&fp=chrome&mode=gun&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&serviceName=vless-grpc-reality&sni=id.vk.com&type=grpc#%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20%E2%80%94%20%23141
-vless://4330a14e-455d-4b89-82d1-179efb3d0a32@46.182.24.240:443?encryption=none&fp=random&mode=gun&pbk=Ed29G1bO6isJRo8iGPm7W_9c4mVFqHUilPmDP0llJW8&security=reality&serviceName=grpc-32d2699be001e4f1&sni=max.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%23132
-vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&fp=qq&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2341
+vless://4330a14e-455d-4b89-82d1-179efb3d0a32@46.182.24.240:443?encryption=none&fp=random&mode=gun&pbk=Ed29G1bO6isJRo8iGPm7W_9c4mVFqHUilPmDP0llJW8&security=reality&serviceName=grpc-32d2699be001e4f1&sni=max.ru&type=grpc#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%23107

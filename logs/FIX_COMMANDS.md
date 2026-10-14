@@ -1,7 +1,11 @@
 # FIX_COMMANDS — авто-анализ после прогона
 
-Updated: 2026-10-14T01:29:14.017181+00:00
+Updated: 2026-10-14T06:52:18.406387+00:00
 
 Эти команды бот выставляет после анализа логов. Критичные (P0) чинить в первую очередь.
 
-_Проблем не найдено._
+## [P0] `LOW_EXPORT`
+
+- action: Clash ok=5, export=4: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
+- auto: `soft_fill_and_raise_pass`
+

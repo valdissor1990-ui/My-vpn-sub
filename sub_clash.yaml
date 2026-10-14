@@ -1,43 +1,27 @@
-# My VPN Sub Clash Meta · 2026-10-14 01:29 UTC
-# nodes: 6
+# My VPN Sub Clash Meta · 2026-10-14 06:52 UTC
+# nodes: 4
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "1406ms | 78.24.216.134:2096"
+    name: "VISION | 641ms | 37.18.14.145:4510"
     type: vless
-    server: 78.24.216.134
-    port: 2096
-    uuid: 768712b8-81dc-440f-9b38-4523bf767df4
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: chrome
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
-  -
-    name: "VISION | 375ms | 45.131.212.151:443"
-    type: vless
-    server: 45.131.212.151
-    port: 443
-    uuid: 5aefad36-749b-401c-8b3b-547ef7d2253e
+    server: 37.18.14.145
+    port: 4510
+    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
     network: tcp
     udp: true
     tls: true
     client-fingerprint: random
-    servername: de.lstu.ru
+    servername: 9c99da.usecache.net
     reality-opts:
-      public-key: e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg
-      short-id: 
+      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
+      short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
   -
-    name: "611ms | 46.182.24.240:443"
+    name: "619ms | 46.182.24.240:443"
     type: vless
     server: 46.182.24.240
     port: 443
@@ -53,36 +37,7 @@ proxies:
     grpc-opts:
       grpc-service-name: grpc-32d2699be001e4f1
   -
-    name: "1037ms | 45.12.75.242:26424"
-    type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: ya.ru
-    reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
-  -
-    name: "VISION | 759ms | 37.18.14.145:4510"
-    type: vless
-    server: 37.18.14.145
-    port: 4510
-    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: random
-    servername: 9c99da.usecache.net
-    reality-opts:
-      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
-      short-id: 2d0c188798bae174
-    flow: xtls-rprx-vision
-  -
-    name: "VISION | 1826ms | 185.141.227.190:7449"
+    name: "VISION | 8969ms | 185.141.227.190:7449"
     type: vless
     server: 185.141.227.190
     port: 7449
@@ -96,17 +51,30 @@ proxies:
       public-key: TluV1p0lbKcf1UWlkQQ6T7HiIf5NcBax397uh23tUjw
       short-id: 315bf0f2ca19696a
     flow: xtls-rprx-vision
+  -
+    name: "VISION | 330ms | 45.131.212.151:443"
+    type: vless
+    server: 45.131.212.151
+    port: 443
+    uuid: 5aefad36-749b-401c-8b3b-547ef7d2253e
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: random
+    servername: de.lstu.ru
+    reality-opts:
+      public-key: e0RV9wRJdsQbQ0ugn5QUhJcTgWsSTVsKQTXMKweMDUg
+      short-id: 
+    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "1406ms | 78.24.216.134:2096"
-      - "VISION | 375ms | 45.131.212.151:443"
-      - "611ms | 46.182.24.240:443"
-      - "1037ms | 45.12.75.242:26424"
-      - "VISION | 759ms | 37.18.14.145:4510"
-      - "VISION | 1826ms | 185.141.227.190:7449"
+      - "VISION | 641ms | 37.18.14.145:4510"
+      - "619ms | 46.182.24.240:443"
+      - "VISION | 8969ms | 185.141.227.190:7449"
+      - "VISION | 330ms | 45.131.212.151:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -114,12 +82,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "1406ms | 78.24.216.134:2096"
-      - "VISION | 375ms | 45.131.212.151:443"
-      - "611ms | 46.182.24.240:443"
-      - "1037ms | 45.12.75.242:26424"
-      - "VISION | 759ms | 37.18.14.145:4510"
-      - "VISION | 1826ms | 185.141.227.190:7449"
+      - "VISION | 641ms | 37.18.14.145:4510"
+      - "619ms | 46.182.24.240:443"
+      - "VISION | 8969ms | 185.141.227.190:7449"
+      - "VISION | 330ms | 45.131.212.151:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
