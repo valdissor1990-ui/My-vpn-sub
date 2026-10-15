@@ -1,12 +1,27 @@
-# My VPN Sub Clash Meta · 2026-10-14 21:04 UTC
-# nodes: 1
+# My VPN Sub Clash Meta · 2026-10-15 00:11 UTC
+# nodes: 2
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 734ms | 37.18.14.145:4510"
+    name: "VISION | 339ms | 178.248.236.21:50443"
+    type: vless
+    server: 178.248.236.21
+    port: 50443
+    uuid: 07d0b603-7955-47b9-a913-12e6208062cb
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: de01-edge.atlanta-games.com
+    reality-opts:
+      public-key: r-_zNu0BrD8PgGzg-KQSes06Si83txHWYPH-o8xXihk
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 704ms | 37.18.14.145:4510"
     type: vless
     server: 37.18.14.145
     port: 4510
@@ -14,7 +29,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: random
     servername: 9c99da.usecache.net
     reality-opts:
       public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
@@ -25,7 +40,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 734ms | 37.18.14.145:4510"
+      - "VISION | 339ms | 178.248.236.21:50443"
+      - "VISION | 704ms | 37.18.14.145:4510"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -33,7 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 734ms | 37.18.14.145:4510"
+      - "VISION | 339ms | 178.248.236.21:50443"
+      - "VISION | 704ms | 37.18.14.145:4510"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
