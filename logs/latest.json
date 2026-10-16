@@ -1,33 +1,33 @@
 {
-  "ts": "2026-10-16 15:05:26 UTC",
+  "ts": "2026-10-16 19:07:59 UTC",
   "status": {
-    "generated_at": "2026-10-16T15:05:26.858959+00:00",
+    "generated_at": "2026-10-16T19:07:59.415670+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 6,
       "sources_fail": 0,
-      "total_lines": 958,
+      "total_lines": 1109,
       "telegram_links": 0
     },
     "filter": {
-      "unique": 66
+      "unique": 71
     },
     "monitor": {
-      "tcp_alive": 53,
-      "checked": 59,
+      "tcp_alive": 60,
+      "checked": 68,
       "pre_score_cap": 500,
-      "skipped_dead": 7,
+      "skipped_dead": 3,
       "dead_cache": {
-        "entries": 1,
-        "active_dead": 1,
+        "entries": 7,
+        "active_dead": 7,
         "hours": 6
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 53,
-      "passed": 3,
+      "tested": 60,
+      "passed": 6,
       "fallback_tcp": false,
       "test_urls": [
         "http://www.gstatic.com/generate_204",
@@ -49,12 +49,12 @@
       "sub_clash.yaml": 2
     },
     "pipeline": {
-      "raw_lines": 958,
+      "raw_lines": 1109,
       "tg_links": 0,
-      "filtered": 66,
-      "tcp_alive": 53,
-      "clash_passed": 3,
-      "clash_tested": 53,
+      "filtered": 71,
+      "tcp_alive": 60,
+      "clash_passed": 6,
+      "clash_tested": 60,
       "exported": 2,
       "pick_source": "clash_soft_fill"
     },
@@ -62,16 +62,16 @@
       {
         "host": "87.242.95.164",
         "score": 180,
-        "ping": 174,
-        "clash_delay": 1761,
+        "ping": 141,
+        "clash_delay": 1238,
         "vision": false,
         "proto_ok": true
       },
       {
         "host": "90.156.218.163",
         "score": 210,
-        "ping": 231,
-        "clash_delay": 4939,
+        "ping": 153,
+        "clash_delay": 3313,
         "vision": true,
         "proto_ok": true
       }
@@ -88,7 +88,7 @@
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=3, export=2: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=6, export=2: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
     }
   ]
