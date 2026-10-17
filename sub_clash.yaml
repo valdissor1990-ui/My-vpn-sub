@@ -1,12 +1,12 @@
-# My VPN Sub Clash Meta · 2026-10-17 21:09 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-17 23:36 UTC
+# nodes: 1
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 657ms | 188.225.78.8:12443"
+    name: "VISION | 786ms | 188.225.78.8:12443"
     type: vless
     server: 188.225.78.8
     port: 12443
@@ -14,35 +14,18 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: qq
+    client-fingerprint: ios
     servername: yandex.ru
     reality-opts:
       public-key: oaHOP3_Dv1Kadp45Isz5QxQ4Pf0duSThF1wKlvIUxwE
       short-id: 
     flow: xtls-rprx-vision
-  -
-    name: "552ms | 87.242.95.164:9443"
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: a5a3942d-96cc-421c-8b09-97a5578da27c
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: passport.yandex.ru
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 657ms | 188.225.78.8:12443"
-      - "552ms | 87.242.95.164:9443"
+      - "VISION | 786ms | 188.225.78.8:12443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -50,8 +33,7 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 657ms | 188.225.78.8:12443"
-      - "552ms | 87.242.95.164:9443"
+      - "VISION | 786ms | 188.225.78.8:12443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
