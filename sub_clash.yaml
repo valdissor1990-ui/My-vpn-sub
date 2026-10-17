@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-17 18:57 UTC
+# My VPN Sub Clash Meta · 2026-10-17 21:09 UTC
 # nodes: 2
 mixed-port: 7890
 allow-lan: false
@@ -6,42 +6,43 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 4531ms | 109.120.181.153:443"
+    name: "VISION | 657ms | 188.225.78.8:12443"
     type: vless
-    server: 109.120.181.153
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    server: 188.225.78.8
+    port: 12443
+    uuid: e77680d0-b8d0-47ed-b811-61d58893cf1f
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
-    servername: eh.vk.ru
+    client-fingerprint: qq
+    servername: yandex.ru
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
+      public-key: oaHOP3_Dv1Kadp45Isz5QxQ4Pf0duSThF1wKlvIUxwE
+      short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 837ms | 90.156.218.163:443"
+    name: "552ms | 87.242.95.164:9443"
     type: vless
-    server: 90.156.218.163
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    network: tcp
+    server: 87.242.95.164
+    port: 9443
+    uuid: a5a3942d-96cc-421c-8b09-97a5578da27c
+    network: grpc
     udp: true
     tls: true
-    client-fingerprint: chrome
-    servername: eh.vk.ru
+    client-fingerprint: qq
+    servername: passport.yandex.ru
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    grpc-opts:
+      grpc-service-name: grpc
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 4531ms | 109.120.181.153:443"
-      - "VISION | 837ms | 90.156.218.163:443"
+      - "VISION | 657ms | 188.225.78.8:12443"
+      - "552ms | 87.242.95.164:9443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +50,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 4531ms | 109.120.181.153:443"
-      - "VISION | 837ms | 90.156.218.163:443"
+      - "VISION | 657ms | 188.225.78.8:12443"
+      - "552ms | 87.242.95.164:9443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
