@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-07T10:40:48.271477+00:00",
+  "generated_at": "2026-10-17T13:21:15.227291+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 430,
+    "total_lines": 1482,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 70
+    "unique": 87
   },
   "monitor": {
-    "tcp_alive": 55,
-    "checked": 70,
+    "tcp_alive": 77,
+    "checked": 84,
     "pre_score_cap": 500,
-    "skipped_dead": 0,
+    "skipped_dead": 3,
     "dead_cache": {
-      "entries": 2,
-      "active_dead": 2,
+      "entries": 6,
+      "active_dead": 6,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 55,
-    "passed": 7,
+    "tested": 60,
+    "passed": 4,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -38,47 +38,39 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 3,
-    "sub_vision.txt": 0,
-    "sub_white.txt": 3,
-    "sub_black.txt": 3,
+    "sub.txt": 2,
+    "sub_vision.txt": 1,
+    "sub_white.txt": 1,
+    "sub_black.txt": 1,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 3,
-    "sub_clash.yaml": 3
+    "sub_reality.txt": 2,
+    "sub_clash.yaml": 2
   },
   "pipeline": {
-    "raw_lines": 430,
+    "raw_lines": 1482,
     "tg_links": 0,
-    "filtered": 70,
-    "tcp_alive": 55,
-    "clash_passed": 7,
-    "clash_tested": 55,
-    "exported": 3,
+    "filtered": 87,
+    "tcp_alive": 77,
+    "clash_passed": 4,
+    "clash_tested": 60,
+    "exported": 2,
     "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "45.139.26.179",
-      "score": 155,
-      "ping": 158,
-      "clash_delay": 4644,
+      "host": "87.242.95.164",
+      "score": 180,
+      "ping": 145,
+      "clash_delay": 617,
       "vision": false,
       "proto_ok": true
     },
     {
-      "host": "176.108.252.139",
-      "score": 147,
-      "ping": 146,
-      "clash_delay": 1959,
-      "vision": false,
-      "proto_ok": true
-    },
-    {
-      "host": "45.12.75.242",
-      "score": 130,
-      "ping": 164,
-      "clash_delay": 1252,
-      "vision": false,
+      "host": "188.225.25.96",
+      "score": 177,
+      "ping": 136,
+      "clash_delay": 559,
+      "vision": true,
       "proto_ok": true
     }
   ],
