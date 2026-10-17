@@ -1,48 +1,31 @@
-# My VPN Sub Clash Meta · 2026-10-17 05:10 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-17 09:51 UTC
+# nodes: 1
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 3008ms | 90.156.218.163:443"
+    name: "VISION | 9040ms | 188.225.25.96:443"
     type: vless
-    server: 90.156.218.163
+    server: 188.225.25.96
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: 66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
-    servername: eh.vk.ru
+    client-fingerprint: safari
+    servername: node-fra04.rkitman.ru
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
+      public-key: 8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU
+      short-id: 88d9dc52ef39c8bd
     flow: xtls-rprx-vision
-  -
-    name: "741ms | 87.242.95.164:9443"
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 61272e8e-d073-4b99-9718-75e1ef82ff2f
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: qq
-    servername: passport.yandex.ru
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    grpc-opts:
-      grpc-service-name: grpc
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 3008ms | 90.156.218.163:443"
-      - "741ms | 87.242.95.164:9443"
+      - "VISION | 9040ms | 188.225.25.96:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -50,8 +33,7 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 3008ms | 90.156.218.163:443"
-      - "741ms | 87.242.95.164:9443"
+      - "VISION | 9040ms | 188.225.25.96:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
