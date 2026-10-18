@@ -1,10 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-18 22:00 UTC
-# Count: 4
+# Generated: 2026-10-18 23:57 UTC
+# Count: 1
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://58b364b9-e67f-44a6-b12c-48cdd7b3df33@194.55.239.164:8443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1psC2mENtLYukWhrdLs3n1aKRXyG7S0ZNINeZWxWDQs&security=reality&sid=0803c427&sni=ads.vk.ru&type=raw#%F0%9F%87%B2%F0%9F%87%BD%20Mexico%20%E2%80%94%20%23197
-vless://320bb8a2-0b37-4d1a-9b7e-615fe6534ecf@178.248.236.45:62443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=vqRiLDLgn_0PWMUvELC0C4JD-a2LUoM0iZ6wdvgMBmQ&security=reality&sid=d0cd6a0b1a18092b&sni=rutube.ru&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%23184
-vless://8571b13c-96ae-480a-8b0d-8969ceda21f8@81.94.148.162:9446?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM&security=reality&sni=no.roskomnadzor.space&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%23178
-vless://d44bf370-e495-4fe3-92c8-710be5598f66@195.24.67.165:443?encryption=none&extra=null&fp=edge&mode=packet-up&path=%2Fassets%2Fv1%2F3c81d85929030c5f11c88786%2F&pbk=DnXBmz9AHnv3Rs-4z_ZLt_sBgmTjVNXxq9aW9xkanEg&security=reality&sid=703a00989e6967e8&sni=qwq.clear-nodefast.cfd&type=xhttp#%F0%9F%87%AA%F0%9F%87%AA%20Estonia%20%E2%80%94%20%23182
+vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%23131
