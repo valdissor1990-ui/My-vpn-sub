@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-18 11:51 UTC
+# My VPN Sub Clash Meta · 2026-10-18 15:01 UTC
 # nodes: 1
 mixed-port: 7890
 allow-lan: false
@@ -6,7 +6,7 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 376ms | 178.248.236.45:62443"
+    name: "VISION | 478ms | 178.248.236.45:62443"
     type: vless
     server: 178.248.236.45
     port: 62443
@@ -14,7 +14,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: qq
+    client-fingerprint: firefox
     servername: rutube.ru
     reality-opts:
       public-key: vqRiLDLgn_0PWMUvELC0C4JD-a2LUoM0iZ6wdvgMBmQ
@@ -25,7 +25,7 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 376ms | 178.248.236.45:62443"
+      - "VISION | 478ms | 178.248.236.45:62443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -33,7 +33,7 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 376ms | 178.248.236.45:62443"
+      - "VISION | 478ms | 178.248.236.45:62443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
