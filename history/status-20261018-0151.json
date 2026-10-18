@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-10-18T01:51:45.266310+00:00",
+  "pick_source": "tcp_fallback",
+  "collect": {
+    "sources_ok": 6,
+    "sources_fail": 0,
+    "total_lines": 1412,
+    "telegram_links": 0
+  },
+  "filter": {
+    "unique": 82
+  },
+  "monitor": {
+    "tcp_alive": 75,
+    "checked": 75,
+    "pre_score_cap": 500,
+    "skipped_dead": 7,
+    "dead_cache": {
+      "entries": 6,
+      "active_dead": 6,
+      "hours": 6
+    }
+  },
+  "protocol_test": {
+    "engine": "mihomo",
+    "enabled": true,
+    "tested": 60,
+    "passed": 0,
+    "fallback_tcp": true,
+    "test_urls": [
+      "http://www.gstatic.com/generate_204",
+      "http://cp.cloudflare.com/generate_204",
+      "http://connectivitycheck.gstatic.com/generate_204",
+      "http://www.msftconnecttest.com/connecttest.txt"
+    ],
+    "workers": 4,
+    "workers_hy2": 2,
+    "workers_used": 4
+  },
+  "output": {
+    "sub.txt": 20,
+    "sub_vision.txt": 11,
+    "sub_white.txt": 12,
+    "sub_black.txt": 10,
+    "sub_hy2.txt": 0,
+    "sub_reality.txt": 20,
+    "sub_clash.yaml": 20
+  },
+  "pipeline": {
+    "raw_lines": 1412,
+    "tg_links": 0,
+    "filtered": 82,
+    "tcp_alive": 75,
+    "clash_passed": 0,
+    "clash_tested": 60,
+    "exported": 20,
+    "pick_source": "tcp_fallback"
+  },
+  "top_scores": [
+    {
+      "host": "185.229.9.175",
+      "score": 150,
+      "ping": 161,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "188.225.45.79",
+      "score": 150,
+      "ping": 161,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "87.242.94.66",
+      "score": 150,
+      "ping": 162,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "185.229.9.234",
+      "score": 150,
+      "ping": 163,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "37.18.14.6",
+      "score": 150,
+      "ping": 163,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "83.166.237.116",
+      "score": 150,
+      "ping": 175,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "185.229.9.235",
+      "score": 125,
+      "ping": 161,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    },
+    {
+      "host": "194.55.239.51",
+      "score": 125,
+      "ping": 220,
+      "clash_delay": null,
+      "vision": true,
+      "proto_ok": null
+    }
+  ],
+  "health": "ok",
+  "mirrors": {
+    "jsdelivr": "https://cdn.jsdelivr.net/gh/valdissor1990-ui/My-vpn-sub@main/sub.txt",
+    "raw": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/sub.txt",
+    "blog": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/blog.md",
+    "fixes": "https://raw.githubusercontent.com/valdissor1990-ui/My-vpn-sub/main/logs/FIX_COMMANDS.md"
+  }
+}
