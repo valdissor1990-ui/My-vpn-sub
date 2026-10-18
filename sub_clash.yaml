@@ -1,12 +1,27 @@
-# My VPN Sub Clash Meta · 2026-10-18 15:01 UTC
-# nodes: 1
+# My VPN Sub Clash Meta · 2026-10-18 17:52 UTC
+# nodes: 2
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 478ms | 178.248.236.45:62443"
+    name: "VISION | 1002ms | 185.86.145.128:8443"
+    type: vless
+    server: 185.86.145.128
+    port: 8443
+    uuid: 4c44b85a-71f8-41d8-b6bc-01d4c2f08dd0
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: ios
+    servername: cinderrack.app
+    reality-opts:
+      public-key: NEaLMYvat0TO8YX1FuR1yt11UT5iUQmrUNRpSTvT0xA
+      short-id: a0d140fa25f56be2
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 514ms | 178.248.236.45:62443"
     type: vless
     server: 178.248.236.45
     port: 62443
@@ -25,7 +40,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 478ms | 178.248.236.45:62443"
+      - "VISION | 1002ms | 185.86.145.128:8443"
+      - "VISION | 514ms | 178.248.236.45:62443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -33,7 +49,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 478ms | 178.248.236.45:62443"
+      - "VISION | 1002ms | 185.86.145.128:8443"
+      - "VISION | 514ms | 178.248.236.45:62443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
