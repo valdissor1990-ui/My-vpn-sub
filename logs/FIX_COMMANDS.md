@@ -1,16 +1,16 @@
 # FIX_COMMANDS — авто-анализ после прогона
 
-Updated: 2026-10-19T02:36:22.646061+00:00
+Updated: 2026-10-19T08:12:05.553267+00:00
 
 Эти команды бот выставляет после анализа логов. Критичные (P0) чинить в первую очередь.
 
-## [P0] `CLASH_ZERO`
+## [P0] `LOW_EXPORT`
 
-- action: Все delay fail: сменить TEST_URLS / версию mihomo / не резать pool только proto_ok
-- auto: `force_tcp_fallback_pick`
+- action: Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS
+- auto: `soft_fill_and_raise_pass`
 
-## [P1] `MIHOMO_DOWN`
+## [P1] `TCP_LOW`
 
-- action: mihomo не стартовал — проверить releases URL и bin/mihomo
-- auto: `retry_mihomo_download`
+- action: tcp_alive=5: ослабить pre_score / dead_cache hours
+- auto: `clear_stale_dead_cache`
 
