@@ -1,26 +1,10 @@
-# My VPN Sub Clash Meta · 2026-10-20 05:28 UTC
-# nodes: 6
+# My VPN Sub Clash Meta · 2026-10-20 10:32 UTC
+# nodes: 5
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
-  -
-    name: "188.225.72.65:27443"
-    type: vless
-    server: 188.225.72.65
-    port: 27443
-    uuid: 19e0ff76-2eb3-4b17-842f-ac57094cb35e
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: static.polina.mom
-    reality-opts:
-      public-key: zIF5SLjmd3gzvGPhEBKjqLv8_-7MOHMpJciVEehL0C8
-      short-id: 
-    grpc-opts:
-      grpc-service-name: grpc
   -
     name: "VISION | 82.202.179.111:15443"
     type: vless
@@ -30,7 +14,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: ios
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
@@ -45,7 +29,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc
@@ -104,7 +88,6 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "188.225.72.65:27443"
       - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
       - "78.159.250.88:2096"
@@ -117,7 +100,6 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "188.225.72.65:27443"
       - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
       - "78.159.250.88:2096"
