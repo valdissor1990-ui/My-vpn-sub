@@ -1,27 +1,92 @@
-# My VPN Sub Clash Meta · 2026-10-19 20:49 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-20 00:00 UTC
+# nodes: 6
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 459ms | 46.254.17.76:443"
+    name: "VISION | 82.202.179.111:15443"
     type: vless
-    server: 46.254.17.76
-    port: 443
-    uuid: ad7966f9-7710-47b9-90d9-2f33e539b06a
+    server: 82.202.179.111
+    port: 15443
+    uuid: 1ba0439d-384c-4a6e-9560-0439698beb2a
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: 5post-gate.x5.ru
+    client-fingerprint: firefox
+    servername: smartcaptcha.yandexcloud.net
     reality-opts:
-      public-key: XguLRlc-hWqFhf8-KTxtCE434F6e4Hiqoc5cTBpLxnE
-      short-id: 111111
+      public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
+      short-id: b74f54b7
     flow: xtls-rprx-vision
   -
-    name: "920ms | 78.159.250.88:2096"
+    name: "VISION | 82.202.179.106:11443"
+    type: vless
+    server: 82.202.179.106
+    port: 11443
+    uuid: 54f22246-cc9c-4315-907a-6c94c901d20f
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: smartcaptcha.yandexcloud.net
+    reality-opts:
+      public-key: WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc
+      short-id: 044a5e06faf5
+    flow: xtls-rprx-vision
+  -
+    name: "188.225.77.143:8468"
+    type: vless
+    server: 188.225.77.143
+    port: 8468
+    uuid: 40c12ce6-b1c6-424e-862e-010a4585ff52
+    network: xhttp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: ads.x5.ru
+    reality-opts:
+      public-key: mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc
+      short-id: 6ba85179e30d4fc2
+    xhttp-opts:
+      path: /xh
+      host: ads.x5.ru
+      mode: auto
+  -
+    name: "188.225.77.254:8443"
+    type: vless
+    server: 188.225.77.254
+    port: 8443
+    uuid: 5473d93b-3cb2-4a10-9fd5-2b98459d9c53
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    servername: io.ozone.ru
+    reality-opts:
+      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
+      short-id: 4951a2313524dd8f
+    grpc-opts:
+      grpc-service-name: ozone
+  -
+    name: "188.225.83.133:443"
+    type: vless
+    server: 188.225.83.133
+    port: 443
+    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: ios
+    servername: xnodtwx.artemida.live
+    reality-opts:
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    grpc-opts:
+      grpc-service-name: 
+  -
+    name: "78.159.250.88:2096"
     type: vless
     server: 78.159.250.88
     port: 2096
@@ -41,8 +106,12 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 459ms | 46.254.17.76:443"
-      - "920ms | 78.159.250.88:2096"
+      - "VISION | 82.202.179.111:15443"
+      - "VISION | 82.202.179.106:11443"
+      - "188.225.77.143:8468"
+      - "188.225.77.254:8443"
+      - "188.225.83.133:443"
+      - "78.159.250.88:2096"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -50,8 +119,12 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 459ms | 46.254.17.76:443"
-      - "920ms | 78.159.250.88:2096"
+      - "VISION | 82.202.179.111:15443"
+      - "VISION | 82.202.179.106:11443"
+      - "188.225.77.143:8468"
+      - "188.225.77.254:8443"
+      - "188.225.83.133:443"
+      - "78.159.250.88:2096"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
