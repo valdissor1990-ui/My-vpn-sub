@@ -1,6 +1,6 @@
 # FIX_COMMANDS — авто-анализ после прогона
 
-Updated: 2026-10-20T00:00:42.211984+00:00
+Updated: 2026-10-20T05:28:38.033366+00:00
 
 Эти команды бот выставляет после анализа логов. Критичные (P0) чинить в первую очередь.
 
@@ -16,6 +16,6 @@ Updated: 2026-10-20T00:00:42.211984+00:00
 
 ## [P1] `TCP_LOW`
 
-- action: tcp_alive=18: ослабить pre_score / dead_cache hours
+- action: tcp_alive=16: ослабить pre_score / dead_cache hours
 - auto: `clear_stale_dead_cache`
 
