@@ -1,10 +1,3 @@
-{"ts": "2026-10-16 15:05:26 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=3 → pool=3"}
-{"ts": "2026-10-16 15:05:26 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
-{"ts": "2026-10-16 19:06:01 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-10-16 19:06:05 UTC", "level": "info", "stage": "collect", "msg": "lines=1109 ok=6 fail=0"}
-{"ts": "2026-10-16 19:06:05 UTC", "level": "info", "stage": "tg", "msg": "links=0"}
-{"ts": "2026-10-16 19:06:05 UTC", "level": "info", "stage": "filter", "msg": "unique=71"}
-{"ts": "2026-10-16 19:06:08 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=60"}
 {"ts": "2026-10-16 19:07:59 UTC", "level": "info", "stage": "clash", "msg": "passed=6/60 enabled=True"}
 {"ts": "2026-10-16 19:07:59 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=6 → pool=6"}
 {"ts": "2026-10-16 19:07:59 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
@@ -198,3 +191,10 @@
 {"ts": "2026-10-20 15:25:06 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=13"}
 {"ts": "2026-10-20 15:25:50 UTC", "level": "info", "stage": "clash", "msg": "passed=0/13 enabled=True"}
 {"ts": "2026-10-20 15:25:50 UTC", "level": "info", "stage": "health", "msg": "fixes=3", "codes": ["CLASH_ZERO", "MIHOMO_DOWN", "TCP_LOW"]}
+{"ts": "2026-10-20 19:41:11 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-10-20 19:41:14 UTC", "level": "info", "stage": "collect", "msg": "lines=645 ok=6 fail=0"}
+{"ts": "2026-10-20 19:41:14 UTC", "level": "info", "stage": "tg", "msg": "links=0"}
+{"ts": "2026-10-20 19:41:14 UTC", "level": "info", "stage": "filter", "msg": "unique=18"}
+{"ts": "2026-10-20 19:41:17 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=6"}
+{"ts": "2026-10-20 19:41:20 UTC", "level": "info", "stage": "clash", "msg": "passed=0/6 enabled=True"}
+{"ts": "2026-10-20 19:41:20 UTC", "level": "info", "stage": "health", "msg": "fixes=3", "codes": ["CLASH_ZERO", "MIHOMO_DOWN", "TCP_LOW"]}
