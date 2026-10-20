@@ -1,8 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IHdoaXRl
 #profile-update-interval: 1
-# Generated: 2026-10-20 10:32 UTC
+# Generated: 2026-10-20 15:25 UTC
 # Count: 2
 # white
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://1ba0439d-384c-4a6e-9560-0439698beb2a@82.202.179.111:15443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4&security=reality&sid=b74f54b7&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%87%AB%F0%9F%87%B7%20France%20%E2%80%94%20%2399
-vless://54f22246-cc9c-4315-907a-6c94c901d20f@82.202.179.106:11443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc&security=reality&sid=044a5e06faf5&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%87%AB%F0%9F%87%B7%20France%20%E2%80%94%20%23100
+vless://1ba0439d-384c-4a6e-9560-0439698beb2a@82.202.179.111:15443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4&security=reality&sid=b74f54b7&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%87%AB%F0%9F%87%B7%20France%20%E2%80%94%20%23112
+vless://54f22246-cc9c-4315-907a-6c94c901d20f@82.202.179.106:11443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc&security=reality&sid=044a5e06faf5&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%87%AB%F0%9F%87%B7%20France%20%E2%80%94%20%23113

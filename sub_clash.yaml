@@ -1,25 +1,10 @@
-# My VPN Sub Clash Meta · 2026-10-20 10:32 UTC
-# nodes: 5
+# My VPN Sub Clash Meta · 2026-10-20 15:25 UTC
+# nodes: 4
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
-  -
-    name: "VISION | 82.202.179.111:15443"
-    type: vless
-    server: 82.202.179.111
-    port: 15443
-    uuid: 1ba0439d-384c-4a6e-9560-0439698beb2a
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: ios
-    servername: smartcaptcha.yandexcloud.net
-    reality-opts:
-      public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
-      short-id: b74f54b7
-    flow: xtls-rprx-vision
   -
     name: "VISION | 82.202.179.106:11443"
     type: vless
@@ -36,22 +21,6 @@ proxies:
       short-id: 044a5e06faf5
     flow: xtls-rprx-vision
   -
-    name: "78.159.250.88:2096"
-    type: vless
-    server: 78.159.250.88
-    port: 2096
-    uuid: e667f5c7-6b38-48ef-ab89-40519713afb0
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: id.vk.com
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 
-    grpc-opts:
-      grpc-service-name: vless-grpc-reality
-  -
     name: "188.225.83.133:443"
     type: vless
     server: 188.225.83.133
@@ -60,7 +29,7 @@ proxies:
     network: grpc
     udp: true
     tls: true
-    client-fingerprint: chrome
+    client-fingerprint: random
     servername: xnodtwx.artemida.live
     reality-opts:
       public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
@@ -83,16 +52,30 @@ proxies:
       short-id: 4951a2313524dd8f
     grpc-opts:
       grpc-service-name: ozone
+  -
+    name: "VISION | 82.202.179.111:15443"
+    type: vless
+    server: 82.202.179.111
+    port: 15443
+    uuid: 1ba0439d-384c-4a6e-9560-0439698beb2a
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: ios
+    servername: smartcaptcha.yandexcloud.net
+    reality-opts:
+      public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
+      short-id: b74f54b7
+    flow: xtls-rprx-vision
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
-      - "78.159.250.88:2096"
       - "188.225.83.133:443"
       - "188.225.77.254:8443"
+      - "VISION | 82.202.179.111:15443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -100,11 +83,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
-      - "78.159.250.88:2096"
       - "188.225.83.133:443"
       - "188.225.77.254:8443"
+      - "VISION | 82.202.179.111:15443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"

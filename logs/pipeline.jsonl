@@ -1,10 +1,3 @@
-{"ts": "2026-10-16 10:17:18 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
-{"ts": "2026-10-16 15:03:13 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
-{"ts": "2026-10-16 15:03:20 UTC", "level": "info", "stage": "collect", "msg": "lines=958 ok=6 fail=0"}
-{"ts": "2026-10-16 15:03:20 UTC", "level": "info", "stage": "tg", "msg": "links=0"}
-{"ts": "2026-10-16 15:03:20 UTC", "level": "info", "stage": "filter", "msg": "unique=66"}
-{"ts": "2026-10-16 15:03:23 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=53"}
-{"ts": "2026-10-16 15:05:26 UTC", "level": "info", "stage": "clash", "msg": "passed=3/53 enabled=True"}
 {"ts": "2026-10-16 15:05:26 UTC", "level": "info", "stage": "picker", "msg": "soft_fill clash=3 → pool=3"}
 {"ts": "2026-10-16 15:05:26 UTC", "level": "info", "stage": "health", "msg": "fixes=1", "codes": ["LOW_EXPORT"]}
 {"ts": "2026-10-16 19:06:01 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
@@ -198,3 +191,10 @@
 {"ts": "2026-10-20 10:31:59 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=14"}
 {"ts": "2026-10-20 10:32:21 UTC", "level": "info", "stage": "clash", "msg": "passed=0/14 enabled=True"}
 {"ts": "2026-10-20 10:32:21 UTC", "level": "info", "stage": "health", "msg": "fixes=3", "codes": ["CLASH_ZERO", "MIHOMO_DOWN", "TCP_LOW"]}
+{"ts": "2026-10-20 15:24:59 UTC", "level": "info", "stage": "main", "msg": "pipeline start"}
+{"ts": "2026-10-20 15:25:03 UTC", "level": "info", "stage": "collect", "msg": "lines=685 ok=6 fail=0"}
+{"ts": "2026-10-20 15:25:03 UTC", "level": "info", "stage": "tg", "msg": "links=0"}
+{"ts": "2026-10-20 15:25:03 UTC", "level": "info", "stage": "filter", "msg": "unique=23"}
+{"ts": "2026-10-20 15:25:06 UTC", "level": "info", "stage": "monitor", "msg": "tcp_alive=13"}
+{"ts": "2026-10-20 15:25:50 UTC", "level": "info", "stage": "clash", "msg": "passed=0/13 enabled=True"}
+{"ts": "2026-10-20 15:25:50 UTC", "level": "info", "stage": "health", "msg": "fixes=3", "codes": ["CLASH_ZERO", "MIHOMO_DOWN", "TCP_LOW"]}
