@@ -1,25 +1,10 @@
-# My VPN Sub Clash Meta · 2026-10-20 19:41 UTC
+# My VPN Sub Clash Meta · 2026-10-20 22:45 UTC
 # nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
-  -
-    name: "VISION | 82.202.179.106:11443"
-    type: vless
-    server: 82.202.179.106
-    port: 11443
-    uuid: 54f22246-cc9c-4315-907a-6c94c901d20f
-    network: tcp
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: smartcaptcha.yandexcloud.net
-    reality-opts:
-      public-key: WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc
-      short-id: 044a5e06faf5
-    flow: xtls-rprx-vision
   -
     name: "VISION | 82.202.179.111:15443"
     type: vless
@@ -29,11 +14,26 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: safari
+    client-fingerprint: ios
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
       short-id: b74f54b7
+    flow: xtls-rprx-vision
+  -
+    name: "VISION | 82.202.179.106:11443"
+    type: vless
+    server: 82.202.179.106
+    port: 11443
+    uuid: 54f22246-cc9c-4315-907a-6c94c901d20f
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: smartcaptcha.yandexcloud.net
+    reality-opts:
+      public-key: WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc
+      short-id: 044a5e06faf5
     flow: xtls-rprx-vision
   -
     name: "188.225.77.254:8443"
@@ -56,8 +56,8 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 82.202.179.106:11443"
       - "VISION | 82.202.179.111:15443"
+      - "VISION | 82.202.179.106:11443"
       - "188.225.77.254:8443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
@@ -66,8 +66,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 82.202.179.106:11443"
       - "VISION | 82.202.179.111:15443"
+      - "VISION | 82.202.179.106:11443"
       - "188.225.77.254:8443"
       - DIRECT
 rules:
