@@ -1,32 +1,32 @@
 {
-  "ts": "2026-10-21 20:58:13 UTC",
+  "ts": "2026-10-21 23:52:40 UTC",
   "status": {
-    "generated_at": "2026-10-21T20:58:13.384611+00:00",
+    "generated_at": "2026-10-21T23:52:40.480372+00:00",
     "pick_source": "tcp_fallback",
     "collect": {
       "sources_ok": 6,
       "sources_fail": 0,
-      "total_lines": 498,
+      "total_lines": 677,
       "telegram_links": 0
     },
     "filter": {
-      "unique": 30
+      "unique": 15
     },
     "monitor": {
-      "tcp_alive": 18,
-      "checked": 22,
+      "tcp_alive": 7,
+      "checked": 13,
       "pre_score_cap": 500,
-      "skipped_dead": 8,
+      "skipped_dead": 2,
       "dead_cache": {
-        "entries": 5,
-        "active_dead": 5,
+        "entries": 1,
+        "active_dead": 1,
         "hours": 6
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 18,
+      "tested": 7,
       "passed": 0,
       "fallback_tcp": true,
       "test_urls": [
@@ -40,45 +40,29 @@
       "workers_used": 4
     },
     "output": {
-      "sub.txt": 3,
-      "sub_vision.txt": 1,
-      "sub_white.txt": 2,
+      "sub.txt": 1,
+      "sub_vision.txt": 0,
+      "sub_white.txt": 1,
       "sub_black.txt": 1,
       "sub_hy2.txt": 0,
-      "sub_reality.txt": 3,
-      "sub_clash.yaml": 3
+      "sub_reality.txt": 1,
+      "sub_clash.yaml": 1
     },
     "pipeline": {
-      "raw_lines": 498,
+      "raw_lines": 677,
       "tg_links": 0,
-      "filtered": 30,
-      "tcp_alive": 18,
+      "filtered": 15,
+      "tcp_alive": 7,
       "clash_passed": 0,
-      "clash_tested": 18,
-      "exported": 3,
+      "clash_tested": 7,
+      "exported": 1,
       "pick_source": "tcp_fallback"
     },
     "top_scores": [
       {
-        "host": "46.243.235.6",
-        "score": 150,
-        "ping": 157,
-        "clash_delay": null,
-        "vision": true,
-        "proto_ok": null
-      },
-      {
-        "host": "84.201.180.13",
-        "score": 145,
-        "ping": 151,
-        "clash_delay": null,
-        "vision": false,
-        "proto_ok": null
-      },
-      {
         "host": "188.225.83.133",
         "score": 87,
-        "ping": 143,
+        "ping": 147,
         "clash_delay": null,
         "vision": false,
         "proto_ok": null
@@ -108,7 +92,7 @@
     {
       "priority": "P1",
       "code": "TCP_LOW",
-      "action": "tcp_alive=18: ослабить pre_score / dead_cache hours",
+      "action": "tcp_alive=7: ослабить pre_score / dead_cache hours",
       "auto": "clear_stale_dead_cache"
     }
   ]
