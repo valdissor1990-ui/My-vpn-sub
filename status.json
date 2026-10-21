@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-10-21T12:30:45.437227+00:00",
-  "pick_source": "tcp_fallback",
+  "generated_at": "2026-10-21T17:43:44.373413+00:00",
+  "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 841,
+    "total_lines": 543,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 21
+    "unique": 23
   },
   "monitor": {
-    "tcp_alive": 8,
-    "checked": 15,
+    "tcp_alive": 11,
+    "checked": 23,
     "pre_score_cap": 500,
-    "skipped_dead": 6,
+    "skipped_dead": 0,
     "dead_cache": {
-      "entries": 0,
-      "active_dead": 0,
+      "entries": 3,
+      "active_dead": 3,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 8,
-    "passed": 0,
-    "fallback_tcp": true,
+    "tested": 11,
+    "passed": 1,
+    "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
       "http://cp.cloudflare.com/generate_204",
@@ -38,40 +38,32 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 2,
+    "sub.txt": 1,
     "sub_vision.txt": 0,
-    "sub_white.txt": 2,
-    "sub_black.txt": 2,
+    "sub_white.txt": 1,
+    "sub_black.txt": 1,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 2,
-    "sub_clash.yaml": 2
+    "sub_reality.txt": 1,
+    "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 841,
+    "raw_lines": 543,
     "tg_links": 0,
-    "filtered": 21,
-    "tcp_alive": 8,
-    "clash_passed": 0,
-    "clash_tested": 8,
-    "exported": 2,
-    "pick_source": "tcp_fallback"
+    "filtered": 23,
+    "tcp_alive": 11,
+    "clash_passed": 1,
+    "clash_tested": 11,
+    "exported": 1,
+    "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "188.225.83.133",
-      "score": 87,
-      "ping": 117,
-      "clash_delay": null,
+      "host": "45.12.75.242",
+      "score": 130,
+      "ping": 130,
+      "clash_delay": 2873,
       "vision": false,
-      "proto_ok": null
-    },
-    {
-      "host": "188.225.77.254",
-      "score": 87,
-      "ping": 129,
-      "clash_delay": null,
-      "vision": false,
-      "proto_ok": null
+      "proto_ok": true
     }
   ],
   "health": "ok",
