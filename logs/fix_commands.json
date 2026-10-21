@@ -2,7 +2,7 @@
   "soft_fill_tcp": false,
   "force_tcp_fallback_pick": true,
   "raise_candidates": false,
-  "generated_at": "2026-10-21T01:04:55.982656+00:00",
+  "generated_at": "2026-10-21T06:42:37.967349+00:00",
   "fixes": [
     {
       "priority": "P0",
@@ -19,7 +19,7 @@
     {
       "priority": "P1",
       "code": "TCP_LOW",
-      "action": "tcp_alive=14: ослабить pre_score / dead_cache hours",
+      "action": "tcp_alive=16: ослабить pre_score / dead_cache hours",
       "auto": "clear_stale_dead_cache"
     }
   ]

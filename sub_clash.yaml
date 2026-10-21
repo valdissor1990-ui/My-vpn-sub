@@ -1,25 +1,26 @@
-# My VPN Sub Clash Meta · 2026-10-21 01:04 UTC
-# nodes: 5
+# My VPN Sub Clash Meta · 2026-10-21 06:42 UTC
+# nodes: 4
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 185.141.227.201:7445"
+    name: "188.225.77.254:8443"
     type: vless
-    server: 185.141.227.201
-    port: 7445
-    uuid: 66217279-de40-4b62-b2bb-9c33b8fb7a01
-    network: tcp
+    server: 188.225.77.254
+    port: 8443
+    uuid: 5473d93b-3cb2-4a10-9fd5-2b98459d9c53
+    network: grpc
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: passport.yandex.ru
+    client-fingerprint: ios
+    servername: io.ozone.ru
     reality-opts:
-      public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
-      short-id: 283f4b51fbe39ad9
-    flow: xtls-rprx-vision
+      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
+      short-id: 4951a2313524dd8f
+    grpc-opts:
+      grpc-service-name: ozone
   -
     name: "188.225.83.133:443"
     type: vless
@@ -29,8 +30,8 @@ proxies:
     network: grpc
     udp: true
     tls: true
-    client-fingerprint: random
-    servername: xnodtwx.artemida.live
+    client-fingerprint: chrome
+    servername: 188.225.83.133
     reality-opts:
       public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
       short-id: a1b2c3d4e5f6a7b8
@@ -45,7 +46,7 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: safari
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4
@@ -60,38 +61,21 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     servername: smartcaptcha.yandexcloud.net
     reality-opts:
       public-key: WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc
       short-id: 044a5e06faf5
     flow: xtls-rprx-vision
-  -
-    name: "188.225.77.254:8443"
-    type: vless
-    server: 188.225.77.254
-    port: 8443
-    uuid: 5473d93b-3cb2-4a10-9fd5-2b98459d9c53
-    network: grpc
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    servername: io.ozone.ru
-    reality-opts:
-      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
-      short-id: 4951a2313524dd8f
-    grpc-opts:
-      grpc-service-name: ozone
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 185.141.227.201:7445"
+      - "188.225.77.254:8443"
       - "188.225.83.133:443"
       - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
-      - "188.225.77.254:8443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -99,11 +83,10 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 185.141.227.201:7445"
+      - "188.225.77.254:8443"
       - "188.225.83.133:443"
       - "VISION | 82.202.179.111:15443"
       - "VISION | 82.202.179.106:11443"
-      - "188.225.77.254:8443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
