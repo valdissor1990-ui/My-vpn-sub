@@ -1,30 +1,67 @@
-# My VPN Sub Clash Meta · 2026-10-21 17:43 UTC
-# nodes: 1
+# My VPN Sub Clash Meta · 2026-10-21 20:58 UTC
+# nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "2873ms | 45.12.75.242:26424"
+    name: "VISION | 46.243.235.6:8445"
     type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    server: 46.243.235.6
+    port: 8445
+    uuid: 92e135b9-4c04-4e7e-8b28-d8074a202cf8
     network: tcp
     udp: true
     tls: true
-    client-fingerprint: chrome
-    servername: ya.ru
+    client-fingerprint: firefox
+    servername: passport.yandex.ru
     reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
+      public-key: SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0
+      short-id: 
+    flow: xtls-rprx-vision
+  -
+    name: "84.201.180.13:443"
+    type: vless
+    server: 84.201.180.13
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    network: xhttp
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    servername: api-maps.yandex.ru
+    reality-opts:
+      public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
+      short-id: 
+    xhttp-opts:
+      path: /
+      host: api-maps.yandex.ru
+      mode: auto
+  -
+    name: "188.225.83.133:443"
+    type: vless
+    server: 188.225.83.133
+    port: 443
+    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+    network: grpc
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: 188.225.83.133
+    reality-opts:
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    grpc-opts:
+      grpc-service-name: 
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "2873ms | 45.12.75.242:26424"
+      - "VISION | 46.243.235.6:8445"
+      - "84.201.180.13:443"
+      - "188.225.83.133:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -32,7 +69,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "2873ms | 45.12.75.242:26424"
+      - "VISION | 46.243.235.6:8445"
+      - "84.201.180.13:443"
+      - "188.225.83.133:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
