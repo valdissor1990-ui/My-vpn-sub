@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-10-21T06:42:37.966370+00:00",
+  "generated_at": "2026-10-21T12:30:45.437227+00:00",
   "pick_source": "tcp_fallback",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 684,
+    "total_lines": 841,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 23
+    "unique": 21
   },
   "monitor": {
-    "tcp_alive": 16,
-    "checked": 23,
+    "tcp_alive": 8,
+    "checked": 15,
     "pre_score_cap": 500,
-    "skipped_dead": 0,
+    "skipped_dead": 6,
     "dead_cache": {
-      "entries": 5,
-      "active_dead": 3,
+      "entries": 0,
+      "active_dead": 0,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 16,
+    "tested": 8,
     "passed": 0,
     "fallback_tcp": true,
     "test_urls": [
@@ -38,55 +38,39 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 4,
-    "sub_vision.txt": 2,
+    "sub.txt": 2,
+    "sub_vision.txt": 0,
     "sub_white.txt": 2,
     "sub_black.txt": 2,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 4,
-    "sub_clash.yaml": 4
+    "sub_reality.txt": 2,
+    "sub_clash.yaml": 2
   },
   "pipeline": {
-    "raw_lines": 684,
+    "raw_lines": 841,
     "tg_links": 0,
-    "filtered": 23,
-    "tcp_alive": 16,
+    "filtered": 21,
+    "tcp_alive": 8,
     "clash_passed": 0,
-    "clash_tested": 16,
-    "exported": 4,
+    "clash_tested": 8,
+    "exported": 2,
     "pick_source": "tcp_fallback"
   },
   "top_scores": [
     {
-      "host": "188.225.77.254",
-      "score": 87,
-      "ping": 142,
-      "clash_delay": null,
-      "vision": false,
-      "proto_ok": null
-    },
-    {
       "host": "188.225.83.133",
       "score": 87,
-      "ping": 146,
+      "ping": 117,
       "clash_delay": null,
       "vision": false,
       "proto_ok": null
     },
     {
-      "host": "82.202.179.111",
-      "score": 150,
-      "ping": 135,
+      "host": "188.225.77.254",
+      "score": 87,
+      "ping": 129,
       "clash_delay": null,
-      "vision": true,
-      "proto_ok": null
-    },
-    {
-      "host": "82.202.179.106",
-      "score": 150,
-      "ping": 163,
-      "clash_delay": null,
-      "vision": true,
+      "vision": false,
       "proto_ok": null
     }
   ],
