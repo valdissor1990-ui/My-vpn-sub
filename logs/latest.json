@@ -1,32 +1,32 @@
 {
-  "ts": "2026-10-22 08:02:13 UTC",
+  "ts": "2026-10-22 14:10:37 UTC",
   "status": {
-    "generated_at": "2026-10-22T08:02:13.245097+00:00",
+    "generated_at": "2026-10-22T14:10:37.799315+00:00",
     "pick_source": "clash_soft_fill",
     "collect": {
       "sources_ok": 6,
       "sources_fail": 0,
-      "total_lines": 578,
+      "total_lines": 514,
       "telegram_links": 0
     },
     "filter": {
-      "unique": 22
+      "unique": 16
     },
     "monitor": {
-      "tcp_alive": 9,
-      "checked": 20,
+      "tcp_alive": 8,
+      "checked": 16,
       "pre_score_cap": 500,
-      "skipped_dead": 2,
+      "skipped_dead": 0,
       "dead_cache": {
-        "entries": 6,
-        "active_dead": 6,
+        "entries": 3,
+        "active_dead": 3,
         "hours": 6
       }
     },
     "protocol_test": {
       "engine": "mihomo",
       "enabled": true,
-      "tested": 9,
+      "tested": 8,
       "passed": 3,
       "fallback_tcp": false,
       "test_urls": [
@@ -49,38 +49,38 @@
       "sub_clash.yaml": 3
     },
     "pipeline": {
-      "raw_lines": 578,
+      "raw_lines": 514,
       "tg_links": 0,
-      "filtered": 22,
-      "tcp_alive": 9,
+      "filtered": 16,
+      "tcp_alive": 8,
       "clash_passed": 3,
-      "clash_tested": 9,
+      "clash_tested": 8,
       "exported": 3,
       "pick_source": "clash_soft_fill"
     },
     "top_scores": [
       {
-        "host": "45.12.75.242",
-        "score": 118,
-        "ping": 1220,
-        "clash_delay": 3132,
-        "vision": false,
+        "host": "46.254.17.88",
+        "score": 177,
+        "ping": 170,
+        "clash_delay": 883,
+        "vision": true,
         "proto_ok": true
       },
       {
         "host": "185.91.52.13",
-        "score": 177,
-        "ping": 175,
-        "clash_delay": 1831,
+        "score": 165,
+        "ping": 1187,
+        "clash_delay": 2387,
         "vision": true,
         "proto_ok": true
       },
       {
-        "host": "46.254.17.88",
-        "score": 177,
-        "ping": 194,
-        "clash_delay": 2011,
-        "vision": true,
+        "host": "45.12.75.242",
+        "score": 118,
+        "ping": 1209,
+        "clash_delay": 2130,
+        "vision": false,
         "proto_ok": true
       }
     ],
@@ -102,7 +102,7 @@
     {
       "priority": "P1",
       "code": "TCP_LOW",
-      "action": "tcp_alive=9: ослабить pre_score / dead_cache hours",
+      "action": "tcp_alive=8: ослабить pre_score / dead_cache hours",
       "auto": "clear_stale_dead_cache"
     }
   ]
