@@ -1,8 +1,8 @@
 {
   "tag": "filtered",
-  "count": 16,
+  "count": 25,
   "protocols": {
-    "vless": 16
+    "vless": 25
   },
-  "generated_at": "2026-10-22T14:10:29.670867+00:00"
+  "generated_at": "2026-10-22T18:55:01.382705+00:00"
 }
