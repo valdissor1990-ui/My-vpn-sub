@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-15T00:11:25.517713+00:00",
+  "generated_at": "2026-10-22T21:58:42.876420+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 919,
+    "total_lines": 734,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 61
+    "unique": 15
   },
   "monitor": {
-    "tcp_alive": 50,
-    "checked": 55,
+    "tcp_alive": 11,
+    "checked": 13,
     "pre_score_cap": 500,
-    "skipped_dead": 6,
+    "skipped_dead": 2,
     "dead_cache": {
-      "entries": 1,
-      "active_dead": 1,
+      "entries": 6,
+      "active_dead": 5,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 50,
-    "passed": 7,
+    "tested": 11,
+    "passed": 4,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -39,37 +39,37 @@
   },
   "output": {
     "sub.txt": 2,
-    "sub_vision.txt": 2,
-    "sub_white.txt": 2,
-    "sub_black.txt": 0,
+    "sub_vision.txt": 1,
+    "sub_white.txt": 1,
+    "sub_black.txt": 1,
     "sub_hy2.txt": 0,
     "sub_reality.txt": 2,
     "sub_clash.yaml": 2
   },
   "pipeline": {
-    "raw_lines": 919,
+    "raw_lines": 734,
     "tg_links": 0,
-    "filtered": 61,
-    "tcp_alive": 50,
-    "clash_passed": 7,
-    "clash_tested": 50,
+    "filtered": 15,
+    "tcp_alive": 11,
+    "clash_passed": 4,
+    "clash_tested": 11,
     "exported": 2,
     "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "178.248.236.21",
-      "score": 177,
-      "ping": 25,
-      "clash_delay": 339,
-      "vision": true,
+      "host": "45.12.75.242",
+      "score": 130,
+      "ping": 184,
+      "clash_delay": 4085,
+      "vision": false,
       "proto_ok": true
     },
     {
-      "host": "37.18.14.145",
+      "host": "46.254.17.88",
       "score": 177,
-      "ping": 155,
-      "clash_delay": 704,
+      "ping": 168,
+      "clash_delay": 789,
       "vision": true,
       "proto_ok": true
     }

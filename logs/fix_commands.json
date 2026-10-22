@@ -2,18 +2,18 @@
   "soft_fill_tcp": true,
   "force_tcp_fallback_pick": false,
   "raise_candidates": false,
-  "generated_at": "2026-10-22T18:55:11.234387+00:00",
+  "generated_at": "2026-10-22T21:58:42.877131+00:00",
   "fixes": [
     {
       "priority": "P0",
       "code": "LOW_EXPORT",
-      "action": "Clash ok=2, export=1: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
+      "action": "Clash ok=4, export=2: soft-fill из TCP top + поднять PROTOCOL_TEST_MAX_PASS",
       "auto": "soft_fill_and_raise_pass"
     },
     {
       "priority": "P1",
       "code": "TCP_LOW",
-      "action": "tcp_alive=16: ослабить pre_score / dead_cache hours",
+      "action": "tcp_alive=11: ослабить pre_score / dead_cache hours",
       "auto": "clear_stale_dead_cache"
     }
   ]
