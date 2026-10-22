@@ -1,12 +1,26 @@
-# My VPN Sub Clash Meta · 2026-10-22 02:11 UTC
-# nodes: 2
+# My VPN Sub Clash Meta · 2026-10-22 08:02 UTC
+# nodes: 3
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
 proxies:
   -
-    name: "VISION | 1185ms | 185.91.52.13:30066"
+    name: "3132ms | 45.12.75.242:26424"
+    type: vless
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    network: tcp
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    servername: ya.ru
+    reality-opts:
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
+  -
+    name: "VISION | 1831ms | 185.91.52.13:30066"
     type: vless
     server: 185.91.52.13
     port: 30066
@@ -21,7 +35,7 @@ proxies:
       short-id: 
     flow: xtls-rprx-vision
   -
-    name: "VISION | 999ms | 46.254.17.88:30065"
+    name: "VISION | 2011ms | 46.254.17.88:30065"
     type: vless
     server: 46.254.17.88
     port: 30065
@@ -40,8 +54,9 @@ proxy-groups:
     name: AUTO
     type: url-test
     proxies:
-      - "VISION | 1185ms | 185.91.52.13:30066"
-      - "VISION | 999ms | 46.254.17.88:30065"
+      - "3132ms | 45.12.75.242:26424"
+      - "VISION | 1831ms | 185.91.52.13:30066"
+      - "VISION | 2011ms | 46.254.17.88:30065"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -49,8 +64,9 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "VISION | 1185ms | 185.91.52.13:30066"
-      - "VISION | 999ms | 46.254.17.88:30065"
+      - "3132ms | 45.12.75.242:26424"
+      - "VISION | 1831ms | 185.91.52.13:30066"
+      - "VISION | 2011ms | 46.254.17.88:30065"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
