@@ -1,4 +1,4 @@
-# My VPN Sub Clash Meta · 2026-10-23 10:38 UTC
+# My VPN Sub Clash Meta · 2026-10-23 15:30 UTC
 # nodes: 2
 mixed-port: 7890
 allow-lan: false
@@ -6,41 +6,43 @@ mode: rule
 log-level: info
 proxies:
   -
-    name: "1111ms | 45.12.75.242:26424"
+    name: "VISION | 82.202.179.110:14443"
     type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    server: 82.202.179.110
+    port: 14443
+    uuid: ccd6419d-6943-4e7c-bc8c-7a157dadff80
     network: tcp
     udp: true
     tls: true
     client-fingerprint: firefox
-    servername: ya.ru
+    servername: smartcaptcha.yandexcloud.net
     reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
+      public-key: JufPPJ3rmM2jvI9g98K87wgUHroz4C-30NHX21UoZns
+      short-id: d29cbe24661f
+    flow: xtls-rprx-vision
   -
-    name: "VISION | 655ms | 46.254.17.88:30065"
+    name: "188.225.83.133:443"
     type: vless
-    server: 46.254.17.88
-    port: 30065
-    uuid: 30572b57-f5ab-4eb8-82d4-a24d399b99f6
-    network: tcp
+    server: 188.225.83.133
+    port: 443
+    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+    network: grpc
     udp: true
     tls: true
-    client-fingerprint: chrome
-    servername: a3.eosapp.net
+    client-fingerprint: random
+    servername: xnodtwx.artemida.live
     reality-opts:
-      public-key: Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU
-      short-id: 
-    flow: xtls-rprx-vision
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    grpc-opts:
+      grpc-service-name: 
 proxy-groups:
   -
     name: AUTO
     type: url-test
     proxies:
-      - "1111ms | 45.12.75.242:26424"
-      - "VISION | 655ms | 46.254.17.88:30065"
+      - "VISION | 82.202.179.110:14443"
+      - "188.225.83.133:443"
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   -
@@ -48,8 +50,8 @@ proxy-groups:
     type: select
     proxies:
       - AUTO
-      - "1111ms | 45.12.75.242:26424"
-      - "VISION | 655ms | 46.254.17.88:30065"
+      - "VISION | 82.202.179.110:14443"
+      - "188.225.83.133:443"
       - DIRECT
 rules:
   - "GEOIP,RU,DIRECT"
