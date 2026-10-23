@@ -1,7 +1,7 @@
 #profile-title: base64:TXkgVlBOIMK3IFZpc2lvbg==
 #profile-update-interval: 1
-# Generated: 2026-10-23 15:30 UTC
+# Generated: 2026-10-23 19:38 UTC
 # Count: 1
 # XTLS Vision
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://ccd6419d-6943-4e7c-bc8c-7a157dadff80@82.202.179.110:14443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=JufPPJ3rmM2jvI9g98K87wgUHroz4C-30NHX21UoZns&security=reality&sid=d29cbe24661f&sni=smartcaptcha.yandexcloud.net&type=raw#%F0%9F%87%A9%F0%9F%87%AA%20Germany%20%E2%80%94%20%2374
+vless://66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c@188.225.27.229:443?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU&security=reality&sid=88d9dc52ef39c8bd&sni=bridge.rkitman.ru&type=raw#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%E2%80%94%20%2376

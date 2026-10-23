@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-10-23T15:30:27.963709+00:00",
-  "pick_source": "tcp_fallback",
+  "generated_at": "2026-10-23T19:38:11.046545+00:00",
+  "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 470,
+    "total_lines": 493,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 18
+    "unique": 22
   },
   "monitor": {
-    "tcp_alive": 8,
-    "checked": 13,
+    "tcp_alive": 15,
+    "checked": 22,
     "pre_score_cap": 500,
-    "skipped_dead": 5,
+    "skipped_dead": 0,
     "dead_cache": {
-      "entries": 1,
-      "active_dead": 1,
+      "entries": 3,
+      "active_dead": 3,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 8,
-    "passed": 0,
-    "fallback_tcp": true,
+    "tested": 15,
+    "passed": 2,
+    "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
       "http://cp.cloudflare.com/generate_204",
@@ -47,31 +47,31 @@
     "sub_clash.yaml": 2
   },
   "pipeline": {
-    "raw_lines": 470,
+    "raw_lines": 493,
     "tg_links": 0,
-    "filtered": 18,
-    "tcp_alive": 8,
-    "clash_passed": 0,
-    "clash_tested": 8,
+    "filtered": 22,
+    "tcp_alive": 15,
+    "clash_passed": 2,
+    "clash_tested": 15,
     "exported": 2,
-    "pick_source": "tcp_fallback"
+    "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "82.202.179.110",
-      "score": 150,
-      "ping": 187,
-      "clash_delay": null,
+      "host": "188.225.27.229",
+      "score": 177,
+      "ping": 145,
+      "clash_delay": 608,
       "vision": true,
-      "proto_ok": null
+      "proto_ok": true
     },
     {
-      "host": "188.225.83.133",
-      "score": 87,
-      "ping": 129,
-      "clash_delay": null,
+      "host": "45.12.75.242",
+      "score": 130,
+      "ping": 156,
+      "clash_delay": 975,
       "vision": false,
-      "proto_ok": null
+      "proto_ok": true
     }
   ],
   "health": "ok",
