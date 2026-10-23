@@ -1,8 +1,8 @@
 #profile-title: base64:TXkgVlBOIMK3IHJlYWxpdHk=
 #profile-update-interval: 1
-# Generated: 2026-10-22 21:58 UTC
+# Generated: 2026-10-23 00:22 UTC
 # Count: 2
 # reality
 # https://github.com/valdissor1990-ui/My-vpn-sub
-vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2377
-vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.254.17.88:30065?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU&security=reality&sni=a3.eosapp.net&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2379
+vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.254.17.88:30065?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU&security=reality&sni=a3.eosapp.net&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Timeweb%20%E2%80%94%20%2385
+vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&fp=firefox&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw#%F0%9F%87%B7%F0%9F%87%BA%20Beget%20%E2%80%94%20%2382
