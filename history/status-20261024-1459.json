@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-16T19:07:59.415670+00:00",
+  "generated_at": "2026-10-24T14:59:31.365615+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
-    "sources_ok": 6,
-    "sources_fail": 0,
-    "total_lines": 1109,
+    "sources_ok": 5,
+    "sources_fail": 1,
+    "total_lines": 367,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 71
+    "unique": 12
   },
   "monitor": {
-    "tcp_alive": 60,
-    "checked": 68,
+    "tcp_alive": 2,
+    "checked": 9,
     "pre_score_cap": 500,
     "skipped_dead": 3,
     "dead_cache": {
-      "entries": 7,
-      "active_dead": 7,
+      "entries": 0,
+      "active_dead": 0,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 60,
-    "passed": 6,
+    "tested": 2,
+    "passed": 1,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -38,38 +38,30 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 2,
+    "sub.txt": 1,
     "sub_vision.txt": 1,
     "sub_white.txt": 1,
-    "sub_black.txt": 1,
+    "sub_black.txt": 0,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 2,
-    "sub_clash.yaml": 2
+    "sub_reality.txt": 1,
+    "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 1109,
+    "raw_lines": 367,
     "tg_links": 0,
-    "filtered": 71,
-    "tcp_alive": 60,
-    "clash_passed": 6,
-    "clash_tested": 60,
-    "exported": 2,
+    "filtered": 12,
+    "tcp_alive": 2,
+    "clash_passed": 1,
+    "clash_tested": 2,
+    "exported": 1,
     "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "87.242.95.164",
-      "score": 180,
-      "ping": 141,
-      "clash_delay": 1238,
-      "vision": false,
-      "proto_ok": true
-    },
-    {
-      "host": "90.156.218.163",
-      "score": 210,
-      "ping": 153,
-      "clash_delay": 3313,
+      "host": "188.225.27.229",
+      "score": 177,
+      "ping": 155,
+      "clash_delay": 615,
       "vision": true,
       "proto_ok": true
     }
