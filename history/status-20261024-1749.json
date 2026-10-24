@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-10-16T22:18:36.623022+00:00",
+  "generated_at": "2026-10-24T17:49:50.614923+00:00",
   "pick_source": "clash_soft_fill",
   "collect": {
     "sources_ok": 6,
     "sources_fail": 0,
-    "total_lines": 1156,
+    "total_lines": 525,
     "telegram_links": 0
   },
   "filter": {
-    "unique": 56
+    "unique": 25
   },
   "monitor": {
-    "tcp_alive": 45,
-    "checked": 48,
+    "tcp_alive": 16,
+    "checked": 25,
     "pre_score_cap": 500,
-    "skipped_dead": 8,
+    "skipped_dead": 0,
     "dead_cache": {
-      "entries": 7,
-      "active_dead": 7,
+      "entries": 2,
+      "active_dead": 2,
       "hours": 6
     }
   },
   "protocol_test": {
     "engine": "mihomo",
     "enabled": true,
-    "tested": 45,
-    "passed": 2,
+    "tested": 16,
+    "passed": 1,
     "fallback_tcp": false,
     "test_urls": [
       "http://www.gstatic.com/generate_204",
@@ -38,39 +38,31 @@
     "workers_used": 4
   },
   "output": {
-    "sub.txt": 2,
+    "sub.txt": 1,
     "sub_vision.txt": 1,
     "sub_white.txt": 1,
-    "sub_black.txt": 1,
+    "sub_black.txt": 0,
     "sub_hy2.txt": 0,
-    "sub_reality.txt": 2,
-    "sub_clash.yaml": 2
+    "sub_reality.txt": 1,
+    "sub_clash.yaml": 1
   },
   "pipeline": {
-    "raw_lines": 1156,
+    "raw_lines": 525,
     "tg_links": 0,
-    "filtered": 56,
-    "tcp_alive": 45,
-    "clash_passed": 2,
-    "clash_tested": 45,
-    "exported": 2,
+    "filtered": 25,
+    "tcp_alive": 16,
+    "clash_passed": 1,
+    "clash_tested": 16,
+    "exported": 1,
     "pick_source": "clash_soft_fill"
   },
   "top_scores": [
     {
-      "host": "90.156.218.163",
-      "score": 210,
-      "ping": 187,
-      "clash_delay": 958,
+      "host": "188.225.27.229",
+      "score": 177,
+      "ping": 166,
+      "clash_delay": 646,
       "vision": true,
-      "proto_ok": true
-    },
-    {
-      "host": "87.242.95.164",
-      "score": 180,
-      "ping": 147,
-      "clash_delay": 629,
-      "vision": false,
       "proto_ok": true
     }
   ],
